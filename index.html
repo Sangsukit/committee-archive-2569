@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#1F5A60">
+<meta name="theme-color" content="#6E1A16">
 <meta name="format-detection" content="telephone=no">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="th_TH">
@@ -18,29 +18,34 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="สรุปการประชุมคณะกรรมาธิการการบริหารราชการแผ่นดิน วุฒิสภา ปี 2569 ทุกครั้ง พร้อมลิงก์เอกสารทางการ (เว็บไซต์ไม่เป็นทางการ)">
 <script>try{var f=localStorage.getItem("arch-fs");if(f)document.documentElement.setAttribute("data-fs",f)}catch(e){}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Noto+Serif+Thai:wght@600;700&family=Sarabun:wght@400;500;600&display=swap">
 <style>
+/* Font: iPhone/iPad/Mac use their built-in Sukhumvit Set; everyone else gets Anuphan (SIL OFL 1.1, self-hosted in fonts/, no third-party request) */
+@font-face{font-family:"Anuphan";src:local("Anuphan"),url(fonts/anuphan-var.woff2) format("woff2");font-weight:100 700;font-style:normal;font-display:swap}
 /* Layout: a "docket" archive. Sticky search bar, year overview, then one docket card per meeting, newest first.
    Each card opens a full "read more" sheet; Reels mode is a vertical, snap-scrolling stack of the same meetings. */
 :root{
-  --bg:#F1F4F3; --paper:#FFFFFF; --ink:#14272B; --muted:#44575A; --line:#D4DCDA;
-  --teal:#1F5A60; --teal-soft:#E0ECEC; --gold:#94701F; --gold-soft:#F3EAD4; --hl:#F5E3A3;
-  --warn:#8A4B12; --warn-soft:#FBEEDD; --on-teal:#FFFFFF; --shade:rgba(10,30,34,.55);
-  --f-display:"Noto Serif Thai","Sarabun",Georgia,serif;
-  --f-body:"Sarabun","Noto Sans Thai","Leelawadee UI",Tahoma,sans-serif;
-  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  /* Palette inspired by the Thai Parliament and Senate: deep maroon, gold, warm cream; Thai flag colours as accents.
+     "--teal" is the historical name of the primary colour variable (now maroon). No emblem or official logo is used. */
+  --bg:#F7F3EC; --paper:#FFFFFF; --ink:#22170F; --muted:#5B4C3F; --line:#E4D9C7;
+  --teal:#6E1A16; --teal-soft:#F7E8E4; --gold:#8A6A2B; --gold-soft:#F5ECDB; --hl:#F3DE9C;
+  --warn:#8A4B12; --warn-soft:#FCEFD9; --on-teal:#FFFFFF; --shade:rgba(34,14,10,.58);
+  --maroon:#6E1A16; --maroon-deep:#4A0E0B; --gold-deco:#C9A55A; --gold-pale:#F1DFB4;
+  --flag-red:#A51931; --flag-white:#F4F5F8; --navy:#2D2A4A;
+  --f-display:"Sukhumvit Set","Anuphan","Noto Sans Thai","Leelawadee UI",Tahoma,system-ui,sans-serif;
+  --f-body:"Sukhumvit Set","Anuphan","Noto Sans Thai","Leelawadee UI",Tahoma,system-ui,sans-serif;
+  --f-mono:"Sukhumvit Set","Anuphan","Noto Sans Thai","Leelawadee UI",Tahoma,system-ui,sans-serif;
   --r:10px; --gut:max(16px,env(safe-area-inset-left,0px)); --gutr:max(16px,env(safe-area-inset-right,0px));
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0D1517; --paper:#142023; --ink:#E3EBE9; --muted:#B2C0BF; --line:#263739;
-  --teal:#7DB8BD; --teal-soft:#173133; --gold:#D6B463; --gold-soft:#2D2716; --hl:#5B4A14;
-  --warn:#E7A866; --warn-soft:#2E2113; --on-teal:#0D1517; --shade:rgba(0,0,0,.6); color-scheme:dark}}
+  --bg:#140E0D; --paper:#1F1715; --ink:#F3EBE3; --muted:#CDBFB2; --line:#3B2E2A;
+  --teal:#E2BE76; --teal-soft:#3A2C1C; --gold:#E9C987; --gold-soft:#33281A; --hl:#5B4A14;
+  --warn:#F0B070; --warn-soft:#33220F; --on-teal:#1A110E; --shade:rgba(0,0,0,.62);
+  --maroon:#4A100D; --maroon-deep:#2E0907; --gold-deco:#C9A55A; --gold-pale:#5A4826; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0D1517; --paper:#142023; --ink:#E3EBE9; --muted:#B2C0BF; --line:#263739;
-  --teal:#7DB8BD; --teal-soft:#173133; --gold:#D6B463; --gold-soft:#2D2716; --hl:#5B4A14;
-  --warn:#E7A866; --warn-soft:#2E2113; --on-teal:#0D1517; --shade:rgba(0,0,0,.6); color-scheme:dark}
+  --bg:#140E0D; --paper:#1F1715; --ink:#F3EBE3; --muted:#CDBFB2; --line:#3B2E2A;
+  --teal:#E2BE76; --teal-soft:#3A2C1C; --gold:#E9C987; --gold-soft:#33281A; --hl:#5B4A14;
+  --warn:#F0B070; --warn-soft:#33220F; --on-teal:#1A110E; --shade:rgba(0,0,0,.62);
+  --maroon:#4A100D; --maroon-deep:#2E0907; --gold-deco:#C9A55A; --gold-pale:#5A4826; color-scheme:dark}
 
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1rem;line-height:1.75}
@@ -198,7 +203,7 @@ h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:
 
 /* detail sheet */
 dialog{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%;color:var(--ink);margin:0}
-dialog::backdrop{background:var(--shade)}
+dialog::backdrop{background:rgba(24,10,8,.6)} /* literal colour: older Safari and Chrome do not pass CSS variables into ::backdrop */
 .sheet{background:var(--paper);max-width:880px;margin:4vh auto;border-radius:14px;overflow:hidden;height:92vh;display:flex;flex-direction:column}
 @media (max-width:700px){.sheet{margin:0;border-radius:0;height:100%}}
 .sheet-head{display:flex;align-items:center;gap:10px;padding:12px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px));padding-top:calc(12px + env(safe-area-inset-top,0px));border-bottom:1px solid var(--line)}
@@ -506,6 +511,107 @@ html[data-fs="3"] .reel-card h3{font-size:1.25rem}
 html[data-fs="3"] .reel-card ul{font-size:.95rem}
 html[data-fs="3"] .reels-credit{font-size:.7rem}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}.tick:hover{transform:none}}
+
+/* Terms gate: visitors read and accept once before using the site (remembered in this browser only) */
+#gate .gate{background:var(--paper);max-width:660px;margin:4vh auto;border-radius:16px;max-height:92vh;overflow-y:auto;overscroll-behavior:contain;padding:24px 24px 0;display:grid;gap:16px}
+@media (max-width:700px){#gate .gate{margin:0;border-radius:0;max-height:100%;height:100%;padding:20px var(--gutr) 0 var(--gut);align-content:start}}
+.gate h2{font-size:1.45rem;display:flex;gap:10px;align-items:center;outline:none}
+.gate h2 .ico{color:var(--teal);width:1.3em;height:1.3em}
+.gate-lede{margin:0;font-size:1.05rem;color:var(--muted)}
+.gate .fs{flex-wrap:wrap}
+.gate-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.gate-list li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:start;font-size:1.06rem;line-height:1.6;background:var(--bg);border-radius:12px;padding:12px 14px}
+.gate-list .gi{width:44px;height:44px;border-radius:50%;background:var(--teal-soft);color:var(--teal);display:grid;place-items:center}
+.gate-list .gi .ico{width:24px;height:24px}
+.gate-list b{display:block;color:var(--ink);font-size:1.08rem}
+.gate-more{border:1.5px solid var(--line);border-radius:12px}
+.gate-more>summary{min-height:56px;display:flex;align-items:center;gap:10px;padding:0 16px;font-weight:600;color:var(--teal);cursor:pointer;font-size:1.05rem;list-style:none}
+.gate-more>summary::-webkit-details-marker{display:none}
+.gate-more>summary::after{content:"แตะเพื่อเปิด";margin-left:auto;font-weight:500;font-size:.92rem;color:var(--muted)}
+.gate-more[open]>summary::after{content:"แตะเพื่อปิด"}
+.gate-more[open]>summary{border-bottom:1px solid var(--line)}
+.gate-more .terms{padding:0 16px 12px}
+.terms h3{font-family:var(--f-body);font-size:1.1rem;margin:18px 0 4px;color:var(--teal)}
+.terms ul{margin:0;padding-left:1.2em}
+.terms li{margin:6px 0}
+.terms-ver{color:var(--muted);font-size:.95rem;margin:14px 0 0}
+.gate-no{margin:0;font-size:1rem;color:var(--muted)}
+.gate-act{position:sticky;bottom:0;background:var(--paper);padding:12px 0 calc(16px + env(safe-area-inset-bottom,0px));box-shadow:0 -12px 14px -12px rgba(0,0,0,.18);display:grid;gap:8px}
+.gate-ok{min-height:64px;width:100%;border:0;border-radius:14px;background:var(--teal);color:var(--on-teal);font-size:1.3rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer}
+.gate-ok .ico{width:1.35em;height:1.35em;stroke-width:2.4}
+.gate-note{margin:0;color:var(--muted);font-size:.95rem;text-align:center}
+html.gated body{overflow:hidden}
+.sheet-body.terms{line-height:1.75}
+
+/* ===== Thai Parliament theme layer: maroon + gold, Thai flag ribbon, traditional ประจำยาม motif (no emblem, no official logo) ===== */
+body{margin:0;font-family:var(--f-body);letter-spacing:.005em}
+body::before{background:var(--maroon-deep)}
+h1,h2,h3{font-weight:700;letter-spacing:0}
+.top{background:linear-gradient(100deg,var(--maroon-deep) 0%,var(--maroon) 58%,#7E2B1F 100%);color:#FFF8EC;border-bottom:0;box-shadow:0 2px 10px rgba(40,10,5,.18)}
+.top::after{content:"";position:absolute;left:0;right:0;top:100%;height:9px;background:linear-gradient(180deg,var(--flag-red) 0 16.67%,var(--flag-white) 16.67% 33.33%,var(--navy) 33.33% 66.67%,var(--flag-white) 66.67% 83.33%,var(--flag-red) 83.33% 100%);box-shadow:0 2px 4px rgba(0,0,0,.12);pointer-events:none}
+@media (pointer:coarse),(max-width:700px){.top{position:relative}}
+.brand b{color:#FFFFFF;font-size:1.1rem}
+.brand small{color:#F2DFC4}
+.mark{background:var(--gold-deco);color:var(--maroon-deep);border-radius:50%;box-shadow:0 0 0 2px rgba(255,255,255,.35)}
+.credit-top{color:#F2DFC4}
+.credit-top b{color:#FFFFFF}
+.unofficial{background:#FFF1D2;color:#7A3E06;font-weight:700}
+.top .fs{color:#F2DFC4}
+.top .fs button{background:rgba(255,255,255,.96);color:var(--maroon-deep);border-color:transparent}
+.top .fs button[aria-pressed="true"]{background:var(--gold-deco);color:#2A1608;border-color:#F6E2B0}
+.hero{position:relative;padding-top:48px}
+.hero::before{content:"";position:absolute;top:9px;right:0;width:min(520px,55%);height:340px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23C9A55A' stroke-width='1.3'%3E%3Cpath d='M28 6c5 7 5 13 0 16-5-3-5-9 0-16zM28 50c5-7 5-13 0-16-5 3-5 9 0 16zM6 28c7-5 13-5 16 0-3 5-9 5-16 0zM50 28c-7-5-13-5-16 0 3 5 9 5 16 0z'/%3E%3Ccircle cx='28' cy='28' r='3.2'/%3E%3Cpath d='M0 0l8 8M56 0l-8 8M0 56l8-8M56 56l-8-8'/%3E%3C/g%3E%3C/svg%3E");opacity:.22;pointer-events:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 60%);mask-image:linear-gradient(90deg,transparent,#000 60%)}
+.hero>*{position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--gold-soft);color:var(--gold);border:1px solid var(--gold-pale);border-radius:99px;padding:5px 14px 5px 8px;font-size:.95rem;letter-spacing:0}
+.eyebrow::before{content:"";width:24px;height:16px;border-radius:3px;background:linear-gradient(180deg,var(--flag-red) 0 16.67%,var(--flag-white) 16.67% 33.33%,var(--navy) 33.33% 66.67%,var(--flag-white) 66.67% 83.33%,var(--flag-red) 83.33% 100%);box-shadow:0 0 0 1px rgba(0,0,0,.12);flex:none}
+.hero h1{margin-top:14px}
+.hero h1 em{color:var(--teal);background:linear-gradient(transparent 72%,var(--hl) 72%);border-radius:2px}
+.quick{gap:14px}
+.qbtn{position:relative;overflow:hidden;border:2px solid var(--line);box-shadow:0 2px 0 rgba(60,30,10,.05);transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+.qbtn::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--teal)}
+.qbtn.gold::before{background:var(--gold-deco)}
+.qbtn:hover,.qbtn:focus-visible{border-color:var(--gold-deco);transform:translateY(-2px);box-shadow:0 8px 18px rgba(80,30,10,.12)}
+.qbtn:active{transform:scale(.985);box-shadow:none}
+.qbtn .qi{border-radius:50%;box-shadow:0 0 0 4px var(--teal-soft)}
+.qbtn.gold .qi{background:var(--gold);box-shadow:0 0 0 4px var(--gold-soft)}
+.qbtn .go{color:var(--teal);transition:transform .15s ease}
+.qbtn:hover .go{transform:translateX(4px)}
+.notice{border-left:6px solid var(--warn);border-radius:12px}
+.upnext{border:1px solid var(--gold-pale);background:linear-gradient(180deg,var(--gold-soft),var(--paper))}
+.ov>summary{border-left:6px solid var(--gold-deco)}
+.stat .v{font-family:var(--f-body);font-weight:700;font-size:2rem;font-variant-numeric:tabular-nums;color:var(--teal)}
+.panel{border-radius:14px}
+.panel h2 .ico{color:var(--gold-deco)}
+.controls{border-bottom:2px solid var(--gold-pale)}
+.search{border-width:2px}
+.search:focus-within{border-color:var(--gold-deco);box-shadow:0 0 0 4px var(--gold-soft)}
+.card{border-radius:16px;box-shadow:0 1px 0 rgba(60,30,10,.05);transition:box-shadow .2s ease,transform .2s ease,border-color .2s ease}
+.card:hover{box-shadow:0 10px 24px rgba(80,30,10,.10);border-color:var(--gold-pale)}
+.when{background:linear-gradient(180deg,var(--teal-soft),var(--paper));border-right:3px solid var(--gold-deco)}
+.when .no{font-weight:700}
+.btn{border-radius:10px;transition:background .15s ease,border-color .15s ease,transform .1s ease}
+.btn:active,.chip:active{transform:scale(.97)}
+.btn:hover{border-color:var(--gold-deco)}
+.btn.primary:hover{background:var(--maroon-deep);border-color:var(--maroon-deep)}
+.chip[aria-pressed="true"]{box-shadow:0 0 0 3px var(--gold-soft)}
+.cat{background:var(--teal-soft);color:var(--teal)}
+.sheet{border-top:6px solid var(--gold-deco)}
+.sheet-head{background:var(--paper);border-bottom:2px solid var(--gold-pale)}
+.reels{background:#140A08}
+footer{position:relative;background:linear-gradient(180deg,var(--maroon-deep),#2E0907);color:#F1E2D0;border-top:0;margin-top:34px}
+footer::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:9px;background:linear-gradient(180deg,var(--flag-red) 0 16.67%,var(--flag-white) 16.67% 33.33%,var(--navy) 33.33% 66.67%,var(--flag-white) 66.67% 83.33%,var(--flag-red) 83.33% 100%)}
+footer h4{color:#FFFFFF}
+footer p,footer ul{color:#E8D6C2}
+footer a{color:#F6D99A}
+footer .footer-credit{border-top-color:rgba(255,255,255,.18);color:#E8D6C2}
+footer .footer-credit b{color:#FFFFFF}
+:focus-visible{outline:3px solid var(--gold-deco)}
+/* gentle reveal of meeting cards as they scroll into view (skipped when the device asks for less motion) */
+.card.rv{opacity:0;transform:translateY(14px)}
+.card.rv.in{opacity:1;transform:none;transition:opacity .45s ease,transform .45s ease}
+@media (prefers-reduced-motion:reduce){.card.rv{opacity:1;transform:none}.qbtn,.card,.btn{transition:none}}
+@media (max-width:900px){.quick{grid-template-columns:1fr}}
+@media (max-width:700px){.hero{padding-top:38px}.hero::before{width:70%;height:260px;opacity:.16}.qbtn::before{width:5px}}
 </style>
 
 
@@ -547,6 +653,8 @@ html[data-fs="3"] .reels-credit{font-size:.7rem}
  <symbol id="i-pinmap" viewBox="0 0 24 24"><path d="M9 4l6 2 5-2v14l-5 2-6-2-5 2V6z"/><path d="M9 4v14M15 6v14"/></symbol>
  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
  <symbol id="i-time" viewBox="0 0 24 24"><path d="M5 3v18"/><circle cx="5" cy="7" r="2" fill="currentColor"/><circle cx="5" cy="17" r="2" fill="currentColor"/><path d="M9 7h11M9 17h8"/></symbol>
+ <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3M12 14.5v2.5"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
  <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
 </svg>
 
@@ -645,12 +753,86 @@ html[data-fs="3"] .reels-credit{font-size:.7rem}
    <h4>แจ้งแก้ไขข้อมูล</h4>
    <p>หากพบข้อความคลาดเคลื่อน โปรดแจ้งพร้อมระบุครั้งที่ประชุม คณะทำงานจะตรวจสอบกับเอกสารต้นฉบับและแก้ไขโดยเร็ว</p>
    <p><b>ช่องทางติดต่อ:</b> <span id="contact">โปรดแจ้งผู้ที่ส่งลิงก์นี้ให้ท่าน</span></p>
+   <p><a href="#terms">ข้อตกลงการใช้งานและความเป็นส่วนตัว</a></p>
    <p>ปรับปรุงข้อมูลล่าสุด <span id="updated">9 พฤศจิกายน 2569</span></p>
   </div>
-  <div class="footer-credit"><span>จัดทำโดย <b>คณะทำงานของ สว. โชติชัย บัวดิษ</b></span><span>เว็บไซต์ไม่เป็นทางการ · ข้อมูลจากเอกสารเผยแพร่สาธารณะของรัฐสภา</span></div>
+  <div class="footer-credit"><span>จัดทำโดย <b>คณะทำงานของ สว. โชติชัย บัวดิษ</b></span><span>เว็บไซต์ไม่เป็นทางการ · ข้อมูลจากเอกสารเผยแพร่สาธารณะของรัฐสภา · <a href="#terms">ข้อตกลงการใช้งาน</a></span></div>
  </div>
 </footer>
 
+<dialog id="gate" aria-labelledby="g-title" aria-describedby="g-lede">
+ <div class="gate">
+  <h2 id="g-title" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg>ก่อนเริ่มใช้งาน โปรดอ่านข้อตกลง</h2>
+  <div class="fs" role="group" aria-label="ปรับขนาดตัวอักษร"><span>ขนาดตัวอักษร</span><button type="button" data-fs="1" aria-pressed="true" aria-label="ตัวอักษรขนาดปกติ">ก</button><button type="button" data-fs="2" aria-pressed="false" aria-label="ตัวอักษรใหญ่">ก</button><button type="button" data-fs="3" aria-pressed="false" aria-label="ตัวอักษรใหญ่มาก">ก</button></div>
+  <p class="gate-lede" id="g-lede">สรุปสั้น ๆ 5 ข้อ ใช้เวลาอ่านไม่ถึง 1 นาที</p>
+  <ul class="gate-list">
+   <li><span class="gi"><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg></span><span><b>ไม่ใช่เว็บไซต์ทางการของวุฒิสภา</b>จัดทำโดยคณะทำงานของ สว. โชติชัย บัวดิษ</span></li>
+   <li><span class="gi"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg></span><span><b>ใช้เพื่อการอ้างอิงเท่านั้น</b>หากข้อความต่างจากเอกสารต้นฉบับของรัฐสภา ให้ถือตามเอกสารต้นฉบับ</span></li>
+   <li><span class="gi"><svg class="ico" aria-hidden="true"><use href="#i-complaint"/></svg></span><span><b>เรื่องร้องเรียนเป็นข้อกล่าวอ้าง</b>ยังไม่มีการวินิจฉัยว่าผู้ใดผิด และไม่แสดงชื่อบุคคล</span></li>
+   <li><span class="gi"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg></span><span><b>แชร์ลิงก์ได้อย่างอิสระ</b>โปรดอย่าตัดต่อจนความหมายเปลี่ยน ภาพถ่ายเป็นของสำนักงานเลขาธิการวุฒิสภา</span></li>
+   <li><span class="gi"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg></span><span><b>ไม่เก็บข้อมูลส่วนตัว</b>ไม่มีสมาชิก ไม่มีระบบติดตาม จำไว้ในเครื่องของท่านเพียงการยอมรับและขนาดตัวอักษร</span></li>
+  </ul>
+  <details class="gate-more"><summary><svg class="ico" aria-hidden="true"><use href="#i-book"/></svg>อ่านข้อตกลงฉบับเต็ม</summary><div class="terms" id="terms-full"><h3>1. เว็บไซต์นี้คืออะไร</h3>
+<ul>
+ <li>เว็บไซต์ "คลังการประชุม คณะกรรมาธิการการบริหารราชการแผ่นดิน วุฒิสภา ปี 2569" จัดทำโดย <b>คณะทำงานของ สว. โชติชัย บัวดิษ</b> เพื่อช่วยให้ประชาชนติดตามการประชุมได้สะดวก</li>
+ <li><b>ไม่ใช่เว็บไซต์ทางการ</b>ของวุฒิสภาหรือสำนักงานเลขาธิการวุฒิสภา และไม่ใช่ความเห็นหรือมติของคณะกรรมาธิการ</li>
+</ul>
+<h3>2. ข้อมูลใช้เพื่อการอ้างอิงเท่านั้น</h3>
+<ul>
+ <li>บทสรุปเรียบเรียงและตัดทอนจากเอกสารที่เผยแพร่ต่อสาธารณะบนระบบของรัฐสภา เช่น สรุปผลการประชุม และหนังสือนัดประชุม ทุกครั้งมีลิงก์ไปยังเอกสารต้นฉบับ</li>
+ <li><b>หากข้อความใดต่างจากเอกสารต้นฉบับ ให้ถือตามเอกสารต้นฉบับ</b></li>
+ <li>ข้อมูลอาจไม่ครบถ้วนหรือยังไม่เป็นปัจจุบัน และไม่ใช่คำแนะนำทางกฎหมาย โปรดตรวจสอบกับเอกสารทางการก่อนนำไปอ้างอิงหรือใช้ตัดสินใจ</li>
+ <li>บทสรุปเรียบเรียงโดยคณะทำงานด้วยเครื่องมือ AI ช่วยเขียน และตรวจทานกับเอกสารต้นฉบับ วิดีโอใช้เสียงบรรยายสังเคราะห์ด้วย AI</li>
+</ul>
+<h3>3. เรื่องร้องเรียน</h3>
+<ul>
+ <li>เรื่องร้องเรียนที่ปรากฏเป็น<b>ข้อกล่าวอ้างของผู้ร้อง</b> ยังไม่มีการวินิจฉัยว่าผู้ใดกระทำผิด</li>
+ <li>เว็บไซต์ไม่แสดงชื่อผู้ร้อง ผู้ถูกร้อง บริษัทเอกชน และบุคคลที่ไม่ใช่ผู้ดำรงตำแหน่งสาธารณะ</li>
+ <li>เรื่องที่อยู่ระหว่างการพิจารณาของศาล จะไม่ลงรายละเอียด</li>
+</ul>
+<h3>4. การรับประกันและความรับผิด</h3>
+<ul>
+ <li>คณะทำงานตั้งใจให้ข้อมูลถูกต้องที่สุด แต่ให้บริการเว็บไซต์ตามสภาพที่เป็นอยู่ และไม่รับประกันว่าข้อมูลถูกต้องครบถ้วนทุกประการ</li>
+ <li>เท่าที่กฎหมายอนุญาต คณะทำงานไม่ต้องรับผิดต่อความเสียหายที่เกิดจากการนำข้อมูลในเว็บไซต์ไปใช้โดยไม่ตรวจสอบกับเอกสารต้นฉบับ</li>
+</ul>
+<h3>5. ลิขสิทธิ์และการให้เครดิต</h3>
+<ul>
+ <li>เอกสารต้นฉบับเป็นของรัฐสภาและสำนักงานเลขาธิการวุฒิสภา <b>ภาพถ่ายเป็นของสำนักงานเลขาธิการวุฒิสภา</b> เว็บไซต์ใช้โดยระบุที่มาทุกภาพ หากต้องการนำภาพไปใช้ต่อ โปรดขออนุญาตจากสำนักงานเลขาธิการวุฒิสภา</li>
+ <li>ยกข้อความบทสรุปไปใช้ได้ โดยระบุที่มาว่า "คลังการประชุม จัดทำโดยคณะทำงานของ สว. โชติชัย บัวดิษ" และควรแนบลิงก์เอกสารต้นฉบับ</li>
+ <li>หากต้องการนำวิดีโอไปลงใหม่ทั้งเรื่อง หรือใช้ในสื่ออื่น โปรดติดต่อคณะทำงานก่อน และห้ามใช้เพื่อการค้า</li>
+</ul>
+<h3>6. การแชร์</h3>
+<ul>
+ <li><b>แชร์ลิงก์ได้อย่างอิสระ</b> ผ่าน LINE, Facebook, X หรือคัดลอกลิงก์</li>
+ <li>โปรดอย่าตัดข้อความหรือตัดต่อวิดีโอจนความหมายเปลี่ยน และอย่านำไปใช้ในลักษณะที่ทำให้ผู้อื่นเข้าใจผิดหรือเสียหาย</li>
+ <li>เมื่อแตะปุ่มแชร์ เว็บไซต์จะเปิดบริการนั้น ๆ ซึ่งมีนโยบายความเป็นส่วนตัวของตนเอง</li>
+</ul>
+<h3>7. ความเป็นส่วนตัว (ตาม พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562)</h3>
+<ul>
+ <li>เว็บไซต์<b>ไม่มีระบบสมาชิก</b> และไม่ขอชื่อ เบอร์โทรศัพท์ หรืออีเมลของท่าน</li>
+ <li><b>ไม่ใช้คุกกี้ติดตาม</b> ไม่มีระบบนับสถิติผู้เข้าชม และไม่มีโฆษณา</li>
+ <li>เว็บไซต์จดจำไว้ในเครื่องของท่านเพียง 2 อย่าง คือ การยอมรับข้อตกลงนี้ และขนาดตัวอักษรที่เลือก ข้อมูลนี้ไม่ถูกส่งมาที่คณะทำงาน และลบได้โดยล้างข้อมูลเว็บไซต์ในเบราว์เซอร์</li>
+ <li>เว็บไซต์ฝากไว้ที่ GitHub Pages ผู้ให้บริการอาจบันทึกข้อมูลทางเทคนิค เช่น หมายเลข IP เพื่อความปลอดภัยของระบบ ตามนโยบายความเป็นส่วนตัวของ GitHub เว็บไซต์ไม่ได้รับหรือใช้ข้อมูลนี้</li>
+ <li>ลิงก์ไปยังเว็บไซต์ของรัฐสภาและวุฒิสภาเป็นเว็บไซต์ภายนอก</li>
+</ul>
+<h3>8. แจ้งแก้ไขข้อมูล</h3>
+<ul>
+ <li>หากพบข้อความคลาดเคลื่อน โปรดแจ้งพร้อมระบุครั้งที่ประชุม ช่องทาง: <b>โปรดแจ้งผู้ที่ส่งลิงก์นี้ให้ท่าน</b></li>
+ <li>คณะทำงานจะตรวจสอบกับเอกสารต้นฉบับและแก้ไขโดยเร็ว</li>
+</ul>
+<h3>9. การเปลี่ยนแปลงข้อตกลง</h3>
+<ul>
+ <li>ข้อตกลงนี้อาจปรับปรุงได้ หากเปลี่ยนสาระสำคัญ เว็บไซต์จะแสดงหน้าต่างนี้ให้ท่านยอมรับอีกครั้ง</li>
+ <li>ข้อตกลงนี้อยู่ภายใต้กฎหมายไทย</li>
+</ul>
+<p class="terms-ver">ฉบับวันที่ 9 พฤศจิกายน 2569</p></div></details>
+  <p class="gate-no">หากไม่ยอมรับ ท่านยังดูข้อมูลทางการได้ที่ <a href="https://www.senate.go.th/view/414/meeting/TH-TH?cid=79731&amp;ctype=1" rel="noopener">เว็บไซต์วุฒิสภา</a></p>
+  <div class="gate-act">
+   <button class="gate-ok" type="button" id="g-ok"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>ยอมรับและเข้าใช้งาน</button>
+   <p class="gate-note">การกด "ยอมรับ" หมายถึงท่านได้อ่านและยอมรับข้อตกลงนี้</p>
+  </div>
+ </div>
+</dialog>
 <dialog id="detail" aria-labelledby="d-title"><div class="sheet" id="sheet"></div></dialog>
 <div class="reels is-muted" id="reels" hidden role="dialog" aria-label="เลื่อนชมการประชุม">
  <div class="reels-top"><span class="ttl">เลื่อนขึ้น ดูครั้งก่อนหน้า</span><button class="closer" id="close-reels" type="button"><svg class="ico" aria-hidden="true"><use href="#i-close"/></svg>ปิด</button></div>
@@ -890,7 +1072,18 @@ function openTimeline(){
  const dlg=$("#detail");if(!dlg.open){try{dlg.showModal()}catch(e){dlg.setAttribute("open","")}}
  $(".sheet-body").scrollTop=0;$("#d-close").focus();
 }
-function closeDetail(){const dlg=$("#detail");if(!dlg.open)return;dlg.querySelectorAll("video").forEach(v=>v.pause());dlg.close();const n=(location.hash.match(/^#read-(\d+)/)||[])[1];try{if(n)history.replaceState(null,"","#m-"+n);else if(location.hash==="#timeline")history.replaceState(null,"","#quick")}catch(e){}}
+function openTerms(){
+ $("#sheet").innerHTML=`
+ <div class="sheet-head"><span class="t">ข้อตกลงการใช้งาน</span><button class="iconbtn" type="button" data-copy="terms" aria-label="คัดลอกลิงก์หน้านี้">${icon("link")}</button><button class="closebtn" type="button" id="d-close">${icon("close")}ปิด</button></div>
+ <div class="sheet-body terms">
+  <h2 id="d-title">${icon("info")} ข้อตกลงการใช้งานและความเป็นส่วนตัว</h2>
+  ${$("#terms-full").innerHTML}
+  <button class="closebtn" type="button" data-close-sheet style="justify-self:center">${icon("close")}ปิด กลับหน้าหลัก</button>
+ </div>`;
+ const dlg=$("#detail");if(!dlg.open){try{dlg.showModal()}catch(e){dlg.setAttribute("open","")}}
+ $(".sheet-body").scrollTop=0;$("#d-close").focus();
+}
+function closeDetail(){const dlg=$("#detail");if(!dlg.open)return;dlg.querySelectorAll("video").forEach(v=>v.pause());dlg.close();const n=(location.hash.match(/^#read-(\d+)/)||[])[1];try{if(n)history.replaceState(null,"","#m-"+n);else if(location.hash==="#timeline"||location.hash==="#terms")history.replaceState(null,"","#quick")}catch(e){}}
 
 /* reels */
 let reelsBuilt=false,muted=true;
@@ -919,8 +1112,10 @@ function closeReels(){const box=$("#reels");if(box.hidden)return;box.hidden=true
 
 /* routing: #m-NN card, #read-NN detail, #reels, #reel-NN */
 function route(){
+ if(!termsOk)return;
  const h=location.hash.slice(1);let mm;
  if((mm=h.match(/^read-(\d+)$/))){closeReels();openDetail(+mm[1]);return}
+ if(h==="terms"){closeReels();openTerms();return}
  if(h==="timeline"){closeReels();openTimeline();return}
  closeDetail();
  if(h==="reels"){openReels();return}
@@ -957,13 +1152,28 @@ $("#tag-f").addEventListener("change",e=>{S.tag=e.target.value;render()});
 function setFs(v){const el=document.documentElement;if(v==="1")el.removeAttribute("data-fs");else el.setAttribute("data-fs",v);try{localStorage.setItem("arch-fs",v)}catch(e){}document.querySelectorAll(".fs button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.fs===v)));setTop()}
 const tt=$("#totop");window.addEventListener("scroll",()=>tt.classList.toggle("on",scrollY>1400),{passive:true});tt.addEventListener("click",()=>scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}));
 if(navigator.share)document.documentElement.classList.add("can-share");
+/* terms gate: shown until the visitor taps "ยอมรับ"; the acceptance is kept in this browser only (localStorage) */
+const TERMS_V="2569-11-09";let termsOk=false;
+try{termsOk=localStorage.getItem("arch-terms")===TERMS_V}catch(e){}
+function openGate(){const g=$("#gate");document.documentElement.classList.add("gated");try{g.showModal()}catch(e){g.setAttribute("open","")}$("#g-title").focus({preventScroll:true})}
+$("#gate").addEventListener("cancel",e=>e.preventDefault());
+$("#g-ok").addEventListener("click",()=>{termsOk=true;try{localStorage.setItem("arch-terms",TERMS_V)}catch(e){}const g=$("#gate");if(g.open)g.close();g.removeAttribute("open");document.documentElement.classList.remove("gated");route()});
 window.addEventListener("hashchange",route);
 const setTop=()=>document.documentElement.style.setProperty("--toph",$("#top").offsetHeight+"px");
 window.addEventListener("resize",setTop);
 renderOverview();renderUpnext();render();setTop();
 setFs(document.documentElement.getAttribute("data-fs")||"1");
 if(matchMedia("(min-width:1025px) and (pointer:fine)").matches)$("#ov").open=true;
-route();
+/* interactive touches: count-up numbers when the overview opens, cards fade in as they scroll into view */
+const calm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function countUp(){if(calm)return;document.querySelectorAll("#stats .v").forEach(el=>{const t=el.textContent.trim();if(!/^\d+$/.test(t)||el.dataset.done)return;el.dataset.done=1;const n=+t,t0=performance.now(),d=900;const step=now=>{const k=Math.min(1,(now-t0)/d);el.textContent=Math.round(n*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(step)};el.textContent="0";requestAnimationFrame(step)})}
+$("#ov").addEventListener("toggle",()=>{if($("#ov").open)countUp()});
+let revIO=null;
+function reveal(){if(calm||!("IntersectionObserver" in window))return;if(!revIO)revIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");revIO.unobserve(e.target)}}),{rootMargin:"0px 0px -40px 0px"});
+ document.querySelectorAll(".feed .card:not(.rv)").forEach(c=>{const r=c.getBoundingClientRect();if(r.top<innerHeight)return;c.classList.add("rv");revIO.observe(c)})}
+const _render=render;render=function(){_render.apply(this,arguments);reveal()};reveal();
+if($("#ov").open)countUp();
+if(termsOk)route();else openGate();
 </script>
 
 </body>
