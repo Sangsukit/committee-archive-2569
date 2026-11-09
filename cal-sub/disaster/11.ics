@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//committee-archive-2569//TH
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:committee-archive-2569-disaster-m11@sangsukit.github.io
+DTSTAMP:20261109T130648Z
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+SUMMARY:ประชุมคณะอนุกรรมาธิกา
+ รการจัดการภัยพิบัติระดับ
+ ชาติ (วุฒิสภา) ครั้งที่ 11/2569
+LOCATION:
+DESCRIPTION:นัดประชุมตามหนังสือน
+ ัดประชุมที่วุฒิสภาเผยแพร
+ ่ ใส่ปฏิทินเพื่อติดตามเท
+ ่านั้น ไม่ใช่คำเชิญเข้าร
+ ่วม กำหนดการอาจเปลี่ยนแป
+ ลง โปรดตรวจสอบกับเว็บไซต
+ ์วุฒิสภา เวลาสิ้นสุดเป็น
+ เวลาประมาณ (คลังการประชุม 
+ เว็บไซต์ไม่เป็นทางการ)\nรา
+ ยละเอียด: https://sangsukit.github.io/committee-archive-
+ 2569/sub-disaster.html#read-11
+URL:https://sangsukit.github.io/committee-archive-2569/sub-disaster.html#
+ read-11
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ประชุมคณะอนุกรรมาธิก
+ ารการจัดการภัยพิบัติระดั
+ บชาติ (วุฒิสภา) ครั้งที่ 11/2569
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR
