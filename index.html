@@ -33,7 +33,7 @@
   /* Palette inspired by the Thai Parliament and Senate: deep maroon, gold, warm cream; Thai flag colours as accents.
      "--teal" is the historical name of the primary colour variable (now maroon). No emblem or official logo is used. */
   --bg:#F7F3EC; --paper:#FFFFFF; --ink:#22170F; --muted:#5B4C3F; --line:#E4D9C7;
-  --teal:#6E1A16; --teal-soft:#F7E8E4; --gold:#8A6A2B; --gold-soft:#F5ECDB; --hl:#F3DE9C;
+  --teal:#6E1A16; --teal-soft:#F7E8E4; --gold:#7A5C22; --gold-soft:#F5ECDB; --hl:#F3DE9C;
   --warn:#8A4B12; --warn-soft:#FCEFD9; --on-teal:#FFFFFF; --shade:rgba(34,14,10,.58);
   --maroon:#6E1A16; --maroon-deep:#4A0E0B; --gold-deco:#C9A55A; --gold-pale:#F1DFB4;
   --flag-red:#A51931; --flag-white:#F4F5F8; --navy:#2D2A4A;
@@ -783,6 +783,15 @@ footer .footer-credit b{color:#FFFFFF}
 @media (prefers-reduced-motion:reduce){.card.rv{opacity:1;transform:none}.qbtn,.card,.btn{transition:none}}
 @media (max-width:900px){.quick{grid-template-columns:1fr}}
 @media (max-width:700px){.hero{padding-top:38px}.hero::before{width:70%;height:260px;opacity:.16}.qbtn::before{width:5px}}
+/* ── UX pass (2569-11-09): keep short Thai phrases on one line, calmer focus on open, room for the "บนสุด" button ── */
+.hero h1 em{white-space:nowrap}
+#d-title:focus{outline:none}
+@media (max-width:600px){
+ .ov>summary{flex-wrap:wrap;row-gap:2px}
+ .ov>summary>span:first-of-type{flex:1 1 calc(100% - 44px)}
+ .ov>summary .hint{margin-left:36px}
+ footer .wrap{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+}
 </style>
 
 
@@ -838,7 +847,7 @@ footer .footer-credit b{color:#FFFFFF}
    <img class="logo" src="img/logo-tile.svg" width="44" height="44" alt="">
    <span><b>คลังการประชุม 2569</b><small>คณะกรรมาธิการการบริหารราชการแผ่นดิน วุฒิสภา</small></span>
   </a>
-  <div class="credit-top"><span>จัดทำโดย <b>คณะทำงานของ สว. โชติชัย บัวดิษ</b></span><span class="unofficial"><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg>ไม่ใช่เว็บไซต์ทางการของวุฒิสภา</span></div>
+  <div class="credit-top"><span>จัดทำโดย <b>คณะทำงานของ <span class="nw">สว. โชติชัย บัวดิษ</span></b></span><span class="unofficial"><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg>ไม่ใช่เว็บไซต์ทางการของวุฒิสภา</span></div>
   <div class="fs" role="group" aria-label="ปรับขนาดตัวอักษร"><span>ขนาดตัวอักษร</span><button type="button" data-fs="1" aria-pressed="true" aria-label="ตัวอักษรขนาดปกติ">ก</button><button type="button" data-fs="2" aria-pressed="false" aria-label="ตัวอักษรใหญ่">ก</button><button type="button" data-fs="3" aria-pressed="false" aria-label="ตัวอักษรใหญ่มาก">ก</button></div>
  </div>
 </header>
@@ -850,9 +859,9 @@ footer .footer-credit b{color:#FFFFFF}
   <h1>ทุกการประชุม ตั้งแต่ <em>ครั้งที่ 1/2569</em> ในที่เดียว</h1>
   <p class="lede">สรุปการประชุมคณะกรรมาธิการการบริหารราชการแผ่นดิน วุฒิสภา ทุกครั้ง พร้อมวิดีโอและเอกสารต้นฉบับ เลือกได้เลยว่าต้องการทำอะไร</p>
   <nav class="quick" id="quick" aria-label="เลือกสิ่งที่ต้องการ">
-   <a class="qbtn" href="#controls"><span class="qi"><svg class="ico" aria-hidden="true"><use href="#i-search"/></svg></span><span><b>ค้นหาการประชุม</b><span class="qt">พิมพ์คำ เช่น ชื่อจังหวัด หรือ น้ำท่วม</span></span><svg class="ico go" aria-hidden="true"><use href="#i-right"/></svg></a>
+   <a class="qbtn" href="#controls"><span class="qi"><svg class="ico" aria-hidden="true"><use href="#i-search"/></svg></span><span><b>ดูและค้นหาการประชุม</b><span class="qt">ทุกครั้ง เรียงจากครั้งล่าสุด</span></span><svg class="ico go" aria-hidden="true"><use href="#i-right"/></svg></a>
    <a class="qbtn gold" href="#timeline"><span class="qi"><svg class="ico" aria-hidden="true"><use href="#i-time"/></svg></span><span><b>ไทม์ไลน์คณะกรรมาธิการ</b><span class="qt">เหตุการณ์สำคัญตลอดปี 2569</span></span><svg class="ico go" aria-hidden="true"><use href="#i-right"/></svg></a>
-   <a class="qbtn" href="#subs" id="q-subs" hidden><span class="qi"><svg class="ico" aria-hidden="true"><use href="#i-sub"/></svg></span><span><b>คณะอนุกรรมาธิการ</b><span class="qt">การประชุมของคณะอนุกรรมาธิการ 3 คณะ</span></span><svg class="ico go" aria-hidden="true"><use href="#i-right"/></svg></a>
+   <a class="qbtn" href="#subs" id="q-subs" hidden><span class="qi"><svg class="ico" aria-hidden="true"><use href="#i-sub"/></svg></span><span><b>คณะอนุกรรมาธิการ</b><span class="qt">การประชุมของคณะอนุกรรมาธิการ <span class="nw">3 คณะ</span></span></span><svg class="ico go" aria-hidden="true"><use href="#i-right"/></svg></a>
    <a class="qbtn" href="#reels"><span class="qi"><svg class="ico" aria-hidden="true"><use href="#i-reels"/></svg></span><span><b>ดูวิดีโอสรุป</b><span class="qt">เลื่อนนิ้วขึ้นเพื่อดูทีละครั้ง</span></span><svg class="ico go" aria-hidden="true"><use href="#i-right"/></svg></a>
    <a class="qbtn" href="#members" id="q-members" hidden><span class="qi"><svg class="ico" aria-hidden="true"><use href="#i-person"/></svg></span><span><b>รายชื่อ สว. ในคณะกรรมาธิการ</b><span class="qt">ชื่อและภาพของทุกท่าน รวมทั้งคณะอนุกรรมาธิการ</span></span><svg class="ico go" aria-hidden="true"><use href="#i-right"/></svg></a>
   </nav>
@@ -906,7 +915,7 @@ footer .footer-credit b{color:#FFFFFF}
    <div class="ctl-body" id="ctl-body">
    <div class="srow">
    <label class="search" for="q"><svg class="ico" aria-hidden="true"><use href="#i-search"/></svg><span class="sr">ค้นหา</span>
-    <input id="q" type="search" placeholder="พิมพ์คำค้น เช่น น้ำท่วม หรือ น่าน" autocomplete="off">
+    <input id="q" type="search" placeholder="พิมพ์คำ เช่น น้ำท่วม" autocomplete="off">
    </label>
    <button class="ctl-hide" id="ctl-hide" type="button" aria-controls="ctl-body" aria-label="ซ่อนแถบค้นหาและกรอง"><svg class="ico" aria-hidden="true"><use href="#i-up"/></svg><span>ซ่อน</span></button>
    </div>
@@ -953,7 +962,7 @@ footer .footer-credit b{color:#FFFFFF}
    <p><a href="#terms">ข้อตกลงการใช้งานและความเป็นส่วนตัว</a></p>
    <p>ปรับปรุงข้อมูลล่าสุด <span id="updated">9 พฤศจิกายน 2569</span></p>
   </div>
-  <div class="footer-credit"><span>จัดทำโดย <b>คณะทำงานของ สว. โชติชัย บัวดิษ</b></span><span>เว็บไซต์ไม่เป็นทางการ · ข้อมูลจากเอกสารเผยแพร่สาธารณะของรัฐสภา · <a href="#terms">ข้อตกลงการใช้งาน</a></span></div>
+  <div class="footer-credit"><span>จัดทำโดย <b>คณะทำงานของ <span class="nw">สว. โชติชัย บัวดิษ</span></b></span><span>เว็บไซต์ไม่เป็นทางการ · ข้อมูลจากเอกสารเผยแพร่สาธารณะของรัฐสภา · <a href="#terms">ข้อตกลงการใช้งาน</a></span></div>
  </div>
 </footer>
 
@@ -1256,6 +1265,8 @@ function newsSection(m){const ns=m.news||[];if(!ns.length)return "";
  const own=ns.filter(x=>x.kind==="meeting"),bg=ns.filter(x=>x.kind!=="meeting");
  const grp=(t,a)=>a.length?`<div class="news-grp"><h4>${t}</h4><ul class="news-list">${a.map(newsRow).join("")}</ul></div>`:"";
  return `<section class="d-sec" id="news-sec"><h3>${icon("news")}ข่าวที่เกี่ยวข้อง</h3>${grp("ข่าวการประชุมหรือกิจกรรมนี้",own)}${grp("ข่าวเบื้องหลังของเรื่องที่พิจารณา",bg)}<p class="newsnote">${icon("info")}<span>ลิงก์เปิดเว็บไซต์ภายนอกในหน้าใหม่ ${ns.some(x=>x.outlet!=="วุฒิสภา")?"ข่าวจากสำนักข่าวเป็นเนื้อหาของสำนักข่าวนั้น ไม่ใช่ความเห็นของคณะกรรมาธิการหรือของเว็บไซต์นี้":"ข่าวจากเว็บไซต์วุฒิสภาเผยแพร่โดยสำนักงานเลขาธิการวุฒิสภา"}${bg.length?" ข่าวเบื้องหลังให้ข้อมูลประกอบเรื่องที่พิจารณาเท่านั้น ไม่ได้หมายความว่าคณะกรรมาธิการพิจารณาตามข่าวนั้น":""}</span></p></section>`}
+/* on open, move focus to the sheet title (screen readers read it first; no gold ring on "ปิด" for people who arrive from a shared link) */
+function dFocus(){const h=$("#d-title");if(!h)return;h.tabIndex=-1;h.focus({preventScroll:true})}
 function openDetail(n,sec){
  const i=live.findIndex(m=>m.n===n);if(i<0)return;const m=live[i];
  const newer=live[i-1],older=live[i+1],md=m.media||{},k=CHAIR_IMG[m.chair];
@@ -1264,7 +1275,7 @@ function openDetail(n,sec){
   :k?`<figure class="d-figure"><img src="${P[k].img}" alt="${esc(m.chair)}"><figcaption>${esc(m.chair)} ประธานในที่ประชุม · ภาพ: สำนักงานเลขาธิการวุฒิสภา</figcaption></figure>`:"";
  const hasComplaint=(m.items||[]).some(x=>x[2]==="complaint");
  $("#sheet").innerHTML=`
- <div class="sheet-head"><span class="t">ครั้งที่ ${m.n}/2569 · ${thaiDate(m,1)}</span><button class="iconbtn" type="button" data-copy="read-${m.n}" aria-label="คัดลอกลิงก์หน้านี้">${icon("link")}</button><button class="closebtn" type="button" id="d-close">${icon("close")}ปิด</button></div>
+ <div class="sheet-head"><span class="t">ครั้งที่ ${m.n}/2569 · <span class="nw">${thaiDate(m,1)}</span></span><button class="iconbtn" type="button" data-copy="read-${m.n}" aria-label="คัดลอกลิงก์หน้านี้">${icon("link")}</button><button class="closebtn" type="button" id="d-close">${icon("close")}ปิด</button></div>
  <div class="sheet-body">
   <div class="d-hero"><div style="display:grid;gap:12px;min-width:0">
    <div class="meta">${m.upcoming?`<span class="badge up">${icon("cal")}นัดประชุม สรุปผลจะเพิ่มหลังการประชุม</span>`:""}${m.milestone?`<span class="badge ms">${icon("star")}จุดเปลี่ยนสำคัญ</span>`:""}<span>${icon("book")}บทสรุปไม่เป็นทางการ</span></div>
@@ -1291,7 +1302,7 @@ function openDetail(n,sec){
   <button class="closebtn" type="button" data-close-sheet style="justify-self:center">${icon("close")}ปิด กลับหน้าหลัก</button>
  </div>`;
  const dlg=$("#detail");if(!dlg.open){try{dlg.showModal()}catch(e){dlg.setAttribute("open","")}}
- $(".sheet-body").scrollTop=0;$("#d-close").focus();
+ $(".sheet-body").scrollTop=0;dFocus();
  if(sec){const el=document.getElementById(sec);if(el)el.scrollIntoView({block:"start"})}
 }
 function openTimeline(){
@@ -1318,7 +1329,7 @@ function openTimeline(){
   <button class="closebtn" type="button" data-close-sheet style="justify-self:center">${icon("close")}ปิด กลับหน้าหลัก</button>
  </div>`;
  const dlg=$("#detail");if(!dlg.open){try{dlg.showModal()}catch(e){dlg.setAttribute("open","")}}
- $(".sheet-body").scrollTop=0;$("#d-close").focus();
+ $(".sheet-body").scrollTop=0;dFocus();
 }
 /* subcommittees: one tab per subcommittee, meetings of this year with the official documents */
 function subChairImg(s){return P[s.chair]?P[s.chair].img:""}
@@ -1362,7 +1373,7 @@ function openSubs(key){
   <button class="closebtn" type="button" data-close-sheet style="justify-self:center">${icon("close")}ปิด กลับหน้าหลัก</button>
  </div>`;
  const dlg=$("#detail");if(!dlg.open){try{dlg.showModal()}catch(e){dlg.setAttribute("open","")}}
- $(".sheet-body").scrollTop=0;$("#d-close").focus();
+ $(".sheet-body").scrollTop=0;dFocus();
 }
 /* members: senators on the committee and on each current subcommittee, in directory order, same photo size for all */
 const mHash=g=>g.key==="main"?"members":"members-"+g.key;
@@ -1413,7 +1424,7 @@ function openMembers(key){
   <button class="closebtn" type="button" data-close-sheet style="justify-self:center">${icon("close")}ปิด กลับหน้าหลัก</button>
  </div>`;
  const dlg=$("#detail");if(!dlg.open){try{dlg.showModal()}catch(e){dlg.setAttribute("open","")}}
- $(".sheet-body").scrollTop=0;$("#d-close").focus();
+ $(".sheet-body").scrollTop=0;dFocus();
 }
 function openTerms(){
  $("#sheet").innerHTML=`
@@ -1424,7 +1435,7 @@ function openTerms(){
   <button class="closebtn" type="button" data-close-sheet style="justify-self:center">${icon("close")}ปิด กลับหน้าหลัก</button>
  </div>`;
  const dlg=$("#detail");if(!dlg.open){try{dlg.showModal()}catch(e){dlg.setAttribute("open","")}}
- $(".sheet-body").scrollTop=0;$("#d-close").focus();
+ $(".sheet-body").scrollTop=0;dFocus();
 }
 function closeDetail(){const dlg=$("#detail");if(!dlg.open)return;dlg.querySelectorAll("video").forEach(v=>v.pause());dlg.close();const n=(location.hash.match(/^#(?:read|dl)-(\d+)/)||[])[1];try{if(n)history.replaceState(null,"","#m-"+n);else if(location.hash==="#timeline"||location.hash==="#terms"||location.hash.startsWith("#subs"))history.replaceState(null,"","#quick")}catch(e){}}
 
@@ -1510,7 +1521,8 @@ function setFs(v){const el=document.documentElement;if(v==="1")el.removeAttribut
   if(A.getBoundingClientRect().top>toph()+40){if(collapsed&&!manual)set(false);openY=-1;return}
   if(!collapsed&&down&&stuck()&&!C.contains(document.activeElement)&&(openY<0||y>openY+300))set(true)},{passive:true});
 })();
-const tt=$("#totop");window.addEventListener("scroll",()=>tt.classList.toggle("on",scrollY>1400),{passive:true});tt.addEventListener("click",()=>scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}));
+/* "บนสุด" shows only when the visitor scrolls back up (so it never sits on top of what they are reading) */
+const tt=$("#totop");{let ly=scrollY;window.addEventListener("scroll",()=>{const y=scrollY;if(y<1400){tt.classList.remove("on");ly=y;return}if(y<ly-6){tt.classList.add("on");ly=y}else if(y>ly+6){tt.classList.remove("on");ly=y}},{passive:true})}tt.addEventListener("click",()=>scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}));
 if(navigator.share)document.documentElement.classList.add("can-share");
 /* terms gate: shown until the visitor taps "ยอมรับ"; the acceptance is kept in this browser only (localStorage) */
 const TERMS_V="2569-11-09";let termsOk=false;
