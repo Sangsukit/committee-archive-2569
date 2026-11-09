@@ -22,8 +22,21 @@
     "kind": "pre",
     "label": "วิดีโอก่อนการประชุม",
     "dur": "1:40",
+    "ck": "36p",
     "size": 3318752
-   }
+   },
+   "videos": [
+    {
+     "src": "media/v36.mp4",
+     "poster": "img/poster36.jpg",
+     "vtt": "media/v36.th.vtt",
+     "kind": "pre",
+     "label": "วิดีโอก่อนการประชุม",
+     "dur": "1:40",
+     "ck": "36p",
+     "size": 3318752
+    }
+   ]
   },
   "chair": "นายธวัช สุระบาล",
   "chair_role": "ประธานคณะกรรมาธิการ",
@@ -91,8 +104,21 @@
     "kind": "post",
     "label": "วิดีโอสรุปผลการประชุม",
     "dur": "2:43",
+    "ck": "35",
     "size": 7322414
-   }
+   },
+   "videos": [
+    {
+     "src": "media/v35.mp4",
+     "poster": "img/poster35.jpg",
+     "vtt": "media/v35.th.vtt",
+     "kind": "post",
+     "label": "วิดีโอสรุปผลการประชุม",
+     "dur": "2:43",
+     "ck": "35",
+     "size": 7322414
+    }
+   ]
   },
   "chair": "นายธวัช สุระบาล",
   "chair_role": "ประธานคณะกรรมาธิการ",
@@ -165,7 +191,30 @@
     "url": "https://pis.parliament.go.th/PARWeb/doc/meeting-agenda/MeetingAgendaDetailForQRCode?meetingId=gbDap5J6ws-DoQ3x5M0"
    }
   ],
-  "media": {},
+  "media": {
+   "video": {
+    "src": "media/v34.mp4",
+    "poster": "img/poster34.jpg",
+    "vtt": "media/v34.th.vtt",
+    "kind": "post",
+    "label": "วิดีโอสรุปผลการประชุม",
+    "dur": "3:09",
+    "ck": "34",
+    "size": 12914966
+   },
+   "videos": [
+    {
+     "src": "media/v34.mp4",
+     "poster": "img/poster34.jpg",
+     "vtt": "media/v34.th.vtt",
+     "kind": "post",
+     "label": "วิดีโอสรุปผลการประชุม",
+     "dur": "3:09",
+     "ck": "34",
+     "size": 12914966
+    }
+   ]
+  },
   "chair": "นายธวัช สุระบาล",
   "chair_role": "ประธานคณะกรรมาธิการ",
   "headline": "วางแผนงานปีงบประมาณ 2570: ลงพื้นที่ 8 ครั้งใน 5 ภูมิภาค 2 สัมมนา และหลักสูตรภัยพิบัติศึกษาในโรงเรียน",
