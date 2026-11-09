@@ -9,9 +9,10 @@
 <meta property="og:locale" content="th_TH">
 <meta property="og:title" content="คลังการประชุม คณะอนุกรรมาธิการด้านการจัดการภัยพิบัติระดับชาติ (คณะเดิม) 2569">
 <meta property="og:description" content="สรุปการประชุมคณะอนุกรรมาธิการการบริหารราชการแผ่นดินด้านการจัดการภัยพิบัติระดับชาติ (คณะเดิม) ในคณะกรรมาธิการการบริหารราชการแผ่นดิน วุฒิสภา ปี 2569 ค้นหาได้ พร้อมเอกสารต้นฉบับ (เว็บไซต์ไม่เป็นทางการ)">
-<meta property="og:image" content="https://sangsukit.github.io/committee-archive-2569/img/og2.jpg">
+<meta property="og:image" content="https://sangsukit.github.io/committee-archive-2569/img/s/sub-disaster-old-6a20954e.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://sangsukit.github.io/committee-archive-2569/img/s/sub-disaster-old-6a20954e.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://sangsukit.github.io/committee-archive-2569/sub-disaster-old.html">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
@@ -1103,6 +1104,11 @@ const thaiDate=(m,short)=>{const d=dt(m);return `${short?"":"วัน"+DAY[d.ge
 const era=m=>"b";
 const live=DATA.filter(m=>!m.cancelled);
 const link=h=>(BASE_URL||location.href.split("#")[0])+"#"+h;
+const SHARE_P="disaster-old-",SHARE_V={"17": "6e648435", "16": "192a0520", "15": "9bca3100", "14": "209343ee", "13": "cb012d0a", "12": "a8aa45ef", "11": "9f9eebb6", "10": "f5585942", "9": "39f5a0c9", "8": "9eed08b4", "7": "e6742c05", "6": "ca4f4fd5", "5": "de21ae9b", "4": "d692950c", "3": "c780e9bc", "2": "4174af95", "1": "11708a77"},SHARE_QR=[17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+const sdir=()=>(BASE_URL||location.href.split("#")[0].split("?")[0]).replace(/[^/]*$/,"");
+const spath=n=>"s/"+SHARE_P+n+".html"+(SHARE_V[n]?"?v="+SHARE_V[n]:"");
+const slink=n=>SHARE_V[n]?sdir()+spath(n):link("read-"+n);
+
 const norm=s=>String(s).toLowerCase().replace(/[๐-๙]/g,c=>"๐๑๒๓๔๕๖๗๘๙".indexOf(c)).replace(/[\s​‌‍﻿]+/g,"");
 DATA.forEach(m=>{m.hay=norm([m.n,`ครั้งที่${m.n}`,`${m.n}/2569`,thaiDate(m),m.chair,m.room,m.headline,m.summary,(m.items||[]).map(i=>i.join(" ")).join(" "),(m.tags||[]).join(" "),(m.places||[]).join(" "),m.cancelled?"ยกเลิก งดประชุม":""].join(" "))});
 
@@ -1112,17 +1118,19 @@ function copy(text,label){
  const fallback=()=>{const ta=document.createElement("textarea");ta.value=text;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand("copy")}catch(e){}ta.remove();ok?done():toast("คัดลอกไม่สำเร็จ ลิงก์คือ "+text)};
  try{navigator.clipboard.writeText(text).then(done,fallback)}catch(e){fallback()}
 }
-function shareText(m){return `คณะอนุกรรมาธิการด้านการจัดการภัยพิบัติระดับชาติ (คณะเดิม) (กมธ.การบริหารราชการแผ่นดิน วุฒิสภา) ครั้งที่ ${m.n}/2569 (${thaiDate(m,1)}): ${m.headline}`}
+function shareText(m){return `คณะอนุกรรมาธิการด้านการจัดการภัยพิบัติระดับชาติ (คณะเดิม) (กมธ.การบริหารราชการแผ่นดิน วุฒิสภา) ครั้งที่ ${m.n}/2569 (${thaiDate(m,1)}${m.time?" เวลา "+m.time+" น.":""}${m.room?" "+m.room.replace(/\s+/g," ").replace(/^ห้องประชุม(?:กรรมาธิการ)?\s*/,"ห้อง ").replace("และผ่าน Zoom Meeting","และทางออนไลน์"):""}): ${m.headline}`}
 function shareRow(m,h){
- const u=encodeURIComponent(link(h)),t=encodeURIComponent(shareText(m));
+ const u=encodeURIComponent(m.cancelled?link(h):slink(m.n)),t=encodeURIComponent(shareText(m));
  return `<span class="share-l">ส่งต่อให้คนอื่น:</span>
  <a class="btn line" href="https://social-plugins.line.me/lineit/share?url=${u}&amp;text=${t}" target="_blank" rel="noopener">${icon("share")}ส่งทาง LINE</a>
  <a class="btn" href="https://www.facebook.com/sharer/sharer.php?u=${u}" target="_blank" rel="noopener">${icon("share")}Facebook</a>
- <button class="btn" type="button" data-copy="${h}">${icon("link")}คัดลอกลิงก์</button>
+ <a class="btn msg" href="fb-messenger://share/?link=${u}" rel="noopener">${icon("share")}Messenger</a>
+ <button class="btn" type="button" data-copy="${m.cancelled?h:"s:"+m.n}">${icon("link")}คัดลอกลิงก์</button>
  <a class="btn" href="https://twitter.com/intent/tweet?url=${u}&amp;text=${t}" target="_blank" rel="noopener">${icon("share")}X</a>
+ ${!m.cancelled&&SHARE_QR.includes(m.n)?`<button class="btn" type="button" data-qr="${m.n}">${icon("qr")}แสดงคิวอาร์โค้ด</button>`:""}
  <button class="btn ns" type="button" data-nshare="${h}" data-n="${m.n}">${icon("share")}แชร์ช่องทางอื่นในเครื่อง</button>`;
 }
-function nativeShare(h,n){const m=DATA.find(x=>x.n===n&&!x.cancelled);if(!navigator.share||!m)return;navigator.share({title:`การประชุมครั้งที่ ${m.n}/2569`,text:shareText(m),url:link(h)}).catch(()=>{})}
+function nativeShare(h,n){const m=DATA.find(x=>x.n===n&&!x.cancelled);if(!navigator.share||!m)return;navigator.share({title:`การประชุมครั้งที่ ${m.n}/2569`,text:shareText(m),url:slink(m.n)}).catch(()=>{})}
 const today=(()=>{try{return new Date().toLocaleDateString("sv-SE",{timeZone:"Asia/Bangkok"})}catch(e){return new Date().toISOString().slice(0,10)}})();
 function isoTh(iso,end,long){const d=new Date(iso+"T00:00:00Z"),dd=d.getUTCDate(),mo=(long?MON:MOS)[d.getUTCMonth()],y=d.getUTCFullYear()+543;if(!end)return `${dd} ${mo} ${y}`;const e=new Date(end+"T00:00:00Z");return e.getUTCMonth()===d.getUTCMonth()?`${dd}–${e.getUTCDate()} ${mo} ${y}`:`${dd} ${mo} – ${e.getUTCDate()} ${(long?MON:MOS)[e.getUTCMonth()]} ${y}`}
 
@@ -1272,7 +1280,7 @@ function openDetail(n,sec){
   :k?`<figure class="d-figure"><img src="${P[k].img}" alt="${esc(m.chair)}"><figcaption>${esc(m.chair)} ประธานในที่ประชุม · ภาพ: สำนักงานเลขาธิการวุฒิสภา</figcaption></figure>`:"";
  const hasComplaint=(m.items||[]).some(x=>x[2]==="complaint");
  $("#sheet").innerHTML=`
- <div class="sheet-head"><span class="t">ครั้งที่ ${m.n}/2569 · <span class="nw">${thaiDate(m,1)}</span></span><button class="iconbtn" type="button" data-copy="read-${m.n}" aria-label="คัดลอกลิงก์หน้านี้">${icon("link")}</button><button class="closebtn" type="button" id="d-close">${icon("close")}ปิด</button></div>
+ <div class="sheet-head"><span class="t">ครั้งที่ ${m.n}/2569 · <span class="nw">${thaiDate(m,1)}</span></span><button class="iconbtn" type="button" data-copy="s:${m.n}" aria-label="คัดลอกลิงก์หน้านี้">${icon("link")}</button><button class="closebtn" type="button" id="d-close">${icon("close")}ปิด</button></div>
  <div class="sheet-body">
   <div class="d-hero"><div style="display:grid;gap:12px;min-width:0">
    <div class="meta">${m.upcoming?`<span class="badge up">${icon("cal")}นัดประชุม สรุปผลจะเพิ่มหลังการประชุม</span>`:""}${m.agenda_only?`<span class="badge cx">${icon("info")}จากหนังสือนัดประชุม วุฒิสภายังไม่เผยแพร่สรุปผลการประชุม</span>`:""}${m.milestone?`<span class="badge ms">${icon("star")}จุดเปลี่ยนสำคัญ</span>`:""}<span>${icon("book")}บทสรุปไม่เป็นทางการ</span></div>
@@ -1447,7 +1455,7 @@ function reel(m){
  <div class="reel-side">${v?`<button class="rbtn" type="button" data-mute aria-label="เปิดหรือปิดเสียง">${icon(muted?"mute":"vol")}</button><span class="rlabel">เสียง</span>`:""}
  <a class="rbtn" href="#read-${m.n}" aria-label="อ่านรายละเอียด">${icon("book")}</a><span class="rlabel">อ่านต่อ</span>
  <button class="rbtn" type="button" data-copy="reel-${m.n}" aria-label="คัดลอกลิงก์">${icon("link")}</button><span class="rlabel">ลิงก์</span>
- <a class="rbtn" href="https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(link("reel-"+m.n))}" target="_blank" rel="noopener" aria-label="แชร์ทาง LINE">${icon("share")}</a><span class="rlabel">LINE</span>
+ <a class="rbtn" href="https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(slink(m.n))}" target="_blank" rel="noopener" aria-label="แชร์ทาง LINE">${icon("share")}</a><span class="rlabel">LINE</span>
  </div></div></section>`;
 }
 function openReels(n){
@@ -1486,7 +1494,7 @@ document.addEventListener("click",e=>{
  if(t.dataset.nshare){nativeShare(t.dataset.nshare,+t.dataset.n);return}
  if(t.dataset.tlnow!==undefined){const el=$("#tl-now");if(el)el.scrollIntoView({block:"center"});return}
  if(t.dataset.closeSheet!==undefined){closeDetail();return}
- if(t.dataset.copy!==undefined){e.preventDefault();copy(link(t.dataset.copy),t.dataset.copy.startsWith("reel")?"คัดลอกลิงก์วิดีโอแล้ว":"คัดลอกลิงก์แล้ว");return}
+ if(t.dataset.copy!==undefined){e.preventDefault();copy(t.dataset.copy.startsWith("s:")?slink(+t.dataset.copy.slice(2)):link(t.dataset.copy),t.dataset.copy.startsWith("reel")?"คัดลอกลิงก์วิดีโอแล้ว":"คัดลอกลิงก์แล้ว");return}
  if(t.dataset.tag!==undefined){const v=t.dataset.tag;S.tag=(S.tag===v&&!t.classList.contains("chip"))?"":v;render();if(!t.closest(".controls"))$("#controls").scrollIntoView({block:"start"});return}
  if(t.dataset.q){S.q=t.dataset.q;$("#q").value=S.q;render();$("#controls").scrollIntoView({block:"start"});return}
  if(t.dataset.mo!==undefined){S.mo=S.mo===+t.dataset.mo?-1:+t.dataset.mo;render();return}
@@ -2047,3 +2055,27 @@ markFeed();jumps();
 
 </body>
 </html>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></symbol></svg>
+<style>
+dialog#qrbox{border:0;border-radius:18px;padding:22px 20px;max-width:420px;width:calc(100% - 32px);height:fit-content;max-height:calc(100% - 32px);margin:auto;overflow:auto;text-align:center;background:#fff;color:#22170F}
+#qrbox::backdrop{background:rgba(24,10,8,.72)}
+#qrbox img{width:min(300px,70vw);height:auto;margin:8px auto;display:block}
+#qrbox b{display:block;font-size:1.15rem;line-height:1.5}
+#qrbox p{margin:6px 0 14px;font-size:1rem;line-height:1.6;color:#4A3B2E}
+#qrbox button{min-height:56px;width:100%;border-radius:12px;border:0;background:#6E1A16;color:#fff;font:inherit;font-weight:700;font-size:1.1rem}
+.share .btn.msg{display:none} .is-touch .share .btn.msg{display:inline-flex}
+</style>
+<dialog id="qrbox" aria-labelledby="qrt"><b id="qrt"></b>
+<img id="qri" alt="คิวอาร์โค้ดของลิงก์การประชุม" width="300" height="300"><p>ให้อีกท่านเปิดกล้องโทรศัพท์ หรือกดสแกนใน LINE แล้วส่องที่ภาพนี้ ก็จะเปิดหน้าการประชุมนี้ได้ทันที</p>
+<button type="button" id="qrc">ปิด</button></dialog>
+<script>
+(function(){
+ if(matchMedia("(pointer:coarse)").matches)document.documentElement.classList.add("is-touch");
+ const box=document.getElementById("qrbox");
+ document.addEventListener("click",e=>{const t=e.target.closest("[data-qr]");
+  if(t){e.preventDefault();e.stopPropagation();document.getElementById("qrt").textContent="คิวอาร์โค้ด การประชุมครั้งที่ "+t.dataset.qr;
+   document.getElementById("qri").src="img/s/qr-"+SHARE_P+t.dataset.qr+".svg";try{box.showModal()}catch(_){box.setAttribute("open","")}return}
+  if(e.target.id==="qrc"||e.target===box){e.stopPropagation();box.close()}},true);
+})();
+</script>
