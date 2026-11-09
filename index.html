@@ -1944,5 +1944,234 @@ if(feed)feed.insertAdjacentHTML("beforebegin",`<div class="wrap"><details class=
 })();
 </script>
 
+<!-- DIAGRAM LAYER (9 Nov 2569): simple diagrams for quick understanding. Injected by build.py only when DIAGRAMS=1.
+     Wording and sources live in diagrams.py. Boxes are HTML and arrows are CSS/SVG, so text grows with the text-size
+     buttons and screen readers read each diagram as a list. Never edits template.html; hooks into the rendered page. -->
+<style>
+:root{--dg-navy:#2D2A4A;--dg-navy-s:#ECEBF4}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--dg-navy:#C9C6EE;--dg-navy-s:#221F33}}
+:root[data-theme="dark"]{--dg-navy:#C9C6EE;--dg-navy-s:#221F33}
+.dg-t-com{--dc:var(--teal);--ds:var(--teal-soft)}
+.dg-t-sen{--dc:var(--dg-navy);--ds:var(--dg-navy-s)}
+.dg-t-sub{--dc:var(--c-sub,#5A4FA0);--ds:var(--c-sub-s,#ECEAF8)}
+.dg-t-cmp{--dc:var(--c-complaint,#1F5FA8);--ds:var(--c-complaint-s,#E4EEF9)}
+.dg-sec p{overflow-wrap:anywhere}
+.dg-i{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;flex:none;background:var(--ds);color:var(--dc);border:2px solid var(--dc)}
+.dg-i .ico{width:28px;height:28px}
+/* a vertical flow: numbered boxes joined by arrows drawn in CSS */
+.dg-flow{list-style:none;margin:0;padding:0;display:grid}
+.dg-step{position:relative;display:grid;grid-template-columns:56px 1fr;gap:12px;align-items:start;background:var(--paper);border:2px solid var(--line);border-radius:14px;padding:14px 16px}
+.dg-flow>li+li{margin-top:36px}
+.dg-flow>li+li::before{content:"";position:absolute;left:44px;top:-34px;width:4px;height:22px;border-radius:2px;background:var(--gold-deco)}
+.dg-flow>li+li::after{content:"";position:absolute;left:37px;top:-14px;border-left:9px solid transparent;border-right:9px solid transparent;border-top:11px solid var(--gold-deco)}
+.dg-step b,.dg-box b{display:block;font-size:1.08rem;line-height:1.4;color:var(--dc)}
+.dg-step p,.dg-box p{margin:2px 0 0;line-height:1.6}
+.dg-n{display:block;font-size:.88rem;color:var(--muted);font-weight:600}
+.dg-src{display:inline-flex;align-items:center;gap:6px;margin-top:8px;padding:3px 10px;border-radius:99px;background:var(--gold-soft);color:var(--ink);font-size:.88rem;font-weight:600;border:1px solid var(--gold-deco)}
+.dg-src .ico{color:var(--gold)}
+.dg-note{display:flex;gap:8px;align-items:flex-start;margin:12px 0 0;color:var(--muted);line-height:1.6}
+.dg-note .ico{margin-top:4px;color:var(--gold)}
+/* complaint: the decision box lists the usual paths */
+.dg-fan{position:relative;border:2px dashed var(--dc);border-radius:14px;padding:14px 16px;background:var(--paper)}
+.dg-fan-h{display:block;font-weight:700;margin-bottom:10px;color:var(--dc)}
+.dg-fan ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.dg-path{display:grid;grid-template-columns:44px 1fr;gap:10px;align-items:center;padding:8px 10px;border-radius:12px;border:1.5px solid var(--line)}
+.dg-path .dg-i{width:44px;height:44px}.dg-path .dg-i .ico{width:22px;height:22px}
+.dg-path b{display:block;line-height:1.4}
+.dg-path p{margin:0;color:var(--muted);line-height:1.55;font-size:.95rem}
+.dg-path.on{border:2px solid var(--dc);border-left-width:6px;background:var(--ds)}
+.dg-path.on b{color:var(--dc)}
+.dg-cnt{grid-column:2;justify-self:start;display:inline-flex;align-items:center;gap:6px;padding:3px 12px;border-radius:99px;background:var(--dc);color:var(--c-on,#fff);font-weight:700;font-size:.92rem}
+.dg-cnt .ico{width:1em;height:1em}
+.dg-other{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:.95rem}
+.dg-step.sm{grid-template-columns:44px 1fr;align-items:center;padding:10px 14px}
+.dg-step.sm .dg-i{width:44px;height:44px}.dg-step.sm .dg-i .ico{width:22px;height:22px}
+.dg-flow>li.sm+li::before,.dg-flow>li+li.sm::before{left:38px}
+.dg-flow>li.sm+li::after,.dg-flow>li+li.sm::after{left:31px}
+/* the committee and its subcommittees */
+.dg-org{display:grid}
+.dg-box{display:grid;grid-template-columns:56px 1fr;gap:12px;align-items:start;border:2px solid var(--dc);background:var(--ds);border-radius:14px;padding:14px 16px;min-width:0}
+.dg-box>div{min-width:0}
+.dg-box>.dg-wide{grid-column:1/-1}
+.dg-box .dg-i{background:var(--paper)}
+.dg-box.sm{grid-template-columns:44px 1fr;align-items:center;padding:10px 14px}
+.dg-box.sm .dg-i{width:44px;height:44px}.dg-box.sm .dg-i .ico{width:22px;height:22px}
+.dg-link{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:6px 0}
+.dg-link span{display:flex;align-items:center;gap:8px;color:var(--ink);font-weight:600;font-size:.95rem;line-height:1.4}
+.dg-link .dn{justify-content:flex-end;text-align:right}
+.dg-ar{width:22px;height:44px;flex:none;stroke:var(--gold-deco);stroke-width:3.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.dg-chair{display:flex;gap:10px;align-items:center;margin-top:2px;padding:8px 10px;border-radius:12px;background:var(--paper)}
+.dg-chair img{width:48px;height:58px;object-fit:cover;object-position:top;border-radius:7px;flex:none;background:var(--line)}
+.dg-chair small{display:block;color:var(--muted);font-size:.88rem;line-height:1.4}
+.dg-chair b{color:var(--ink);font-size:1rem}
+.dg-subs{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.dg-sub{display:flex;gap:10px;align-items:center;min-height:64px;padding:8px 10px;border:1.5px solid var(--dc);border-radius:12px;background:var(--paper);color:var(--ink);text-decoration:none}
+.dg-sub img{width:44px;height:54px;object-fit:cover;object-position:top;border-radius:6px;flex:none;background:var(--line)}
+.dg-sub b{display:block;font-size:.98rem;line-height:1.35;color:var(--ink)}
+.dg-sub small{display:block;color:var(--muted);font-size:.88rem;line-height:1.4}
+.dg-sub>.ico{margin-left:auto;color:var(--dc)}
+.dg-sub:hover{border-width:2.5px}
+.dg-sub>span{min-width:0}
+html[data-fs="3"] .dg-sub .nw{white-space:normal;overflow-wrap:anywhere}
+/* where this meeting stands */
+.dg-track{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.dg-track li{position:relative;display:grid;justify-items:center;align-content:start;text-align:center;padding:0 3px;min-width:0}
+.dg-track li::before{content:"";position:absolute;top:22px;right:50%;width:100%;height:4px;background:var(--line)}
+.dg-track li:first-child::before{display:none}
+.dg-track li.ok::before{background:var(--c-visit,#1B6E45)}
+.dg-track .st{display:grid;justify-items:center;gap:4px;width:100%;min-height:48px;background:none;border:0;padding:0;font:inherit;color:inherit;cursor:default}
+.dg-track button.st{cursor:pointer}
+.dg-dot{position:relative;z-index:1;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--paper);border:3px solid var(--line);color:var(--muted)}
+.dg-dot .ico{width:24px;height:24px}
+.dg-track .ok .dg-dot{background:var(--c-visit,#1B6E45);border-color:var(--c-visit,#1B6E45);color:var(--c-on,#fff)}
+.dg-track .next .dg-dot{border-color:var(--c-up,#2D2A4A);color:var(--c-up,#2D2A4A)}
+.dg-track .wait .dg-dot{border-style:dashed}
+.dg-track b{font-size:.95rem;line-height:1.35;overflow-wrap:anywhere}
+.dg-track small{display:block;color:var(--muted);font-size:.85rem;line-height:1.4;overflow-wrap:anywhere}
+.dg-track .ok small{color:var(--c-visit,#1B6E45);font-weight:700}
+.dg-track .next small{color:var(--c-up,#2D2A4A);font-weight:700}
+.dg-track button.st b{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+html[data-fs="3"] .dg-track{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:16px}
+html[data-fs="3"] .dg-track li::before{display:none}
+/* entry points and page */
+.dg-help{display:flex;align-items:center;gap:14px;margin-top:12px;padding:14px 16px;min-height:64px;border:2px solid var(--gold-deco);border-radius:14px;background:var(--paper);color:var(--ink);text-decoration:none;font-weight:700;line-height:1.45}
+.dg-help>.ico:first-child{flex:none;width:30px;height:30px;color:var(--gold)}
+.dg-help>.ico:last-child{margin-left:auto;color:var(--gold)}
+.dg-help small{display:block;font-weight:400;color:var(--muted);font-size:.95rem}
+.dg-help:hover{border-color:var(--teal)}
+.dg-jump{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.dg-jump .btn{justify-content:flex-start;min-height:54px;text-align:left}
+.dg-jn{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--teal);color:var(--on-teal);font-weight:700;flex:none}
+.dg-lede{margin:0 0 12px;line-height:1.6}
+.dg-more{margin:10px 0 0}
+.dg-more a{display:inline-flex;align-items:center;gap:8px;min-height:48px;font-weight:700}
+.dg-mini{display:grid;margin:4px 0 6px}
+</style>
+<script>
+(()=>{
+if(typeof live==="undefined")return;
+const DG={"committee": "คณะกรรมาธิการการบริหารราชการแผ่นดิน", "remit": "ดูแลเรื่องการบริหารราชการส่วนกลางและส่วนภูมิภาค การพัฒนาระบบราชการ การจัดการภัยพิบัติระดับชาติ การปฏิบัติหน้าที่ของเจ้าหน้าที่ของรัฐ และเรื่องอื่นที่เกี่ยวข้อง", "process": [["cal", "นัดประชุม", "เลขาธิการวุฒิสภาประกาศกำหนดการ และเลขานุการคณะกรรมาธิการลงนามหนังสือนัดประชุมพร้อมระเบียบวาระ", true], ["room", "ประชุม", "กรรมาธิการร่วมกันพิจารณาเรื่องตามระเบียบวาระ และอาจเชิญหน่วยงานที่เกี่ยวข้องมาชี้แจง ผู้เข้าฟังได้คือสมาชิกวุฒิสภาและผู้ที่ประธานในที่ประชุมอนุญาต", false], ["doc", "สรุปผลการประชุม", "สรุปผลการประชุมเผยแพร่ทางระบบของรัฐสภา บอกว่าแต่ละเรื่องที่ประชุมมีมติอย่างไร", true], ["book", "บันทึกการประชุม", "ที่ประชุมรับรองบันทึกการประชุมในครั้งถัดไป แล้วเปิดเผยต่อประชาชนตามหลักเกณฑ์ของวุฒิสภา", true], ["flag", "รายงานต่อวุฒิสภา", "เมื่อพิจารณาเรื่องใดเสร็จ คณะกรรมาธิการรายงานต่อวุฒิสภา ข้อสังเกตที่วุฒิสภาเห็นด้วยจะส่งถึงคณะรัฐมนตรีหรือหน่วยงานที่เกี่ยวข้อง และมีการติดตามผล", false]], "process_note": "เว็บไซต์นี้ไม่ได้บันทึกภาพหรือเสียงในห้องประชุม และเรียบเรียงจากเอกสารที่เผยแพร่ต่อสาธารณะแล้วเท่านั้น", "struct": {"senate": ["flag", "วุฒิสภา", "ตั้งคณะกรรมาธิการสามัญ 21 คณะ ให้ดูแลงานแต่ละด้าน"], "down1": "ตั้งคณะกรรมาธิการ", "up1": "รายงานต่อวุฒิสภา", "down2": "มอบเรื่องให้ช่วยศึกษา", "up2": "รายงานผลกลับ", "subs": "คณะอนุกรรมาธิการ", "subs_text": "ตั้งได้ไม่เกิน 3 คณะ ช่วยศึกษาและรวบรวมข้อมูลเบื้องต้นในเรื่องเฉพาะด้าน แล้วรายงานให้คณะกรรมาธิการพิจารณา"}, "complaint": {"in": ["complaint", "ผู้ร้องยื่นเรื่อง", "ประชาชนหรือหน่วยงานยื่นเรื่องต่อคณะกรรมาธิการผ่านช่องทางของวุฒิสภา เรื่องที่ยื่นเป็นข้อกล่าวอ้างของผู้ร้อง ยังไม่ใช่ข้อยุติ"], "meet": ["room", "ที่ประชุมพิจารณา", "คณะกรรมาธิการพิจารณาว่าเรื่องอยู่ในหน้าที่และอำนาจหรือไม่ และควรดำเนินการอย่างไร"], "paths": [["ask", "doc", "ประสานหน่วยงานที่เกี่ยวข้อง", "มีหนังสือขอข้อเท็จจริง หรือขอให้หน่วยงานตรวจสอบและรายงานผล"], ["invite", "person", "เชิญมาให้ข้อมูล", "เชิญหน่วยงานที่เกี่ยวข้องมาชี้แจง หรือเชิญผู้ร้องมาให้ข้อมูลเพิ่มเติม"], ["sub", "sub", "มอบคณะอนุกรรมาธิการ", "ให้คณะอนุกรรมาธิการช่วยรวบรวมข้อมูลเบื้องต้น แล้วรายงานกลับ"], ["refer", "share", "ส่งคณะกรรมาธิการที่ดูแลโดยตรง", "ส่งต่อให้คณะกรรมาธิการอื่นที่มีหน้าที่และอำนาจในเรื่องนั้นโดยตรง"], ["close", "check", "แจ้งผู้ร้อง หรือยุติเรื่อง", "เช่น เรื่องนั้นมีช่องทางตามกฎหมายอยู่แล้ว หรืออยู่ระหว่างการพิจารณาของศาล"]], "follow": ["time", "ติดตามผล", "หน่วยงานรายงานกลับ ที่ประชุมพิจารณาต่อ และแจ้งผลให้ผู้ร้องทราบ บางเรื่องใช้เวลาหลายครั้งการประชุม"], "note": "คณะกรรมาธิการทำหน้าที่ศึกษา ติดตาม และสอบหาข้อเท็จจริงตามหน้าที่และอำนาจ เว็บไซต์นี้ไม่ระบุชื่อผู้ร้องและผู้ถูกร้อง"}, "sources": "แผนภาพนี้สรุปอย่างง่ายเพื่อช่วยให้เห็นภาพรวม ไม่ใช่คำอธิบายทางกฎหมาย อ้างอิง: ข้อบังคับการประชุมวุฒิสภา พ.ศ. 2562 ข้อ 77, 78, 89, 90, 92, 94, 98, 99 และ 104 (ฉบับรวม ก.ค. 2569) · แนวทางเรื่องร้องเรียนเรียบเรียงจากมติในสรุปผลการประชุมปี 2569 · ตำแหน่งตามทำเนียบคณะกรรมาธิการบนเว็บไซต์วุฒิสภา ณ 9 พ.ย. 2569 · ภาพบุคคล: สำนักงานเลขาธิการวุฒิสภา (senate.go.th)"};
+/* a "flow" icon for the diagrams entry points */
+const spr=document.getElementById("i-info");
+if(spr&&spr.parentNode&&!document.getElementById("i-flow")){const s=document.createElementNS("http://www.w3.org/2000/svg","symbol");s.setAttribute("id","i-flow");s.setAttribute("viewBox","0 0 24 24");
+ s.innerHTML='<rect x="3" y="3" width="8" height="6" rx="1.5"/><rect x="13" y="15" width="8" height="6" rx="1.5"/><path d="M7 9v4.5c0 .8.7 1.5 1.5 1.5H12"/><path d="M10 12.5l2.5 2.5-2.5 2.5"/>';spr.parentNode.appendChild(s)}
+const ARD='<svg class="dg-ar" viewBox="0 0 22 44" aria-hidden="true"><path d="M11 3v36M4 31l7 9 7-9"/></svg>';
+const ARU='<svg class="dg-ar" viewBox="0 0 22 44" aria-hidden="true"><path d="M11 41V5M4 13l7-9 7 9"/></svg>';
+const KW2=["ภาครัฐ","บุคลากร"];
+const kw=s=>{let h=typeof keepWords==="function"?keepWords(s):esc(s);KW2.forEach(w=>{h=h.split(w).join(`<span class="nw">${w}</span>`)});return h};
+const pn=s=>typeof personName==="function"?personName(s):esc(s);
+const link2=(d,u)=>`<div class="dg-link"><span class="dn">${esc(d)}${ARD}</span><span class="upw">${ARU}${esc(u)}</span></div>`;
+
+/* 1. how a meeting works */
+function procHTML(){
+ return `<ol class="dg-flow" aria-label="ขั้นตอนของการประชุมคณะกรรมาธิการ">${DG.process.map((s,i)=>`<li class="dg-step dg-t-com"><span class="dg-i">${icon(s[0])}</span><div><span class="dg-n">ขั้นที่ ${i+1}</span><b>${esc(s[1])}</b><p>${esc(s[2])}</p>${s[3]?`<span class="dg-src">${icon("book")}เว็บไซต์นี้ใช้เอกสารขั้นนี้</span>`:""}</div></li>`).join("")}</ol>
+ <p class="dg-note">${icon("info")}<span>${esc(DG.process_note)}</span></p>`;
+}
+/* 2. the committee and its subcommittees */
+function structHTML(){
+ const S=DG.struct,cm=live.find(m=>!m.upcoming&&!m.cancelled&&m.chair),ck=cm&&typeof CHAIR_IMG!=="undefined"&&CHAIR_IMG[cm.chair],cp=ck&&P[ck];
+ const subs=(typeof SUBS!=="undefined"?SUBS:[]).filter(s=>s.status==="current");
+ const sub=s=>{const im=P[s.chair]?P[s.chair].img:"";return `<li><a class="dg-sub" href="#subs-${esc(s.key)}">${im?`<img src="${im}" alt="" loading="lazy">`:""}<span><b>${kw(s.short)}</b><small>ประธาน ${pn(s.chair_name)}</small></span>${icon("right")}</a></li>`};
+ return `<div class="dg-org" role="group" aria-label="วุฒิสภา คณะกรรมาธิการ และคณะอนุกรรมาธิการ">
+  <div class="dg-box dg-t-sen"><span class="dg-i">${icon(S.senate[0])}</span><div><b>${esc(S.senate[1])}</b><p>${esc(S.senate[2])}</p></div></div>
+  ${link2(S.down1,S.up1)}
+  <div class="dg-box dg-t-com"><span class="dg-i">${icon("room")}</span><div><b>${esc(DG.committee)}</b><p>${esc(DG.remit)}</p></div>${cp?`<div class="dg-chair dg-wide"><img src="${cp.img}" alt="" loading="lazy"><span><small>ประธานคณะกรรมาธิการ</small><b>${pn(cm.chair)}</b></span></div>`:""}</div>
+  ${link2(S.down2,S.up2)}
+  <div class="dg-box dg-t-sub"><span class="dg-i">${icon("sub")}</span><div><b>${esc(S.subs)}</b><p>${esc(S.subs_text)}</p></div>${subs.length?`<ul class="dg-subs dg-wide">${subs.map(sub).join("")}</ul>`:""}</div>
+ </div>`;
+}
+/* 3. how a complaint is handled. counts = {path: n} marks the paths one meeting's decisions took */
+const BUCKET=[["sub",/มอบ.*อนุ/],["invite",/เชิญ/],["refer",/ส่ง.{0,12}(กมธ|คณะกรรมาธิการ)/],["ask",/มีหนังสือ|ขอข้อมูล|ขอข้อเท็จจริง|ตรวจสอบ|เร่งรัด|สอบถาม/],["close",/ยุติ(?!ธรรม)|แจ้ง.{0,20}ผู้ร้อง/]];
+const bucket=t=>{for(let i=0;i<BUCKET.length;i++)if(BUCKET[i][1].test(String(t)))return BUCKET[i][0];return null};
+function cmpHTML(counts,compact){
+ const C=DG.complaint;
+ const step=s=>`<li class="dg-step dg-t-cmp${compact?" sm":""}"><span class="dg-i">${icon(s[0])}</span><div><b>${esc(s[1])}</b>${compact?"":`<p>${esc(s[2])}</p>`}</div></li>`;
+ const path=(p,on)=>`<li class="dg-path${on?" on":""}"><span class="dg-i">${icon(p[1])}</span><div><b>${esc(p[2])}</b>${compact?"":`<p>${esc(p[3])}</p>`}</div>${on?`<span class="dg-cnt">${icon("check")}ครั้งนี้ ${counts[p[0]]} เรื่อง</span>`:""}</li>`;
+ let fan;
+ if(counts){const used=C.paths.filter(p=>counts[p[0]]),rest=C.paths.filter(p=>!counts[p[0]]);
+  fan=`<b class="dg-fan-h">ที่ประชุมครั้งนี้มีมติ</b><ul>${used.map(p=>path(p,1)).join("")}</ul>${rest.length?`<p class="dg-other">แนวทางอื่นที่ใช้ได้: ${rest.map(p=>esc(p[2])).join(" · ")}</p>`:""}`}
+ else fan=`<b class="dg-fan-h">แนวทางที่ที่ประชุมใช้บ่อย</b><ul>${C.paths.map(p=>path(p,0)).join("")}</ul>`;
+ return `<ol class="dg-flow" aria-label="ขั้นตอนของเรื่องร้องเรียน">${step(C.in)}${step(C.meet)}<li class="dg-fan dg-t-cmp">${fan}</li>${step(C.follow)}</ol>${compact?"":`<p class="dg-note">${icon("info")}<span>${esc(C.note)}</span></p>`}`;
+}
+/* 4. where one meeting stands */
+function trackHTML(m){
+ const has=k=>(m.docs||[]).some(d=>(d&&d.k||d)===k),held=!m.upcoming;
+ const st=[
+  ["cal","นัดประชุม",has("notice")?"ok":"wait",has("notice")?"เผยแพร่แล้ว":"ยังไม่เผยแพร่",has("notice")],
+  ["room","ประชุม",held?"ok":"next",held?"ประชุมแล้ว":thaiDate(m,1),0],
+  ["doc",'<span class="nw">สรุปผล</span><wbr><span class="nw">การประชุม</span>',has("summary")?"ok":"wait",has("summary")?"เผยแพร่แล้ว":held?"ยังไม่เผยแพร่":'<span class="nw">หลัง</span><wbr><span class="nw">การประชุม</span>',has("summary")],
+  ["book",'<span class="nw">บันทึก</span><wbr><span class="nw">การประชุม</span>',has("minutes")?"ok":"wait",has("minutes")?"เผยแพร่แล้ว":'<span class="nw">หลังที่ประชุม</span><wbr><span class="nw">รับรอง</span>',has("minutes")]];
+ const anyLink=st.some(s=>s[4]);
+ return `<section class="d-sec dg-sec" id="dg-track"><h3>${icon("flow")}ความคืบหน้าของการประชุมครั้งนี้</h3>
+  <ol class="dg-track">${st.map((s,i)=>{const inner=`<span class="dg-dot">${icon(s[2]==="ok"?"check":s[0])}</span><b>${s[1]}</b><small>${s[3]}</small>`;
+   return `<li class="${s[2]}" aria-label="ขั้นที่ ${i+1} ${s[1].replace(/<[^>]+>/g,"")}: ${String(s[3]).replace(/<[^>]+>/g,"")}">${s[4]?`<button class="st" type="button" data-dgdl>${inner}</button>`:`<span class="st">${inner}</span>`}</li>`}).join("")}</ol>
+  ${anyLink?`<p class="dg-note">${icon("info")}<span>แตะขั้นที่เผยแพร่แล้วเพื่อไปยังรายการเอกสาร · <a href="#how">ดูว่าแต่ละขั้นคืออะไร</a></span></p>`:""}</section>`;
+}
+function cmpDetail(m,body){
+ const its=(m.items||[]).filter(x=>x[2]==="complaint");if(!its.length)return;
+ let counts=null;
+ if(!m.upcoming){counts={};its.forEach(x=>{const k=bucket(x[1]);if(k)counts[k]=(counts[k]||0)+1});if(!Object.keys(counts).length)counts=null}
+ const sec=`<section class="d-sec dg-sec" id="dg-cmp"><h3>${icon("complaint")}<span>เรื่องร้องเรียน<span class="nw">${m.upcoming?"ในวาระครั้งนี้":"ในครั้งนี้"}</span> ดำเนินการอย่างไร</span></h3>
+  <p class="dg-lede">${m.upcoming?`มีเรื่องร้องเรียนในระเบียบวาระ ${its.length} เรื่อง แผนภาพนี้แสดงแนวทางที่ที่ประชุมใช้บ่อย`:`ครั้งนี้มีเรื่องร้องเรียน ${its.length} เรื่อง`}</p>
+  ${cmpHTML(counts,1)}<p class="dg-more"><a href="#how">${icon("flow")}ดูแผนภาพทั้งหมด</a></p></section>`;
+ const a=body.querySelector(".caution")||(body.querySelector(".agenda")&&body.querySelector(".agenda").closest("section"));
+ if(a)a.insertAdjacentHTML("afterend",sec);
+}
+function subsMini(){const S=DG.struct;
+ return `<div class="dg-mini" role="group" aria-label="คณะกรรมาธิการกับคณะอนุกรรมาธิการ"><div class="dg-box dg-t-com sm"><span class="dg-i">${icon("room")}</span><b>คณะกรรมาธิการ</b></div>${link2(S.down2,S.up2)}<div class="dg-box dg-t-sub sm"><span class="dg-i">${icon("sub")}</span><b>${esc(S.subs)}</b></div></div><p class="dg-more"><a href="#how">${icon("flow")}ดูแผนภาพทั้งหมด</a></p>`}
+
+/* the diagrams page (#how) */
+function openHow(){
+ const J=[["dg-proc","การประชุมแต่ละครั้ง"],["dg-org","คณะกรรมาธิการและคณะอนุกรรมาธิการ"],["dg-cmpx","เรื่องร้องเรียน"]];
+ $("#sheet").innerHTML=`
+ <div class="sheet-head"><span class="t">แผนภาพเข้าใจง่าย</span><button class="iconbtn" type="button" data-copy="how" aria-label="คัดลอกลิงก์หน้านี้">${icon("link")}</button><button class="closebtn" type="button" id="d-close">${icon("close")}ปิด</button></div>
+ <div class="sheet-body" data-dg="how">
+  <h2 id="d-title">${icon("flow")} เข้าใจงานคณะกรรมาธิการด้วยแผนภาพ</h2>
+  <p class="tl-intro">แผนภาพอย่างง่าย 3 ภาพ ช่วยให้เห็นว่าคณะกรรมาธิการทำงานอย่างไร โปรดแตะหัวข้อเพื่อไปยังแผนภาพที่ต้องการ</p>
+  <div class="dg-jump">${J.map((j,i)=>`<button class="btn" type="button" data-dgjump="${j[0]}"><span class="dg-jn">${i+1}</span>${j[1]}</button>`).join("")}</div>
+  <section class="d-sec dg-sec" id="dg-proc"><h3>${icon("cal")}1. การประชุมแต่ละครั้ง เป็นมาอย่างไร</h3>${procHTML()}</section>
+  <section class="d-sec dg-sec" id="dg-org"><h3>${icon("sub")}2. คณะกรรมาธิการและคณะอนุกรรมาธิการ</h3>${structHTML()}</section>
+  <section class="d-sec dg-sec" id="dg-cmpx"><h3>${icon("complaint")}3. เรื่องร้องเรียน ดำเนินการอย่างไร</h3>${cmpHTML(null,0)}</section>
+  <p class="credit-line">${esc(DG.sources)}</p>
+  <button class="closebtn" type="button" data-close-sheet style="justify-self:center">${icon("close")}ปิด กลับหน้าหลัก</button>
+ </div>`;
+ const dlg=$("#detail");if(!dlg.open){try{dlg.showModal()}catch(e){dlg.setAttribute("open","")}}
+ $(".sheet-body").scrollTop=0;$("#d-close").focus();
+}
+function dgRoute(){if(!termsOk||location.hash!=="#how")return;try{closeReels()}catch(e){}openHow()}
+
+/* add diagrams to pages drawn by the template */
+function enhanceSheet(){
+ const body=$("#sheet .sheet-body");if(!body)return;
+ if(body.dataset.ez==="faq"){if(!body.querySelector(".dg-help")){const p=body.querySelector("#d-title+p");if(p)p.insertAdjacentHTML("afterend",`<a class="dg-help" href="#how">${icon("flow")}<span>ดูแผนภาพเข้าใจง่าย<small>การประชุมแต่ละครั้ง คณะอนุกรรมาธิการ และเรื่องร้องเรียน</small></span>${icon("right")}</a>`)}return}
+ if(body.dataset.dgx)return;body.dataset.dgx="1";
+ const h=location.hash;let mm;
+ if((mm=h.match(/^#(?:read|dl)-(\d+)$/))){const m=live.find(x=>x.n===+mm[1]);if(!m||m.cancelled)return;
+  const f=body.querySelector(".facts");if(f)f.insertAdjacentHTML("afterend",trackHTML(m));
+  cmpDetail(m,body);
+  if(h.indexOf("#dl-")===0){const d=document.getElementById("dl-sec");if(d)d.scrollIntoView({block:"start"})}
+  return}
+ if(/^#subs/.test(h)){const p=body.querySelector(".tl-intro");if(p)p.insertAdjacentHTML("afterend",subsMini())}
+}
+new MutationObserver(()=>{enhanceSheet();requestAnimationFrame(enhanceSheet)}).observe($("#sheet"),{childList:true});
+
+/* entry points: a strip under the help strip, and a footer link */
+const anchor=document.querySelector("a.ez-help")||$("#quick");
+if(anchor)anchor.insertAdjacentHTML("afterend",`<a class="dg-help" href="#how">${icon("flow")}<span>แผนภาพเข้าใจง่าย: คณะกรรมาธิการทำงานอย่างไร<small>การประชุมแต่ละครั้ง คณะอนุกรรมาธิการ และเรื่องร้องเรียน</small></span>${icon("right")}</a>`);
+const fl=document.querySelector('footer a[href="#faq"]')||document.querySelector('footer a[href="#terms"]');
+if(fl&&fl.parentElement)fl.parentElement.insertAdjacentHTML("afterend",`<p><a href="#how">แผนภาพเข้าใจง่าย</a></p>`);
+
+document.addEventListener("click",e=>{
+ const j=e.target.closest("[data-dgjump]");
+ if(j){const el=document.getElementById(j.dataset.dgjump);if(el)el.scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});return}
+ if(e.target.closest("[data-dgdl]")){const el=document.getElementById("dl-sec");if(el)el.scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})}
+});
+window.addEventListener("hashchange",dgRoute);
+$("#g-ok").addEventListener("click",dgRoute);
+$("#detail").addEventListener("close",()=>{const b=$("#sheet .sheet-body");if(b&&b.dataset.dg==="how"&&location.hash==="#how"){try{history.replaceState(null,"","#quick")}catch(e){}}});
+dgRoute();
+})();
+</script>
+
 </body>
 </html>
