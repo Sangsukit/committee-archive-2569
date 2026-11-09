@@ -1940,5 +1940,110 @@ if(feed)feed.insertAdjacentHTML("beforebegin",`<div class="wrap"><details class=
 })();
 </script>
 
+<!-- STATUS LAYER (9 Nov 2569, Sukit: "I have trouble telling which meeting is past and which is upcoming").
+     Injected by build.py only when STATUS=1 (status.py). Never edits template.html; hooks into the rendered page.
+     The status comes from the meeting DATE in Bangkok time, so a meeting turns into "held" on its own the day after,
+     even before the weekly update writes its summary. Colour is always paired with an icon and words. -->
+<style>
+:root{--st-up:#2D2A4A;--st-up-on:#FFFFFF;--st-up-s:#ECEBF6;--st-past:#1B6E45;--st-past-s:#E6F3EB;--st-wait:#7A4B00;--st-wait-s:#FBEFD9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--st-up:#C9C6EE;--st-up-on:#1A110E;--st-up-s:#24213A;--st-past:#8ED3AC;--st-past-s:#172D22;--st-wait:#F2BE78;--st-wait-s:#36260F}}
+:root[data-theme="dark"]{--st-up:#C9C6EE;--st-up-on:#1A110E;--st-up-s:#24213A;--st-past:#8ED3AC;--st-past-s:#172D22;--st-wait:#F2BE78;--st-wait-s:#36260F}
+/* the ribbon across the top of every meeting card and detail page */
+.st-rib{grid-column:1/-1;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 16px;min-height:52px;font-size:1.08rem;font-weight:700;line-height:1.35}
+.st-rib .ico{width:1.35em;height:1.35em;flex:none}
+.st-rib .st-when{font-weight:600;margin-left:auto;white-space:nowrap}
+.st-rib.up,.st-rib.today{background:var(--st-up);color:var(--st-up-on)}
+.st-rib.past{background:var(--st-past-s);color:var(--st-past);border-bottom:1px solid var(--line)}
+.st-rib.wait{background:var(--st-wait-s);color:var(--st-wait);border-bottom:1px solid var(--line)}
+/* upcoming cards: a thick navy frame and a navy date box, so they cannot be mistaken for past ones */
+.card.st-up{border:3px solid var(--st-up)!important;box-shadow:0 6px 18px rgba(45,42,74,.18)}
+.card.st-up .when{background:var(--st-up-s)!important}
+.card.st-up .when .no,.card.st-up .when .lbl,.card.st-up .when .yr,.card.st-up .when .d,.card.st-up .when .m{color:var(--st-up)!important}
+/* section headings in the list of meetings */
+.st-head{display:flex;align-items:center;gap:12px;margin:8px 0 0;padding:14px 16px;border-radius:14px;font-size:1.25rem;font-weight:700;line-height:1.35}
+.st-head .ico{width:1.5em;height:1.5em;flex:none}
+.st-head small{display:block;font-size:.95rem;font-weight:500;margin-top:2px}
+.st-head.up{background:var(--st-up);color:var(--st-up-on)}
+.st-head.past{background:var(--st-past-s);color:var(--st-past);border:2px solid var(--st-past)}
+.st-head .st-n{margin-left:auto;font-size:1.05rem;white-space:nowrap;padding:4px 12px;border-radius:99px;background:rgba(255,255,255,.18)}
+.st-head.past .st-n{background:var(--paper)}
+.st-jump{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 14px}
+.st-jump a{display:inline-flex;align-items:center;gap:8px;min-height:52px;padding:10px 18px;border-radius:99px;font-weight:700;font-size:1.05rem;text-decoration:none;border:2px solid}
+.st-jump a .ico{width:1.3em;height:1.3em}
+.st-jump a.up{background:var(--st-up);color:var(--st-up-on);border-color:var(--st-up)}
+.st-jump a.past{background:var(--st-past-s);color:var(--st-past);border-color:var(--st-past)}
+.sheet-body>.st-rib{border-radius:12px;margin:0 0 14px}
+.st-head>span:not(.st-n){flex:1;min-width:0}
+</style>
+<script>
+(()=>{
+if(typeof live==="undefined")return;
+const TH_M=["มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน","กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤศจิกายน","ธันวาคม"];
+const TH_D=["อาทิตย์","จันทร์","อังคาร","พุธ","พฤหัสบดี","ศุกร์","เสาร์"];
+// today's date in Bangkok (UTC+7), as YYYY-MM-DD
+const today=()=>new Date(Date.now()+7*3600e3).toISOString().slice(0,10);
+const days=(a,b)=>Math.round((Date.parse(b+"T00:00:00Z")-Date.parse(a+"T00:00:00Z"))/864e5);
+// up = still ahead, today = on today's date, wait = held but the summary is not out yet, past = held
+function status(m){
+ if(!m||m.cancelled)return null;const t=today();
+ if(m.date>t)return "up";if(m.date===t)return "today";
+ return (m.upcoming||m.pending)?"wait":"past";
+}
+const longDate=m=>{const d=new Date(m.date+"T00:00:00Z");return `วัน${TH_D[d.getUTCDay()]}ที่ ${d.getUTCDate()} ${TH_M[d.getUTCMonth()]} ${d.getUTCFullYear()+543}`};
+function ribbon(m){
+ const s=status(m);if(!s)return "";
+ if(s==="up"){const k=days(today(),m.date);
+  return `<div class="st-rib up" data-st="up">${icon("cal")}<span>นัดประชุมที่กำลังจะมาถึง</span><span class="st-when">${k===1?"พรุ่งนี้":`อีก ${k} วัน`}</span></div>`}
+ if(s==="today")return `<div class="st-rib today" data-st="today">${icon("clock")}<span>ประชุมวันนี้</span>${m.time?`<span class="st-when">เวลา ${esc(m.time)} น.</span>`:""}</div>`;
+ if(s==="wait")return `<div class="st-rib wait" data-st="wait">${icon("info")}<span>ประชุมแล้ว รอสรุปผลการประชุม</span></div>`;
+ return `<div class="st-rib past" data-st="past">${icon("check")}<span>ประชุมแล้ว</span></div>`;
+}
+const find=n=>live.find(x=>x.n===n);
+function head(kind,n){
+ if(kind==="up")return `<h2 class="st-head up" id="st-up" data-n="${n}">${icon("cal")}<span>นัดประชุมที่กำลังจะมาถึง<small>ยังไม่ได้ประชุม แสดงวาระที่จะพิจารณา</small></span><span class="st-n">${n} นัด</span></h2>`;
+ return `<h2 class="st-head past" id="st-past" data-n="${n}">${icon("check")}<span>การประชุมที่ผ่านมาแล้ว<small>เรียงจากครั้งล่าสุด</small></span><span class="st-n">${n} ครั้ง</span></h2>`;
+}
+function markFeed(){
+ const feed=$("#feed");if(!feed)return;
+ const cards=[...feed.querySelectorAll(".card")];
+ let firstUp=null,firstPast=null,nUp=0,nPast=0;
+ cards.forEach(c=>{
+  const n=+((c.id||"").match(/^m-(\d+)$/)||[])[1];const m=n&&find(n);const s=status(m);
+  if(!s)return;
+  const ahead=s==="up"||s==="today";
+  if(ahead){nUp++;firstUp=firstUp||c}else{nPast++;firstPast=firstPast||c}
+  if(c.dataset.st)return;c.dataset.st=s;
+  if(ahead)c.classList.add("st-up");
+  else c.querySelectorAll(".meta .badge.up").forEach(b=>b.remove());   // the date has passed: drop the old "นัดประชุม" badge
+  c.insertAdjacentHTML("afterbegin",ribbon(m));
+ });
+ // headings: only touch the DOM when something changed (the observer would otherwise loop)
+ const want=[firstUp&&["up",firstUp,nUp],firstPast&&["past",firstPast,nPast]].filter(Boolean);
+ const ok=want.length===feed.querySelectorAll(".st-head").length&&want.every(([k,c,n])=>{const h=c.previousElementSibling;return h&&h.id==="st-"+k&&h.dataset.n===String(n)});
+ if(ok)return;
+ feed.querySelectorAll(".st-head").forEach(h=>h.remove());
+ want.forEach(([k,c,n])=>c.insertAdjacentHTML("beforebegin",head(k,n)));
+}
+function markSheet(){
+ const body=$("#sheet .sheet-body");if(!body||body.dataset.st)return;
+ const mm=location.hash.match(/^#(?:read|dl)-(\d+)$/);if(!mm)return;
+ const m=find(+mm[1]);const hero=body.querySelector(".d-hero");if(!m||!hero)return;
+ body.dataset.st="1";body.insertAdjacentHTML("afterbegin",ribbon(m));
+ const s=status(m);if(s!=="up"&&s!=="today")body.querySelectorAll(".d-hero .meta .badge.up").forEach(b=>b.remove());
+}
+// two big buttons under the "coming up" box: jump to upcoming / past meetings
+function jumps(){
+ const box=$("#upnext");if(!box||$(".st-jump"))return;
+ const up=live.filter(m=>{const s=status(m);return s==="up"||s==="today"}).length;
+ const h2=box.querySelector("h2");(h2||box).insertAdjacentHTML(h2?"afterend":"beforeend",`<div class="st-jump">${up?`<a class="up" href="#st-up" data-stgo="st-up">${icon("cal")}นัดที่กำลังจะมาถึง (${up})</a>`:""}<a class="past" href="#st-past" data-stgo="${up?"st-past":"feed"}">${icon("check")}การประชุมที่ผ่านมาแล้ว</a></div>`);
+ box.addEventListener("click",e=>{const a=e.target.closest("[data-stgo]");if(!a)return;e.preventDefault();
+  const t=document.getElementById(a.dataset.stgo)||$("#feed");if(t)t.scrollIntoView({behavior:"smooth",block:"start"})});
+}
+new MutationObserver(markFeed).observe($("#feed"),{childList:true});
+new MutationObserver(markSheet).observe($("#sheet"),{childList:true,subtree:false});
+markFeed();jumps();
+})();
+</script>
+
 </body>
 </html>
