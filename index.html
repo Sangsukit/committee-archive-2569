@@ -273,6 +273,20 @@ dialog::backdrop{background:rgba(24,10,8,.6)} /* literal colour: older Safari an
 .dl-notes{margin:2px 0 0;padding:0;list-style:none;display:grid;gap:6px;font-size:.95rem;color:var(--muted)}
 .dl-notes li{display:flex;gap:8px;align-items:flex-start}
 .dl-notes .ico{flex:none;margin-top:3px;color:var(--gold)}
+.news-grp{margin:0 0 14px}
+.news-grp h4{font-size:1rem;margin:0 0 8px;color:var(--muted);font-weight:700}
+.news-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.newsrow{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:start;border:2px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--paper);text-decoration:none;color:var(--ink)}
+.newsrow:hover,.newsrow:focus-visible{border-color:var(--teal)}
+.newsrow .ni{width:44px;height:44px;border-radius:50%;background:var(--gold-soft);color:var(--gold);display:grid;place-items:center}
+.newsrow .ni .ico{width:24px;height:24px}
+.newsrow b{display:block;font-size:1.06rem;line-height:1.45}
+.newsrow .nmeta{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;margin-top:4px;font-size:.92rem;color:var(--muted)}
+.newsrow .nmeta .src{font-weight:700;color:var(--ink)}
+.newsrow .nwhy{display:block;margin-top:4px;font-size:.95rem;color:var(--muted);line-height:1.5}
+.newsrow .ngo{display:inline-flex;align-items:center;gap:4px;font-weight:700;color:var(--teal)}
+.newsnote{margin:4px 0 0;color:var(--muted);font-size:.9rem;line-height:1.55;display:flex;gap:8px;align-items:flex-start}
+.newsnote .ico{flex:none;margin-top:3px;color:var(--gold)}
 @media (max-width:520px){.dlrow{grid-template-columns:44px minmax(0,1fr)}.dlrow .di{width:44px;height:44px}.dlrow .act{grid-column:1/-1;justify-content:center;padding:11px 14px}}
 .subs{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .nav2{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
@@ -784,6 +798,7 @@ footer .footer-credit b{color:#FFFFFF}
  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol>
  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M8 7h7"/></symbol>
+ <symbol id="i-news" viewBox="0 0 24 24"><path d="M4 5h13v14H6a2 2 0 0 1-2-2z"/><path d="M17 9h3v8a2 2 0 0 1-2 2"/><path d="M7 9h7M7 12.5h7M7 16h4"/></symbol>
  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s-7-6.6-7-11.6a7 7 0 0 1 14 0c0 5-7 11.6-7 11.6z"/><circle cx="12" cy="9.8" r="2.6"/></symbol>
  <symbol id="i-pinmap" viewBox="0 0 24 24"><path d="M9 4l6 2 5-2v14l-5 2-6-2-5 2V6z"/><path d="M9 4v14M15 6v14"/></symbol>
  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
@@ -964,6 +979,7 @@ footer .footer-credit b{color:#FFFFFF}
  <li>เว็บไซต์ฝากไว้ที่ GitHub Pages ผู้ให้บริการอาจบันทึกข้อมูลทางเทคนิค เช่น หมายเลข IP เพื่อความปลอดภัยของระบบ ตามนโยบายความเป็นส่วนตัวของ GitHub เว็บไซต์ไม่ได้รับหรือใช้ข้อมูลนี้</li>
  <li>ลิงก์และปุ่มดาวน์โหลดเอกสารทางการจะเปิดไฟล์จากเว็บไซต์ของรัฐสภาและวุฒิสภา ซึ่งเป็นเว็บไซต์ภายนอก เว็บไซต์นี้ไม่ได้เก็บสำเนาเอกสารเหล่านั้น</li>
  <li>ปุ่ม "เปิดแผนที่" ของกิจกรรมที่กำลังจะมาถึงจะเปิด Google Maps ซึ่งเป็นบริการภายนอกที่มีนโยบายความเป็นส่วนตัวของตนเอง เว็บไซต์นี้ไม่ได้ฝังแผนที่ไว้ในหน้า จึงไม่มีข้อมูลใดส่งไปยัง Google จนกว่าท่านจะกดปุ่มเอง และเว็บไซต์ไม่ขอหรือเก็บตำแหน่งของท่าน แผนที่บอกตำแหน่งสถานที่เท่านั้น ไม่ใช่คำเชิญเข้าร่วมกิจกรรม</li><li>ปุ่ม "ฟังสรุปนี้" ใช้ระบบอ่านออกเสียงของเครื่องของท่านเอง และปุ่ม "เพิ่มลงปฏิทิน" เปิดไฟล์ปฏิทินจากเว็บไซต์นี้ หรือเปิด Google ปฏิทิน (บริการภายนอกที่มีนโยบายความเป็นส่วนตัวของตนเอง) เมื่อท่านกดเท่านั้น เว็บไซต์นี้ไม่ได้รับหรือเก็บข้อมูลใดจากการใช้ปุ่มทั้งสอง</li>
+ 
 </ul>
 <h3>8. แจ้งแก้ไขข้อมูล</h3>
 <ul>
@@ -1196,6 +1212,13 @@ function dlSection(m){
    <p class="credit-line">บทสรุปในหน้านี้เรียบเรียงจากเอกสารข้างต้นและอาจตัดทอน</p>
   </section>`;
 }
+/* related news (NEWS_LINKS): links to the outlet's own page only, never copied text */
+function newsRow(x){const ext=x.lang==="en"?" · ภาษาอังกฤษ":"";
+ return `<li><a class="newsrow" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(x.title)} (${esc(x.outlet)}, ${isoTh(x.date,null,1)}${ext}) เปิดเว็บไซต์สำนักข่าวในหน้าใหม่"><span class="ni">${icon("news")}</span><span><b>${esc(x.title)}</b><span class="nmeta"><span class="src">${esc(x.outlet)}</span><span>${isoTh(x.date,null,1)}${ext}</span><span class="ngo">${icon("ext")}อ่านที่เว็บไซต์ข่าว</span></span>${x.why?`<span class="nwhy">${esc(x.why)}</span>`:""}</span></a></li>`}
+function newsSection(m){const ns=m.news||[];if(!ns.length)return "";
+ const own=ns.filter(x=>x.kind==="meeting"),bg=ns.filter(x=>x.kind!=="meeting");
+ const grp=(t,a)=>a.length?`<div class="news-grp"><h4>${t}</h4><ul class="news-list">${a.map(newsRow).join("")}</ul></div>`:"";
+ return `<section class="d-sec" id="news-sec"><h3>${icon("news")}ข่าวที่เกี่ยวข้อง</h3>${grp("ข่าวการประชุมหรือกิจกรรมนี้",own)}${grp("ข่าวเบื้องหลังของเรื่องที่พิจารณา",bg)}<p class="newsnote">${icon("info")}<span>ลิงก์ไปยังเว็บไซต์ของสำนักข่าว เนื้อหาเป็นของสำนักข่าวนั้น ไม่ใช่ความเห็นของคณะกรรมาธิการหรือของเว็บไซต์นี้${bg.length?" ข่าวเบื้องหลังให้ข้อมูลประกอบเรื่องที่พิจารณาเท่านั้น ไม่ได้หมายความว่าคณะกรรมาธิการพิจารณาตามข่าวนั้น":""}</span></p></section>`}
 function openDetail(n,sec){
  const i=live.findIndex(m=>m.n===n);if(i<0)return;const m=live[i];
  const newer=live[i-1],older=live[i+1],md=m.media||{},k=CHAIR_IMG[m.chair];
@@ -1225,6 +1248,7 @@ function openDetail(n,sec){
   ${hasComplaint?`<div class="caution">${icon("info")}<span>เรื่องร้องเรียนเป็นข้อกล่าวอ้างของผู้ร้อง คณะกรรมาธิการรับไว้เพื่อสอบถามข้อเท็จจริงหรือส่งต่อหน่วยงานที่เกี่ยวข้อง ยังไม่ใช่ข้อยุติหรือการวินิจฉัยว่าผู้ใดกระทำผิด และละชื่อบุคคลไว้</span></div>`:""}
   ${subChairs(m)}
   ${dlSection(m)}
+  ${newsSection(m)}
   <section class="d-sec"><h3>${icon("share")}แชร์การประชุมครั้งนี้</h3><div class="share">${shareRow(m,"read-"+m.n)}</div></section>
   <div class="nav2">${older?`<a class="btn" href="#read-${older.n}">${icon("left")}ครั้งก่อน (ครั้งที่ ${older.n})</a>`:"<span></span>"}${newer?`<a class="btn" href="#read-${newer.n}">ครั้งถัดไป (ครั้งที่ ${newer.n})${icon("right")}</a>`:"<span></span>"}</div>
   <button class="closebtn" type="button" data-close-sheet style="justify-self:center">${icon("close")}ปิด กลับหน้าหลัก</button>
@@ -1707,6 +1731,113 @@ $("#g-ok").addEventListener("click",ezRoute);
 $("#detail").addEventListener("close",()=>{closePop();stopSpeak();
  const b=$("#sheet .sheet-body");if(b&&b.dataset.ez==="faq"&&location.hash==="#faq"){try{history.replaceState(null,"","#quick")}catch(e){}}});
 ezRoute();
+})();
+</script>
+
+<!-- COLOR LAYER (9 Nov 2569): topic colours, colour-coded status, colour key. Injected by build.py only when COLORS=1.
+     Colour is always paired with an icon and a text label. Never edits template.html; hooks into the rendered page. -->
+<style>
+:root{--c-sub:#5A4FA0;--c-sub-s:#ECEAF8;--c-complaint:#1F5FA8;--c-complaint-s:#E4EEF9;--c-seminar:#82367A;--c-seminar-s:#F5E7F3;--c-visit:#1B6E45;--c-visit-s:#E1F2E8;--c-appoint:#4B5563;--c-appoint-s:#ECEEF1;--c-disaster:#8F4D00;--c-disaster-s:#FBEEDB;--c-law:#6B5A1E;--c-law-s:#F3EFDF;--c-bill:#0E6A6C;--c-bill-s:#DDF1F1;--c-water:#0A648C;--c-water-s:#DCEFF8;--c-other:#6E1A16;--c-other-s:#F7E8E4;--c-up:#2D2A4A;--c-up-on:#FFFFFF;--c-on:#FFFFFF}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--c-sub:#B9B1F0;--c-sub-s:#25223A;--c-complaint:#8FB9EE;--c-complaint-s:#1A2638;--c-seminar:#E0A3D6;--c-seminar-s:#33202F;--c-visit:#8ED3AC;--c-visit-s:#172D22;--c-appoint:#C3CAD5;--c-appoint-s:#262A31;--c-disaster:#F2BE78;--c-disaster-s:#36260F;--c-law:#D9C88A;--c-law-s:#2E2914;--c-bill:#84D2D1;--c-bill-s:#142E2E;--c-water:#8DCDEE;--c-water-s:#142A36;--c-other:#E2BE76;--c-other-s:#3A2C1C;--c-up:#C9C6EE;--c-up-on:#1A110E;--c-on:#1A110E}}
+:root[data-theme="dark"]{--c-sub:#B9B1F0;--c-sub-s:#25223A;--c-complaint:#8FB9EE;--c-complaint-s:#1A2638;--c-seminar:#E0A3D6;--c-seminar-s:#33202F;--c-visit:#8ED3AC;--c-visit-s:#172D22;--c-appoint:#C3CAD5;--c-appoint-s:#262A31;--c-disaster:#F2BE78;--c-disaster-s:#36260F;--c-law:#D9C88A;--c-law-s:#2E2914;--c-bill:#84D2D1;--c-bill-s:#142E2E;--c-water:#8DCDEE;--c-water-s:#142A36;--c-other:#E2BE76;--c-other-s:#3A2C1C;--c-up:#C9C6EE;--c-up-on:#1A110E;--c-on:#1A110E}
+.cat.sub{background:var(--c-sub-s);color:var(--c-sub)}
+[data-c="sub"]{--tc:var(--c-sub);--tcs:var(--c-sub-s)}
+.cat.complaint{background:var(--c-complaint-s);color:var(--c-complaint)}
+[data-c="complaint"]{--tc:var(--c-complaint);--tcs:var(--c-complaint-s)}
+.cat.seminar{background:var(--c-seminar-s);color:var(--c-seminar)}
+[data-c="seminar"]{--tc:var(--c-seminar);--tcs:var(--c-seminar-s)}
+.cat.visit{background:var(--c-visit-s);color:var(--c-visit)}
+[data-c="visit"]{--tc:var(--c-visit);--tcs:var(--c-visit-s)}
+.cat.appoint{background:var(--c-appoint-s);color:var(--c-appoint)}
+[data-c="appoint"]{--tc:var(--c-appoint);--tcs:var(--c-appoint-s)}
+.cat.disaster{background:var(--c-disaster-s);color:var(--c-disaster)}
+[data-c="disaster"]{--tc:var(--c-disaster);--tcs:var(--c-disaster-s)}
+.cat.law{background:var(--c-law-s);color:var(--c-law)}
+[data-c="law"]{--tc:var(--c-law);--tcs:var(--c-law-s)}
+.cat.bill{background:var(--c-bill-s);color:var(--c-bill)}
+[data-c="bill"]{--tc:var(--c-bill);--tcs:var(--c-bill-s)}
+.cat.water{background:var(--c-water-s);color:var(--c-water)}
+[data-c="water"]{--tc:var(--c-water);--tcs:var(--c-water-s)}
+.cat.other{background:var(--c-other-s);color:var(--c-other)}
+[data-c="other"]{--tc:var(--c-other);--tcs:var(--c-other-s)}
+/* cards: a stripe and a tinted date box in the main topic's colour, plus a labelled topic badge */
+.card[data-c]{border-left:6px solid var(--tc)}
+.card[data-c] .when{background:var(--tcs)}
+.card[data-c] .when .no,.card[data-c] .when .lbl,.card[data-c] .when .yr{color:var(--tc)}
+.badge.tp{background:var(--tcs);color:var(--tc);font-weight:700;border:1px solid var(--tc)}
+.badge.tp .ico{width:1.05em;height:1.05em}
+/* status */
+.badge.up{background:var(--c-up);color:var(--c-up-on)}
+.badge.done{background:var(--c-visit-s);color:var(--c-visit)}
+#upnext{border-left:6px solid var(--c-up)}
+/* detail: each agenda line carries its topic colour */
+.agenda li[data-c]{border-left:4px solid var(--tc);padding-left:12px}
+.agenda li[data-c] .k{color:var(--tc);font-weight:700}
+/* timeline dots */
+.tl-dot[data-c]{background:var(--tc);color:var(--c-on)}
+.tl-ev.plan .tl-dot[data-c]{background:var(--paper);color:var(--tc);border-color:var(--tc)}
+/* colour key */
+.cl-key{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.cl-key .badge{font-size:.98rem;padding:6px 12px;min-height:40px}
+.cl-legend{margin-top:14px;margin-bottom:6px;border:2px solid var(--line);border-radius:14px;background:var(--paper)}
+.cl-legend summary{cursor:pointer;min-height:54px;padding:12px 16px;font-weight:700;display:flex;gap:10px;align-items:center;list-style:none}
+.cl-legend summary::-webkit-details-marker{display:none}
+.cl-legend summary::after{content:"+";margin-left:auto;font-size:1.5rem;line-height:1;color:var(--gold)}
+.cl-legend[open] summary::after{content:"–"}
+.cl-legend summary .sw{display:inline-flex;gap:3px}
+.cl-legend summary .sw i{width:12px;height:22px;border-radius:3px;display:block}
+.cl-legend .in{padding:0 16px 16px;display:grid;gap:12px}
+.cl-legend p{margin:0;color:var(--muted);line-height:1.6}
+</style>
+<script>
+(()=>{
+if(typeof live==="undefined")return;
+const PAL=["sub", "complaint", "seminar", "visit", "appoint", "disaster", "law", "bill", "water", "other"];
+// main topic of a meeting: the most frequent subject category, ties go to the one listed first.
+// "sub" (subcommittee reports) and "other" only count when nothing else is on the agenda, because most meetings have them.
+function topic(m){
+ const it=m.items||[];if(!it.length)return null;
+ const pick=skip=>{const c={};it.forEach((x,i)=>{const k=x[2];if(skip.includes(k)||!PAL.includes(k))return;if(!c[k])c[k]={n:0,i};c[k].n++});
+  let best=null;Object.keys(c).forEach(k=>{if(!best||c[k].n>c[best].n||(c[k].n===c[best].n&&c[k].i<c[best].i))best=k});return best};
+ return pick(["sub","other"])||pick(["other"])||"other";
+}
+const badge=k=>`<span class="badge tp" data-c="${k}" aria-label="หัวข้อหลัก: ${esc(CAT[k])}">${icon(k)}${esc(CAT[k])}</span>`;
+const catOf=el=>{const c=el&&el.querySelector(".cat");if(!c)return null;const k=[...c.classList].find(x=>PAL.includes(x));return k||null};
+
+function colorFeed(){
+ document.querySelectorAll("#feed .card").forEach(c=>{
+  if(c.dataset.cl)return;c.dataset.cl="1";
+  const n=+((c.id||"").match(/^m-(\d+)$/)||[])[1];if(!n)return;
+  const m=live.find(x=>x.n===n);if(!m)return;const k=topic(m);if(!k)return;
+  c.dataset.c=k;const meta=c.querySelector(".meta");if(meta)meta.insertAdjacentHTML("afterbegin",badge(k));
+ });
+}
+function keyHTML(){
+ return `<ul class="cl-key">${PAL.map(k=>`<li>${badge(k)}</li>`).join("")}</ul>
+ <p>สถานะ: <span class="badge up">${icon("cal")}นัดประชุม</span> <span class="badge done">${icon("check")}จัดแล้ว</span> <span class="badge ms">${icon("star")}จุดเปลี่ยนสำคัญ</span> <span class="badge cx">${icon("info")}กำลังจัดทำสรุป</span></p>
+ <p>สีช่วยให้มองเห็นหัวข้อได้เร็วขึ้น ทุกสีมีสัญลักษณ์และชื่อหัวข้อกำกับไว้ด้วย แถบสีบนการ์ดแต่ละใบบอกหัวข้อหลักของการประชุมครั้งนั้น</p>`;
+}
+function colorSheet(){
+ const body=$("#sheet .sheet-body");if(!body||body.dataset.cl)return;body.dataset.cl="1";
+ const mm=location.hash.match(/^#(?:read|dl)-(\d+)$/);
+ if(mm){const m=live.find(x=>x.n===+mm[1]);const k=m&&topic(m);
+  const meta=body.querySelector(".d-hero .meta");if(k&&meta)meta.insertAdjacentHTML("afterbegin",badge(k));
+  body.querySelectorAll(".agenda li").forEach(li=>{const c=catOf(li);if(c)li.dataset.c=c});}
+ body.querySelectorAll(".tl-dot").forEach(d=>{const u=d.querySelector("use");const k=u&&(u.getAttribute("href")||"").replace("#i-","");if(PAL.includes(k))d.dataset.c=k});
+ if(body.dataset.ez==="faq"&&!body.querySelector("#cl-faq")){
+  const close=body.querySelector("[data-close-sheet]");
+  const sec=`<section class="d-sec" id="cl-faq"><h3>${icon("info")}ความหมายของสีและสัญลักษณ์</h3>${keyHTML()}</section>`;
+  if(close)close.insertAdjacentHTML("beforebegin",sec);else body.insertAdjacentHTML("beforeend",sec);
+ }
+}
+// the FAQ page may be drawn after this observer fires, so check again on the next frame
+new MutationObserver(()=>{colorSheet();requestAnimationFrame(()=>{const b=$("#sheet .sheet-body");if(b&&b.dataset.ez==="faq"&&!b.querySelector("#cl-faq")){b.dataset.cl="";colorSheet()}})}).observe($("#sheet"),{childList:true});
+new MutationObserver(colorFeed).observe($("#feed"),{childList:true});
+colorFeed();
+
+/* colour key above the list of meetings (closed by default to keep the page calm) */
+const feed=$("#feed");
+if(feed)feed.insertAdjacentHTML("beforebegin",`<div class="wrap"><details class="cl-legend"><summary><span class="sw" aria-hidden="true">${PAL.slice(0,6).map(k=>`<i style="background:var(--c-${k})"></i>`).join("")}</span>ความหมายของสีหัวข้อ</summary><div class="in">${keyHTML()}</div></details></div>`);
 })();
 </script>
 
