@@ -200,7 +200,7 @@
     "label": "วิดีโอสรุปผลการประชุม",
     "dur": "3:09",
     "ck": "34",
-    "size": 12914966
+    "size": 10672348
    },
    "videos": [
     {
@@ -211,7 +211,7 @@
      "label": "วิดีโอสรุปผลการประชุม",
      "dur": "3:09",
      "ck": "34",
-     "size": 12914966
+     "size": 10672348
     }
    ]
   },
@@ -279,7 +279,30 @@
     "url": "https://pis.parliament.go.th/PARWeb/doc/meeting-agenda/MeetingAgendaDetailForQRCode?meetingId=43x33yFTyeOfkkc_v5c"
    }
   ],
-  "media": {},
+  "media": {
+   "video": {
+    "src": "media/v33.mp4",
+    "poster": "img/poster33.jpg",
+    "vtt": "media/v33.th.vtt",
+    "kind": "post",
+    "label": "วิดีโอสรุปผลการประชุม",
+    "dur": "3:35",
+    "ck": "33",
+    "size": 11193385
+   },
+   "videos": [
+    {
+     "src": "media/v33.mp4",
+     "poster": "img/poster33.jpg",
+     "vtt": "media/v33.th.vtt",
+     "kind": "post",
+     "label": "วิดีโอสรุปผลการประชุม",
+     "dur": "3:35",
+     "ck": "33",
+     "size": 11193385
+    }
+   ]
+  },
   "chair": "นายธวัช สุระบาล",
   "chair_role": "ประธานคณะกรรมาธิการ",
   "headline": "น้ำท่วมกรุงเทพฯ: พยากรณ์ ระบายน้ำ ผังเมือง ร้องเรียนแนวถนนผังเมืองรวม กทม. และร่าง พ.ร.บ.ความรุนแรงในครอบครัว",
