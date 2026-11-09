@@ -24,7 +24,9 @@
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
 <script>
 /* People go straight to the meeting. Link-preview robots (LINE, Facebook, Messenger, iMessage, X) stay and read the card above. */
-if(!/bot|crawl|spider|facebookexternalhit|facebot|twitterbot|line-poker|linkpreview|whatsapp|telegram|slack|discord|embedly|preview/i.test(navigator.userAgent))location.replace("../#read-36");
+/* Upcoming meetings stay here so people can add the date to their calendar in one tap; after the meeting day they go on too. */
+if(!/bot|crawl|spider|facebookexternalhit|facebot|twitterbot|line-poker|linkpreview|whatsapp|telegram|slack|discord|embedly|preview/i.test(navigator.userAgent)
+ &&false||(function(){try{return new Date().toLocaleDateString("sv-SE",{timeZone:"Asia/Bangkok"})>"2026-11-11"}catch(e){return false}})())location.replace("../#read-36");
 </script>
 <style>
 @font-face{font-family:A;src:local("Anuphan"),url(../fonts/anuphan-var.woff2) format("woff2");font-weight:100 700;font-display:swap}
@@ -33,15 +35,26 @@ main{max-width:640px;margin:0 auto;padding:28px 16px 48px} img{width:100%;height
 h1{font-size:1.45rem;line-height:1.45;margin:18px 0 6px} p{margin:6px 0}
 a.go{display:flex;align-items:center;justify-content:center;min-height:60px;margin:20px 0;border-radius:14px;background:#6E1A16;color:#fff;font-weight:700;text-decoration:none;font-size:1.15rem}
 small{color:#5B4C3F;font-size:.9rem}
-@media (prefers-color-scheme:dark){body{background:#140E0D;color:#F3EBE3} a.go{background:#E2BE76;color:#1A110E} small{color:#CDBFB2}}
+.when{display:grid;gap:4px;margin:12px 0 4px;font-weight:600}
+.cal{display:grid;gap:12px;margin:18px 0 8px} .cal h2{font-size:1.15rem;margin:0}
+a.cb{display:flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:6px 14px;border-radius:14px;border:2px solid #6E1A16;color:#6E1A16;background:#fff;font-weight:700;text-decoration:none;font-size:1.1rem;text-align:center;line-height:1.35}
+a.cb.g{background:#6E1A16;color:#fff}
+.note{font-size:.95rem;color:#5B4C3F;background:#FFF5E0;border-radius:12px;padding:10px 14px;line-height:1.6}
+@media (prefers-color-scheme:dark){body{background:#140E0D;color:#F3EBE3} a.go{background:#E2BE76;color:#1A110E} small{color:#CDBFB2}
+ a.cb{background:#1E1614;color:#E2BE76;border-color:#E2BE76} a.cb.g{background:#E2BE76;color:#1A110E} .note{background:#2A2019;color:#E8DCCF}}
 </style>
 </head>
 <body>
 <main>
-<img src="https://sangsukit.github.io/committee-archive-2569/img/s/36-a7680aba.jpg" alt="การ์ดการประชุมคณะกรรมาธิการการบริหารราชการแผ่นดิน วุฒิสภา ครั้งที่ 36/2569 วันพุธที่ 11 พฤศจิกายน 2569 เวลา 13.00 น. ห้อง CA 426 ชั้น 4 อาคารรัฐสภา (นัดประชุม) เว็บไซต์ไม่เป็นทางการ" width="1200" height="630">
+<img src="../img/s/36-a7680aba.jpg" alt="การ์ดการประชุมคณะกรรมาธิการการบริหารราชการแผ่นดิน วุฒิสภา ครั้งที่ 36/2569 วันพุธที่ 11 พฤศจิกายน 2569 เวลา 13.00 น. ห้อง CA 426 ชั้น 4 อาคารรัฐสภา (นัดประชุม) เว็บไซต์ไม่เป็นทางการ" width="1200" height="630">
 <h1>ครั้งที่ 36/2569 (11 พ.ย. 2569) · กมธ.การบริหารราชการแผ่นดิน วุฒิสภา</h1>
 <p>รับรองบันทึกครั้งที่ 35 ผลงานคณะอนุฯ และเรื่องร้องเรียนจากประชาชน</p>
-<a class="go" href="../#read-36">เปิดอ่านการประชุมครั้งนี้</a>
+<div class="when"><span>📅 วันพุธที่ 11 พฤศจิกายน 2569 · 13.00 น.</span><span>📍 ห้อง CA 426 ชั้น 4 อาคารรัฐสภา</span></div>
+<section class="cal" aria-label="เพิ่มลงปฏิทิน"><h2>บันทึกวันประชุมไว้ในปฏิทินของท่าน</h2>
+<a class="cb g" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1+%E0%B8%81%E0%B8%A1%E0%B8%98.%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%81%E0%B8%9C%E0%B9%88%E0%B8%99%E0%B8%94%E0%B8%B4%E0%B8%99+%E0%B8%A7%E0%B8%B8%E0%B8%92%E0%B8%B4%E0%B8%AA%E0%B8%A0%E0%B8%B2+%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88+36%2F2569&amp;dates=20261111T060000Z%2F20261111T090000Z&amp;details=%E0%B8%99%E0%B8%B1%E0%B8%94%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%95%E0%B8%B2%E0%B8%A1%E0%B8%AB%E0%B8%99%E0%B8%B1%E0%B8%87%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%99%E0%B8%B1%E0%B8%94%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A7%E0%B8%B8%E0%B8%92%E0%B8%B4%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B9%80%E0%B8%9C%E0%B8%A2%E0%B9%81%E0%B8%9E%E0%B8%A3%E0%B9%88+%E0%B9%83%E0%B8%AA%E0%B9%88%E0%B8%9B%E0%B8%8F%E0%B8%B4%E0%B8%97%E0%B8%B4%E0%B8%99%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%97%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B8%B1%E0%B9%89%E0%B8%99+%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88%E0%B8%84%E0%B8%B3%E0%B9%80%E0%B8%8A%E0%B8%B4%E0%B8%8D%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A3%E0%B9%88%E0%B8%A7%E0%B8%A1+%E0%B8%81%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AD%E0%B8%B2%E0%B8%88%E0%B9%80%E0%B8%9B%E0%B8%A5%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%99%E0%B9%81%E0%B8%9B%E0%B8%A5%E0%B8%87+%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B8%94%E0%B8%95%E0%B8%A3%E0%B8%A7%E0%B8%88%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B9%84%E0%B8%8B%E0%B8%95%E0%B9%8C%E0%B8%A7%E0%B8%B8%E0%B8%92%E0%B8%B4%E0%B8%AA%E0%B8%A0%E0%B8%B2+%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B9%89%E0%B8%99%E0%B8%AA%E0%B8%B8%E0%B8%94%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B2%E0%B8%93+%28%E0%B8%84%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1+%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B9%84%E0%B8%8B%E0%B8%95%E0%B9%8C%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%29%0A%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%94%3A+https%3A%2F%2Fsangsukit.github.io%2Fcommittee-archive-2569%2F%23read-36&amp;location=%E0%B8%AB%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%81%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B8%B2%E0%B8%98%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3+CA+426+%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99+4+%E0%B8%AD%E0%B8%B2%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B8%A3%E0%B8%B1%E0%B8%90%E0%B8%AA%E0%B8%A0%E0%B8%B2+%28%E0%B8%AA%E0%B8%B1%E0%B8%9B%E0%B8%9B%E0%B8%B2%E0%B8%A2%E0%B8%B0%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99+1111+%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%AA%E0%B8%99+%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%94%E0%B8%B8%E0%B8%AA%E0%B8%B4%E0%B8%95+%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%29&amp;ctz=Asia%2FBangkok" target="_blank" rel="noopener noreferrer">เพิ่มลง Google ปฏิทิน</a>
+<a class="cb" href="../cal/36.ics">เพิ่มลงปฏิทินในโทรศัพท์ (iPhone, iPad และปฏิทินอื่น ๆ)</a>
+<a class="cb" href="https://www.google.com/maps/search/?api=1&amp;query=%E0%B8%A3%E0%B8%B1%E0%B8%90%E0%B8%AA%E0%B8%A0%E0%B8%B2%20%E0%B8%AA%E0%B8%B1%E0%B8%9B%E0%B8%9B%E0%B8%B2%E0%B8%A2%E0%B8%B0%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%20%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%AA%E0%B8%99%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3" target="_blank" rel="noopener noreferrer">เปิดแผนที่ (อาคารรัฐสภา)</a><p class="note">ใส่ปฏิทินเพื่อติดตามเท่านั้น ไม่ใช่คำเชิญเข้าร่วม กำหนดการอาจเปลี่ยนแปลง โปรดตรวจสอบกับหนังสือนัดประชุมฉบับล่าสุด หากกดใน LINE แล้วปฏิทินไม่เปิด ให้กดเมนู ⋯ แล้วเลือกเปิดในเบราว์เซอร์ (Safari หรือ Chrome)</p></section>
+<a class="go" href="../#read-36">เปิดอ่านระเบียบวาระของการประชุมครั้งนี้</a>
 <small>จัดทำโดย คณะทำงานของ สว. โชติชัย บัวดิษ · เว็บไซต์ไม่เป็นทางการ บทสรุปเรียบเรียงจากเอกสารที่วุฒิสภาเผยแพร่ หากต่างจากต้นฉบับ ให้ถือตามเอกสารต้นฉบับ</small>
 </main>
 </body>

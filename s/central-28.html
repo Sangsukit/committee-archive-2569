@@ -24,7 +24,9 @@
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
 <script>
 /* People go straight to the meeting. Link-preview robots (LINE, Facebook, Messenger, iMessage, X) stay and read the card above. */
-if(!/bot|crawl|spider|facebookexternalhit|facebot|twitterbot|line-poker|linkpreview|whatsapp|telegram|slack|discord|embedly|preview/i.test(navigator.userAgent))location.replace("../sub-central.html#read-28");
+/* Upcoming meetings stay here so people can add the date to their calendar in one tap; after the meeting day they go on too. */
+if(!/bot|crawl|spider|facebookexternalhit|facebot|twitterbot|line-poker|linkpreview|whatsapp|telegram|slack|discord|embedly|preview/i.test(navigator.userAgent)
+ &&true||(function(){try{return new Date().toLocaleDateString("sv-SE",{timeZone:"Asia/Bangkok"})>"2026-10-28"}catch(e){return false}})())location.replace("../sub-central.html#read-28");
 </script>
 <style>
 @font-face{font-family:A;src:local("Anuphan"),url(../fonts/anuphan-var.woff2) format("woff2");font-weight:100 700;font-display:swap}
@@ -33,12 +35,18 @@ main{max-width:640px;margin:0 auto;padding:28px 16px 48px} img{width:100%;height
 h1{font-size:1.45rem;line-height:1.45;margin:18px 0 6px} p{margin:6px 0}
 a.go{display:flex;align-items:center;justify-content:center;min-height:60px;margin:20px 0;border-radius:14px;background:#6E1A16;color:#fff;font-weight:700;text-decoration:none;font-size:1.15rem}
 small{color:#5B4C3F;font-size:.9rem}
-@media (prefers-color-scheme:dark){body{background:#140E0D;color:#F3EBE3} a.go{background:#E2BE76;color:#1A110E} small{color:#CDBFB2}}
+.when{display:grid;gap:4px;margin:12px 0 4px;font-weight:600}
+.cal{display:grid;gap:12px;margin:18px 0 8px} .cal h2{font-size:1.15rem;margin:0}
+a.cb{display:flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:6px 14px;border-radius:14px;border:2px solid #6E1A16;color:#6E1A16;background:#fff;font-weight:700;text-decoration:none;font-size:1.1rem;text-align:center;line-height:1.35}
+a.cb.g{background:#6E1A16;color:#fff}
+.note{font-size:.95rem;color:#5B4C3F;background:#FFF5E0;border-radius:12px;padding:10px 14px;line-height:1.6}
+@media (prefers-color-scheme:dark){body{background:#140E0D;color:#F3EBE3} a.go{background:#E2BE76;color:#1A110E} small{color:#CDBFB2}
+ a.cb{background:#1E1614;color:#E2BE76;border-color:#E2BE76} a.cb.g{background:#E2BE76;color:#1A110E} .note{background:#2A2019;color:#E8DCCF}}
 </style>
 </head>
 <body>
 <main>
-<img src="https://sangsukit.github.io/committee-archive-2569/img/s/central-28-95f06f70.jpg" alt="การ์ดการประชุมคณะอนุกรรมาธิการการบริหารราชการแผ่นดิน ส่วนกลางและส่วนภูมิภาค ครั้งที่ 28/2569 วันพุธที่ 28 ตุลาคม 2569  (ระเบียบวาระ) เว็บไซต์ไม่เป็นทางการ" width="1200" height="630">
+<img src="../img/s/central-28-95f06f70.jpg" alt="การ์ดการประชุมคณะอนุกรรมาธิการการบริหารราชการแผ่นดิน ส่วนกลางและส่วนภูมิภาค ครั้งที่ 28/2569 วันพุธที่ 28 ตุลาคม 2569  (ระเบียบวาระ) เว็บไซต์ไม่เป็นทางการ" width="1200" height="630">
 <h1>ครั้งที่ 28/2569 (28 ต.ค. 2569) · คณะอนุกรรมาธิการส่วนกลางและส่วนภูมิภาค</h1>
 <p>ผังเมืองเฉพาะกับการอนุรักษ์เมือง (กรอบร่างรายงานการศึกษา)</p>
 <a class="go" href="../sub-central.html#read-28">เปิดอ่านการประชุมครั้งนี้</a>
