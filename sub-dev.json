@@ -99,7 +99,32 @@
     "url": "https://pis.parliament.go.th/PARWeb/doc/meeting-agenda/MeetingAgendaDetailForQRCode?meetingId=elqLMouXV2wrzVoS69I"
    }
   ],
-  "media": {},
+  "media": {
+   "video": {
+    "src": "media/sub-dev-v14.mp4",
+    "poster": "img/poster-sub-dev-14.jpg",
+    "vtt": "media/sub-dev-v14.th.vtt",
+    "kind": "post",
+    "label": "วิดีโอสรุปผลการประชุม",
+    "dur": "2:03",
+    "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+    "ck": "dev-14",
+    "size": 5080377
+   },
+   "videos": [
+    {
+     "src": "media/sub-dev-v14.mp4",
+     "poster": "img/poster-sub-dev-14.jpg",
+     "vtt": "media/sub-dev-v14.th.vtt",
+     "kind": "post",
+     "label": "วิดีโอสรุปผลการประชุม",
+     "dur": "2:03",
+     "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+     "ck": "dev-14",
+     "size": 5080377
+    }
+   ]
+  },
   "chair": "ผู้ช่วยศาสตราจารย์วราวุธ ตีระนันทน์",
   "chair_role": "ประธานคณะอนุกรรมาธิการ",
   "headline": "เตรียมการสัมมนา จัดทั้งในสถานที่และถ่ายทอดสดออนไลน์",
@@ -143,7 +168,32 @@
     "url": "https://pis.parliament.go.th/PARWeb/doc/meeting-agenda/MeetingAgendaDetailForQRCode?meetingId=paU-XlkHwLOlULF7D7o"
    }
   ],
-  "media": {},
+  "media": {
+   "video": {
+    "src": "media/sub-dev-v13.mp4",
+    "poster": "img/poster-sub-dev-13.jpg",
+    "vtt": "media/sub-dev-v13.th.vtt",
+    "kind": "post",
+    "label": "วิดีโอสรุปผลการประชุม",
+    "dur": "2:25",
+    "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+    "ck": "dev-13",
+    "size": 5762009
+   },
+   "videos": [
+    {
+     "src": "media/sub-dev-v13.mp4",
+     "poster": "img/poster-sub-dev-13.jpg",
+     "vtt": "media/sub-dev-v13.th.vtt",
+     "kind": "post",
+     "label": "วิดีโอสรุปผลการประชุม",
+     "dur": "2:25",
+     "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+     "ck": "dev-13",
+     "size": 5762009
+    }
+   ]
+  },
   "chair": "ผู้ช่วยศาสตราจารย์วราวุธ ตีระนันทน์",
   "chair_role": "ประธานคณะอนุกรรมาธิการ",
   "headline": "หารือรายละเอียดการสัมมนา เน้นภารกิจของกระทรวงมหาดไทยในระดับพื้นที่",
@@ -183,7 +233,32 @@
     "url": "https://pis.parliament.go.th/PARWeb/doc/meeting-agenda/MeetingAgendaDetailForQRCode?meetingId=CI_Ficg_razeOoI-6fE"
    }
   ],
-  "media": {},
+  "media": {
+   "video": {
+    "src": "media/sub-dev-v12.mp4",
+    "poster": "img/poster-sub-dev-12.jpg",
+    "vtt": "media/sub-dev-v12.th.vtt",
+    "kind": "post",
+    "label": "วิดีโอสรุปผลการประชุม",
+    "dur": "2:10",
+    "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+    "ck": "dev-12",
+    "size": 5228156
+   },
+   "videos": [
+    {
+     "src": "media/sub-dev-v12.mp4",
+     "poster": "img/poster-sub-dev-12.jpg",
+     "vtt": "media/sub-dev-v12.th.vtt",
+     "kind": "post",
+     "label": "วิดีโอสรุปผลการประชุม",
+     "dur": "2:10",
+     "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+     "ck": "dev-12",
+     "size": 5228156
+    }
+   ]
+  },
   "chair": "ผู้ช่วยศาสตราจารย์วราวุธ ตีระนันทน์",
   "chair_role": "ประธานคณะอนุกรรมาธิการ",
   "headline": "เห็นชอบจัดโครงการสัมมนาร่วมกับสถาบันพระปกเกล้า สำนักงาน ก.พ.ร. และกระทรวงมหาดไทย",

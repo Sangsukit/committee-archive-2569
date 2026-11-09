@@ -101,7 +101,32 @@
     "url": "https://pis.parliament.go.th/PARWeb/doc/meeting-agenda/MeetingAgendaDetailForQRCode?meetingId=lDWk9Fa0c4GVI4ukyRw"
    }
   ],
-  "media": {},
+  "media": {
+   "video": {
+    "src": "media/sub-disaster-v8.mp4",
+    "poster": "img/poster-sub-disaster-8.jpg",
+    "vtt": "media/sub-disaster-v8.th.vtt",
+    "kind": "post",
+    "label": "วิดีโอสรุปผลการประชุม",
+    "dur": "2:25",
+    "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+    "ck": "disaster-8",
+    "size": 5612722
+   },
+   "videos": [
+    {
+     "src": "media/sub-disaster-v8.mp4",
+     "poster": "img/poster-sub-disaster-8.jpg",
+     "vtt": "media/sub-disaster-v8.th.vtt",
+     "kind": "post",
+     "label": "วิดีโอสรุปผลการประชุม",
+     "dur": "2:25",
+     "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+     "ck": "disaster-8",
+     "size": 5612722
+    }
+   ]
+  },
   "chair": "นางสาวรัชนีกร ทองทิพย์",
   "chair_role": "ประธานคณะอนุกรรมาธิการ",
   "headline": "การบริหารจัดการอุทกภัยในกรุงเทพมหานคร",
@@ -150,7 +175,32 @@
     "url": "https://pis.parliament.go.th/PARWeb/doc/meeting-agenda/MeetingAgendaDetailForQRCode?meetingId=JAQxhQ_mjADV-JeyXN0"
    }
   ],
-  "media": {},
+  "media": {
+   "video": {
+    "src": "media/sub-disaster-v7.mp4",
+    "poster": "img/poster-sub-disaster-7.jpg",
+    "vtt": "media/sub-disaster-v7.th.vtt",
+    "kind": "post",
+    "label": "วิดีโอสรุปผลการประชุม",
+    "dur": "2:24",
+    "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+    "ck": "disaster-7",
+    "size": 5741905
+   },
+   "videos": [
+    {
+     "src": "media/sub-disaster-v7.mp4",
+     "poster": "img/poster-sub-disaster-7.jpg",
+     "vtt": "media/sub-disaster-v7.th.vtt",
+     "kind": "post",
+     "label": "วิดีโอสรุปผลการประชุม",
+     "dur": "2:24",
+     "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+     "ck": "disaster-7",
+     "size": 5741905
+    }
+   ]
+  },
   "chair": "นางสาวรัชนีกร ทองทิพย์",
   "chair_role": "ประธานคณะอนุกรรมาธิการ",
   "headline": "ภัยพิบัติศึกษาและความปลอดภัยในสถานศึกษา",
