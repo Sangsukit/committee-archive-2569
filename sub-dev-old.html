@@ -10,10 +10,10 @@
 <meta property="og:locale" content="th_TH">
 <meta property="og:title" content="คลังการประชุม คณะอนุกรรมาธิการพัฒนาระบบบริหารราชการแผ่นดินฯ (คณะเดิม) 2569">
 <meta property="og:description" content="สรุปการประชุมคณะอนุกรรมาธิการการพัฒนาระบบบริหารราชการแผ่นดิน และบุคลากรภาครัฐ (คณะเดิม) ในคณะกรรมาธิการการบริหารราชการแผ่นดิน วุฒิสภา ปี 2569 ค้นหาได้ พร้อมเอกสารต้นฉบับ (เว็บไซต์ไม่เป็นทางการ)">
-<meta property="og:image" content="https://sangsukit.github.io/committee-archive-2569/img/s/sub-dev-old-e856baef.jpg">
+<meta property="og:image" content="https://sangsukit.github.io/committee-archive-2569/img/s/sub-dev-old-ecd73ae3.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta name="twitter:image" content="https://sangsukit.github.io/committee-archive-2569/img/s/sub-dev-old-e856baef.jpg">
+<meta name="twitter:image" content="https://sangsukit.github.io/committee-archive-2569/img/s/sub-dev-old-ecd73ae3.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://sangsukit.github.io/committee-archive-2569/sub-dev-old.html">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
@@ -815,6 +815,27 @@ footer .footer-credit b{color:#FFFFFF}
 </style>
 
 
+<!--SKEL-->
+<style id="skel-layer">
+.sk-wrap{display:grid;gap:16px;opacity:0;animation:sk-in .3s ease .35s forwards}
+.sk-card{background:var(--paper,#fff);border:1px solid var(--line,#e4d9c7);border-radius:18px;padding:18px;display:grid;gap:12px;
+  box-shadow:0 1px 2px rgba(60,20,10,.05),0 10px 26px -18px rgba(60,20,10,.18)}
+.sk-b{display:block;height:1.05em;border-radius:10px;background:var(--ink,#22170f);opacity:.08;animation:sk-pulse 1.3s ease-in-out .35s infinite alternate}
+.sk-b.h{height:2.2em;border-radius:12px}
+.sk-b.t{height:1.5em;width:82%}
+.sk-b.s{width:58%}
+.sk-b.bt{height:3.1em;border-radius:16px;width:100%;margin-top:4px}
+.sk-row{display:flex;gap:12px;align-items:center}
+.sk-row .sk-b.av{flex:none;width:3.2em;height:3.2em;border-radius:50%}
+.sk-row .sk-b{flex:1}
+.sk-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@keyframes sk-in{to{opacity:1}}
+@keyframes sk-pulse{from{opacity:.06}to{opacity:.13}}
+@media (prefers-reduced-motion:reduce){.sk-wrap{animation:none;opacity:1}.sk-b{animation:none}}
+@media print{.sk-wrap{display:none}}
+img[loading="lazy"][src$=".jpg"],img[loading="lazy"][src*=".jpg?"],img.bgp{background-color:rgba(127,112,100,.16)}
+</style>
+<noscript><style>.sk-wrap{display:none}</style></noscript>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -955,7 +976,7 @@ footer .footer-credit b{color:#FFFFFF}
   </div>
  </section>
 
- <section class="wrap feed" id="feed" aria-label="รายการการประชุม"></section>
+ <section class="wrap feed" id="feed" aria-label="รายการการประชุม"><div class="sk-wrap" aria-hidden="true"><div class="sk-card"><span class="sk-b h"></span><span class="sk-b t"></span><div class="sk-row"><span class="sk-b av"></span><span class="sk-b s"></span></div><span class="sk-b"></span><span class="sk-b"></span><span class="sk-b s"></span><span class="sk-b bt"></span></div><div class="sk-card"><span class="sk-b h"></span><span class="sk-b t"></span><div class="sk-row"><span class="sk-b av"></span><span class="sk-b s"></span></div><span class="sk-b"></span><span class="sk-b"></span><span class="sk-b s"></span><span class="sk-b bt"></span></div><div class="sk-card"><span class="sk-b h"></span><span class="sk-b t"></span><div class="sk-row"><span class="sk-b av"></span><span class="sk-b s"></span></div><span class="sk-b"></span><span class="sk-b"></span><span class="sk-b s"></span><span class="sk-b bt"></span></div></div><span class="sk-sr">กำลังโหลดรายการการประชุม</span></section>
 </main>
 
 <footer>
@@ -1126,7 +1147,7 @@ const thaiDate=(m,short)=>{const d=dt(m);return `${short?"":"วัน"+DAY[d.ge
 const era=m=>"b";
 const live=DATA.filter(m=>!m.cancelled);
 const link=h=>(BASE_URL||location.href.split("#")[0])+"#"+h;
-const SHARE_P="dev-old-",SHARE_V={"19": "233b1489", "18": "347ab45c", "17": "b7fd68e4", "16": "2d0450e3", "15": "739657f0", "14": "9c1bb8dc", "13": "c68e4478", "12": "f62acfc5", "11": "86bbfd9f", "10": "c46f6cb8", "9": "7bf2b253", "8": "b8babf3b", "7": "9012784b", "6": "3d23759b", "5": "301208a6", "4": "33bb5502", "3": "19a27c2e", "2": "089a0e5e", "1": "c5e7293b"},SHARE_QR=[19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+const SHARE_P="dev-old-",SHARE_V={"19": "abd463c5", "18": "b975346b", "17": "9157bea1", "16": "02a012a8", "15": "84c4e65a", "14": "8f30c535", "13": "25717e51", "12": "f052ec9e", "11": "1ffb4b12", "10": "c3d30884", "9": "c3333e5b", "8": "dbe50cf1", "7": "439d10a9", "6": "8a734228", "5": "800fc5c7", "4": "12f00bdb", "3": "93ae4897", "2": "34c32693", "1": "292f5a52"},SHARE_QR=[19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 const sdir=()=>(BASE_URL||location.href.split("#")[0].split("?")[0]).replace(/[^/]*$/,"");
 const spath=n=>"s/"+SHARE_P+n+".html"+(SHARE_V[n]?"?v="+SHARE_V[n]:"");
 const slink=n=>SHARE_V[n]?sdir()+spath(n):link("read-"+n);
