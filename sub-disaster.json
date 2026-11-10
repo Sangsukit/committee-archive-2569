@@ -15,7 +15,32 @@
     "url": "https://pis.parliament.go.th/PARWeb/doc/meeting-agenda/MeetingAgendaDetailForQRCode?meetingId=-eb2nSq3LC8DNQyd-JI"
    }
   ],
-  "media": {},
+  "media": {
+   "video": {
+    "src": "media/sub-disaster-v11pre.mp4",
+    "poster": "img/poster-sub-disaster-11pre.jpg",
+    "vtt": "media/sub-disaster-v11pre.th.vtt",
+    "kind": "pre",
+    "label": "วิดีโอก่อนการประชุม",
+    "dur": "2:26",
+    "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+    "ck": "disaster-11p",
+    "size": 5558400
+   },
+   "videos": [
+    {
+     "src": "media/sub-disaster-v11pre.mp4",
+     "poster": "img/poster-sub-disaster-11pre.jpg",
+     "vtt": "media/sub-disaster-v11pre.th.vtt",
+     "kind": "pre",
+     "label": "วิดีโอก่อนการประชุม",
+     "dur": "2:26",
+     "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+     "ck": "disaster-11p",
+     "size": 5558400
+    }
+   ]
+  },
   "chair": "",
   "chair_role": "",
   "headline": "การประชุมครั้งที่ 11/2569",
