@@ -451,7 +451,32 @@
     "url": "https://pis.parliament.go.th/PARWeb/doc/meeting-agenda/MeetingAgendaDetailForQRCode?meetingId=2g9OmU70oW2wH5yeL2c"
    }
   ],
-  "media": {},
+  "media": {
+   "video": {
+    "src": "media/v32.mp4",
+    "poster": "img/poster32.jpg",
+    "vtt": "media/v32.th.vtt",
+    "kind": "post",
+    "label": "วิดีโอสรุปผลการประชุม",
+    "dur": "3:21",
+    "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+    "ck": "32",
+    "size": 7802526
+   },
+   "videos": [
+    {
+     "src": "media/v32.mp4",
+     "poster": "img/poster32.jpg",
+     "vtt": "media/v32.th.vtt",
+     "kind": "post",
+     "label": "วิดีโอสรุปผลการประชุม",
+     "dur": "3:21",
+     "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+     "ck": "32",
+     "size": 7802526
+    }
+   ]
+  },
   "chair": "นายธวัช สุระบาล",
   "chair_role": "ประธานคณะกรรมาธิการ",
   "headline": "ข้อเสนอเบื้องต้น 6 ด้านเรื่องสถานบริการ และเริ่มศึกษาร่าง พ.ร.บ.คุ้มครองผู้ถูกกระทำด้วยความรุนแรงในครอบครัว",
