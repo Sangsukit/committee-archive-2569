@@ -10,10 +10,10 @@
 <meta property="og:locale" content="th_TH">
 <meta property="og:title" content="คลังการประชุม คณะอนุกรรมาธิการส่วนกลางและส่วนภูมิภาค 2569">
 <meta property="og:description" content="สรุปการประชุมคณะอนุกรรมาธิการการบริหารราชการแผ่นดิน ส่วนกลางและส่วนภูมิภาค ในคณะกรรมาธิการการบริหารราชการแผ่นดิน วุฒิสภา ปี 2569 ค้นหาได้ พร้อมเอกสารต้นฉบับ">
-<meta property="og:image" content="https://parliamentx.com/committee-archive-2569/img/s/sub-central-0ca4197a.jpg">
+<meta property="og:image" content="https://parliamentx.com/committee-archive-2569/img/s/sub-central-ecfca783.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta name="twitter:image" content="https://parliamentx.com/committee-archive-2569/img/s/sub-central-0ca4197a.jpg">
+<meta name="twitter:image" content="https://parliamentx.com/committee-archive-2569/img/s/sub-central-ecfca783.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://parliamentx.com/committee-archive-2569/sub-central.html">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
@@ -1566,11 +1566,11 @@ const thaiDate=(m,short)=>{const d=dt(m);return `${short?"":"วัน"+DAY[d.ge
 const era=m=>"b";
 const live=DATA.filter(m=>!m.cancelled);
 const link=h=>(BASE_URL||location.href.split("#")[0])+"#"+h;
-const SHARE_P="central-",SHARE_V={"30": "1bc4e74f", "29": "6f4371ae", "28": "f40ca03e", "27": "168b3b28", "26": "06d8ea69", "25": "623e25b4", "24": "cda3d1aa", "23": "4e081d80", "22": "71af8557", "21": "0464ccf9", "20": "cf158fb0", "19": "a702c54e", "18": "0dddd957", "17": "6bc49ccd", "16": "926db222", "15": "70ba4541", "14": "ded4104a", "13": "85800dc1", "12": "65133545", "11": "a45d40b2", "10": "51270a62", "9": "6b7afad9", "8": "2342df61", "7": "e1d56b0e", "6": "316bc45f", "5": "4e8cef28", "4": "8a354495", "3": "572b27fc", "2": "9db878e2", "1": "285f14dc"},SHARE_QR=[30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+const SHARE_P="central-",SHARE_V={"30": "e62e61a7", "29": "3043c0b6", "28": "2e71ff9f", "27": "d79d27be", "26": "bdb0dd3d", "25": "997525c1", "24": "b287ba69", "23": "15ae8f2a", "22": "c076066f", "21": "0f5b93ff", "20": "36ddc0a2", "19": "0ffefa13", "18": "1fd33158", "17": "2407c601", "16": "aaf247af", "15": "10bcbbdb", "14": "90003cea", "13": "bcfcf662", "12": "8a175b14", "11": "b816a00d", "10": "bb807acf", "9": "94346a70", "8": "af93cb53", "7": "b6a337eb", "6": "425ec517", "5": "13e14dcd", "4": "048ecab5", "3": "986c8d9b", "2": "e2eae80d", "1": "313ffb9f"},SHARE_QR=[30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 const sdir=()=>(BASE_URL||location.href.split("#")[0].split("?")[0]).replace(/[^/]*$/,"");
 const spath=n=>"s/"+SHARE_P+n+".html"+(SHARE_V[n]?"?v="+SHARE_V[n]:"");
 const slink=n=>SHARE_V[n]?sdir()+spath(n):link("read-"+n);
-const VSHARE=/*VSHARE*/{"30":"s/v-central-30-pre.html?v=bb07c851"};const vlink=n=>VSHARE[n]?sdir()+VSHARE[n]:slink(n);
+const VSHARE=/*VSHARE*/{"30":"s/v-central-30-pre.html?v=907c8ba4"};const vlink=n=>VSHARE[n]?sdir()+VSHARE[n]:slink(n);
 
 const norm=s=>String(s).toLowerCase().replace(/[๐-๙]/g,c=>"๐๑๒๓๔๕๖๗๘๙".indexOf(c)).replace(/[\s​‌‍﻿]+/g,"");
 DATA.forEach(m=>{m.hay=norm([m.n,`ครั้งที่${m.n}`,`${m.n}/2569`,thaiDate(m),m.chair,m.room,m.headline,m.summary,(m.items||[]).map(i=>i.join(" ")).join(" "),(m.tags||[]).join(" "),(m.places||[]).join(" "),m.cancelled?"ยกเลิก งดประชุม":""].join(" "))});
@@ -3598,7 +3598,7 @@ W.__sfStop=hand;
 /* link_share.py: links to a senator, the timeline, a subcommittee or a member list use their own share page,
    so LINE / Facebook show a matching preview card (apps ignore everything after "#"). */
 (function(){
- const X=/*XSHARE*/{"timeline":"share/central-timeline.html?v=c84b5812"};
+ const X=/*XSHARE*/{"timeline":"share/central-timeline.html?v=2f5504d6"};
  const dir=(typeof BASE_URL!=="undefined"&&BASE_URL)||location.href.split("#")[0].split("?")[0].replace(/[^/]*$/,"");
  const here=location.href.split("#")[0].split("?")[0];
  const xmap=u=>{try{if(typeof u!=="string"||u.indexOf("#")<0)return u;const i=u.indexOf("#"),h=decodeURIComponent(u.slice(i+1)),b=u.slice(0,i);

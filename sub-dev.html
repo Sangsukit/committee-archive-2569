@@ -10,10 +10,10 @@
 <meta property="og:locale" content="th_TH">
 <meta property="og:title" content="คลังการประชุม คณะอนุกรรมาธิการพัฒนาระบบบริหารราชการแผ่นดินและบุคลากรภาครัฐ 2569">
 <meta property="og:description" content="สรุปการประชุมคณะอนุกรรมาธิการการพัฒนาระบบบริหารราชการแผ่นดิน และบุคลากรภาครัฐ ในคณะกรรมาธิการการบริหารราชการแผ่นดิน วุฒิสภา ปี 2569 ค้นหาได้ พร้อมเอกสารต้นฉบับ">
-<meta property="og:image" content="https://parliamentx.com/committee-archive-2569/img/s/sub-dev-d461bf91.jpg">
+<meta property="og:image" content="https://parliamentx.com/committee-archive-2569/img/s/sub-dev-24d23055.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta name="twitter:image" content="https://parliamentx.com/committee-archive-2569/img/s/sub-dev-d461bf91.jpg">
+<meta name="twitter:image" content="https://parliamentx.com/committee-archive-2569/img/s/sub-dev-24d23055.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://parliamentx.com/committee-archive-2569/sub-dev.html">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
@@ -1566,11 +1566,11 @@ const thaiDate=(m,short)=>{const d=dt(m);return `${short?"":"วัน"+DAY[d.ge
 const era=m=>"b";
 const live=DATA.filter(m=>!m.cancelled);
 const link=h=>(BASE_URL||location.href.split("#")[0])+"#"+h;
-const SHARE_P="dev-",SHARE_V={"16": "e6c273bf", "15": "2174d16f", "14": "f6536505", "13": "f74f385e", "12": "fc1a82d0", "11": "d0ae0369", "10": "78d5c2bc", "9": "a3197a8d", "8": "4d64f53d", "7": "42e1dede", "6": "c15aea15", "5": "fba25931", "4": "0c1b591c", "3": "e6ba7dd3", "2": "100f6f1c", "1": "2a3667de"},SHARE_QR=[16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+const SHARE_P="dev-",SHARE_V={"16": "4f045a66", "15": "05c03aa1", "14": "949cb272", "13": "84611496", "12": "138d0005", "11": "b49bac05", "10": "7238c340", "9": "b8928c6b", "8": "bd732c8e", "7": "aacc422b", "6": "84b2014b", "5": "92bb73fc", "4": "d76a4dfc", "3": "92e16489", "2": "3472e361", "1": "9a7bb437"},SHARE_QR=[16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 const sdir=()=>(BASE_URL||location.href.split("#")[0].split("?")[0]).replace(/[^/]*$/,"");
 const spath=n=>"s/"+SHARE_P+n+".html"+(SHARE_V[n]?"?v="+SHARE_V[n]:"");
 const slink=n=>SHARE_V[n]?sdir()+spath(n):link("read-"+n);
-const VSHARE=/*VSHARE*/{"16":"s/v-dev-16-pre.html?v=0fb14cf8","15":"s/v-dev-15.html?v=91feee9b","14":"s/v-dev-14.html?v=8b36a6a7","13":"s/v-dev-13.html?v=6623dcd9","12":"s/v-dev-12.html?v=a2c58900"};const vlink=n=>VSHARE[n]?sdir()+VSHARE[n]:slink(n);
+const VSHARE=/*VSHARE*/{"16":"s/v-dev-16-pre.html?v=ae2c0903","15":"s/v-dev-15.html?v=bdc63899","14":"s/v-dev-14.html?v=4431a272","13":"s/v-dev-13.html?v=a76bed2a","12":"s/v-dev-12.html?v=730838a6"};const vlink=n=>VSHARE[n]?sdir()+VSHARE[n]:slink(n);
 
 const norm=s=>String(s).toLowerCase().replace(/[๐-๙]/g,c=>"๐๑๒๓๔๕๖๗๘๙".indexOf(c)).replace(/[\s​‌‍﻿]+/g,"");
 DATA.forEach(m=>{m.hay=norm([m.n,`ครั้งที่${m.n}`,`${m.n}/2569`,thaiDate(m),m.chair,m.room,m.headline,m.summary,(m.items||[]).map(i=>i.join(" ")).join(" "),(m.tags||[]).join(" "),(m.places||[]).join(" "),m.cancelled?"ยกเลิก งดประชุม":""].join(" "))});
@@ -3598,7 +3598,7 @@ W.__sfStop=hand;
 /* link_share.py: links to a senator, the timeline, a subcommittee or a member list use their own share page,
    so LINE / Facebook show a matching preview card (apps ignore everything after "#"). */
 (function(){
- const X=/*XSHARE*/{"timeline":"share/dev-timeline.html?v=9787fde9"};
+ const X=/*XSHARE*/{"timeline":"share/dev-timeline.html?v=1e8942ad"};
  const dir=(typeof BASE_URL!=="undefined"&&BASE_URL)||location.href.split("#")[0].split("?")[0].replace(/[^/]*$/,"");
  const here=location.href.split("#")[0].split("?")[0];
  const xmap=u=>{try{if(typeof u!=="string"||u.indexOf("#")<0)return u;const i=u.indexOf("#"),h=decodeURIComponent(u.slice(i+1)),b=u.slice(0,i);
