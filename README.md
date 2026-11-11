@@ -1,6 +1,6 @@
 # คลังการประชุม คณะกรรมาธิการการบริหารราชการแผ่นดิน วุฒิสภา ปี 2569
 
-เว็บไซต์: https://sangsukit.github.io/committee-archive-2569/
+เว็บไซต์: https://parliamentx.com/committee-archive-2569/
 
 จัดทำโดย คณะทำงานของ สว. โชติชัย บัวดิษ
 
