@@ -4224,6 +4224,23 @@ H.classList.add("sf-on");
 W.__sfStop=hand;
 })();
 </script>
+<script id="xshare-js">
+/* link_share.py: links to a senator, the timeline, a subcommittee or a member list use their own share page,
+   so LINE / Facebook show a matching preview card (apps ignore everything after "#"). */
+(function(){
+ const X=/*XSHARE*/{"senator-25670711_094419":"share/senator-25670711_094419.html?v=7ecd158b","senator-25670711_111944":"share/senator-25670711_111944.html?v=8a109b27","senator-25670711_125618":"share/senator-25670711_125618.html?v=6a0228d9","senator-25670712_113502":"share/senator-25670712_113502.html?v=b8956e8e","senator-25670712_135148":"share/senator-25670712_135148.html?v=01e6ee87","senator-25670712_163513":"share/senator-25670712_163513.html?v=8036fc9f","senator-25670715_091754":"share/senator-25670715_091754.html?v=c5c25b01","senator-25670716_162235":"share/senator-25670716_162235.html?v=1d0f900e","senator-25670723_142533":"share/senator-25670723_142533.html?v=dd101413","senator-25670813_111705":"share/senator-25670813_111705.html?v=1d7e3561","senator-25671022_143306":"share/senator-25671022_143306.html?v=45e281c2","senator-25680217_115448":"share/senator-25680217_115448.html?v=d31dfb65","senator-25680224_095407":"share/senator-25680224_095407.html?v=8390b56c","senator-25690505_094922":"share/senator-25690505_094922.html?v=0e7696c4","senator-25690505_140537":"share/senator-25690505_140537.html?v=06c6e08f","senator-25690519_112902":"share/senator-25690519_112902.html?v=fcd87df1","senator-25690623_133806":"share/senator-25690623_133806.html?v=5fca70ad","senator-25690629_090451":"share/senator-25690629_090451.html?v=2a04532d","senator-25690629_102921":"share/senator-25690629_102921.html?v=4d2f5347","members":"share/members.html?v=9564bb92","members-central":"share/members-central.html?v=8a2a3e9c","members-dev":"share/members-dev.html?v=44e214db","members-disaster":"share/members-disaster.html?v=d0e6cefd","subs-central":"share/subs-central.html?v=25e019e9","subs-dev":"share/subs-dev.html?v=7d5ed587","subs-disaster":"share/subs-disaster.html?v=2da1c5ba","subs-dev-old":"share/subs-dev-old.html?v=cea6345c","subs-disaster-old":"share/subs-disaster-old.html?v=c34b802d","timeline":"share/timeline.html?v=79dbab7a"};
+ const dir=(typeof BASE_URL!=="undefined"&&BASE_URL)||location.href.split("#")[0].split("?")[0].replace(/[^/]*$/,"");
+ const here=location.href.split("#")[0].split("?")[0];
+ const xmap=u=>{try{if(typeof u!=="string"||u.indexOf("#")<0)return u;const i=u.indexOf("#"),h=decodeURIComponent(u.slice(i+1)),b=u.slice(0,i);
+  if(!X[h])return u;if(b!==here&&b+"index.html"!==here&&b!==dir&&b!==dir+"index.html"&&b.replace(/[^/]*$/,"")!==dir)return u;return dir+X[h]}catch(e){return u}};
+ window.xshareLink=xmap;
+ if(typeof copy==="function"){const c0=copy;copy=function(t,l){return c0(xmap(t),l)}}
+ if(navigator.share){const s0=navigator.share.bind(navigator);try{navigator.share=d=>s0(d&&d.url?Object.assign({},d,{url:xmap(d.url)}):d)}catch(e){}}
+ document.addEventListener("click",e=>{const a=e.target.closest&&e.target.closest('a[href*="lineit/share"],a[href*="facebook.com/sharer"],a[href*="twitter.com/intent"],a[href^="fb-messenger:"]');
+  if(!a)return;try{const u=new URL(a.href);for(const k of ["url","u","link"]){const v=u.searchParams.get(k);if(v){const n=xmap(v);if(n!==v){u.searchParams.set(k,n);a.href=u.toString()}}}}catch(_){}
+ },true);
+})();
+</script>
 </body>
 </html>
 
