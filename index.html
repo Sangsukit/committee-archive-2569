@@ -1278,6 +1278,24 @@ html.tp-glide .whereami{opacity:0!important;transition:none!important}
 @media (prefers-reduced-motion:reduce){.lvs{opacity:1;transform:none;transition:none}.lvb,.lvb.lvb-hide{transition:none}}
 </style>
 <!--/LIVELY-->
+<!--NOVDL-->
+<style id="novdl-css">video{-webkit-touch-callout:none}a[download][href*=".mp4"],a[href$=".mp4"][download],a.dlrow[href$=".mp4"]{display:none!important}</style>
+<!--/NOVDL-->
+<!--VIDKIND-->
+<style>
+.vk-head{display:flex;align-items:center;gap:12px;padding:12px 14px;color:#fff;text-align:left;line-height:1.25;container-type:inline-size}
+.vk-pre .vk-head{background:#2D2A4A}
+.vk-post .vk-head{background:#6E1A16}
+.vk-ic{flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);box-shadow:inset 0 0 0 2px #E2BE76}
+.vk-ic .ico{width:24px;height:24px;color:#F6E7C1}
+.vk-t{display:grid;gap:3px;min-width:0}
+.vk-t b{display:block;font-size:1.36rem;font-weight:700;color:#fff;white-space:normal;overflow-wrap:break-word}
+.vk-t .vk-s{display:block;font-size:1rem;color:#F3EBE3;white-space:normal;overflow-wrap:break-word}
+.vk-fig figcaption{font-size:.92rem}
+@container (max-width:300px){.vk-ic{width:34px;height:34px}.vk-ic .ico{width:19px;height:19px}.vk-t b{font-size:1.08rem}.vk-t .vk-s{font-size:.88rem}}
+@media (min-width:701px){.d-hero>.vk-fig{grid-column:-2}.d-hero:has(>.vk-fig+.vk-fig)>div:first-child{grid-row:span 2}}
+</style>
+<!--/VIDKIND-->
 </head>
 <body>
 <a class="dk-skip" href="#feed">ข้ามไปที่รายการการประชุม</a>
@@ -1492,7 +1510,7 @@ html.tp-glide .whereami{opacity:0!important;transition:none!important}
 <ul>
  <li>เอกสารต้นฉบับเป็นของรัฐสภาและสำนักงานเลขาธิการวุฒิสภา <b>ภาพถ่าย รวมถึงภาพที่ปรากฏในวิดีโอ เป็นของสำนักงานเลขาธิการวุฒิสภา</b> เว็บไซต์ใช้โดยระบุที่มาทุกภาพ หากต้องการนำภาพไปใช้ต่อ โปรดขออนุญาตจากสำนักงานเลขาธิการวุฒิสภา</li>
  <li>ยกข้อความบทสรุปไปใช้ได้ โดยระบุที่มาว่า "คลังการประชุม parliamentx.com" และควรแนบลิงก์เอกสารต้นฉบับ</li>
- <li>ดาวน์โหลดวิดีโอไว้ดูเอง หรือส่งต่อทั้งเรื่องโดยไม่ตัดต่อได้</li>
+ <li>ชมวิดีโอได้บนเว็บไซต์นี้ และส่งลิงก์ให้ผู้อื่นชมได้</li>
  <li>หากต้องการนำวิดีโอไปลงใหม่ทั้งเรื่อง หรือใช้ในสื่ออื่น โปรดติดต่อคณะทำงานก่อน และห้ามใช้เพื่อการค้า</li>
 </ul>
 <h3>6. การแชร์</h3>
@@ -1590,11 +1608,11 @@ const thaiDate=(m,short)=>{const d=dt(m);return `${short?"":"วัน"+DAY[d.ge
 const era=m=>m.n<=16?"a":"b";
 const live=DATA.filter(m=>!m.cancelled);
 const link=h=>(BASE_URL||location.href.split("#")[0])+"#"+h;
-const SHARE_P="",SHARE_V={"36": "63b69972", "35": "4f2680de", "34": "91d3803b", "33": "b6b91337", "32": "a6106915", "31": "bdd69b63", "30": "f7c083b2", "29": "feba842b", "28": "de18cdee", "27": "067d1655", "26": "96cf5061", "25": "5991eb0a", "24": "0b360e3e", "23": "eb677683", "22": "b782d0d6", "21": "5cdd4951", "20": "0c67f975", "19": "977f67b4", "18": "49f2e7fa", "17": "65866a5d", "16": "9685824d", "15": "95bef788", "14": "e8e7dffc", "13": "56dd2f38", "12": "52bdb3ee", "11": "564ab88c", "10": "c26f91fd", "9": "c78e1ef6", "8": "6bd68b11", "7": "59b7ec52", "6": "6ca384c3", "5": "b7cfb332", "4": "e37ca119", "3": "9050383e", "2": "978380f6", "1": "a7a74e66"},SHARE_QR=[36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+const SHARE_P="",SHARE_V={"36": "f58b3da7", "35": "db3bd740", "34": "94c993ff", "33": "b1ea8492", "32": "4b55ef93", "31": "9e47e339", "30": "6f295028", "29": "8ee24423", "28": "5f68d52c", "27": "87c9d1ab", "26": "8eafedbe", "25": "9230d762", "24": "6d274047", "23": "1c3211fa", "22": "eba14e24", "21": "43785f60", "20": "a5cd30c6", "19": "440b4e34", "18": "0e966945", "17": "276ccecf", "16": "e9a1bdc8", "15": "96735a7a", "14": "36dcda1f", "13": "da2ea6a7", "12": "fb7b7aa2", "11": "f47528e3", "10": "8c531ad9", "9": "fbf30c90", "8": "36b8af1d", "7": "a9f1276f", "6": "5907543c", "5": "d0734a1a", "4": "c02e7e51", "3": "9ed6c214", "2": "41885dec", "1": "528b292b"},SHARE_QR=[36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 const sdir=()=>(BASE_URL||location.href.split("#")[0].split("?")[0]).replace(/[^/]*$/,"");
 const spath=n=>"s/"+SHARE_P+n+".html"+(SHARE_V[n]?"?v="+SHARE_V[n]:"");
 const slink=n=>SHARE_V[n]?sdir()+spath(n):link("read-"+n);
-const VSHARE=/*VSHARE*/{"36":"s/v-36-pre.html?v=e495293e","35":"s/v-35.html?v=1ff49907","34":"s/v-34.html?v=08964946","33":"s/v-33.html?v=6d19771e","32":"s/v-32.html?v=26f3b885"};const vlink=n=>VSHARE[n]?sdir()+VSHARE[n]:slink(n);
+const VSHARE=/*VSHARE*/{"36":"s/v-36-pre.html?v=ee2d1b48","35":"s/v-35.html?v=204dc301","34":"s/v-34.html?v=a8b66345","33":"s/v-33.html?v=03ddb8f7","32":"s/v-32.html?v=6b7bbfc9"};const vlink=n=>VSHARE[n]?sdir()+VSHARE[n]:slink(n);
 
 const norm=s=>String(s).toLowerCase().replace(/[๐-๙]/g,c=>"๐๑๒๓๔๕๖๗๘๙".indexOf(c)).replace(/[\s​‌‍﻿]+/g,"");
 DATA.forEach(m=>{m.hay=norm([m.n,`ครั้งที่${m.n}`,`${m.n}/2569`,thaiDate(m),m.chair,m.room,m.headline,m.summary,(m.items||[]).map(i=>i.join(" ")).join(" "),(m.tags||[]).join(" "),(m.places||[]).join(" "),m.cancelled?"ยกเลิก งดประชุม":""].join(" "))});
@@ -1714,7 +1732,7 @@ function card(m){
   <ul class="items">${items.map(i=>`<li><span class="cat ${i[2]}" title="${CAT[i[2]]}">${icon(i[2])}</span><span>${hl(i[0])}<span class="dec">${m.upcoming?"":"มติ: "}${hl(i[1])}</span></span></li>`).join("")}</ul>
   ${more>0?`<span class="eyebrow">และอีก ${more} วาระในหน้ารายละเอียด</span>`:""}
   <div class="tags">${(m.tags||[]).map(t=>`<button class="tag" type="button" data-tag="${esc(t)}">#${esc(t)}</button>`).join("")}${(m.places||[]).map(p=>`<button class="tag pl" type="button" data-q="${esc(p)}">${icon("visit")}${esc(p)}</button>`).join("")}</div>
-  <div class="actions"><a class="btn primary read" href="#read-${m.n}">${icon("book")}อ่านรายละเอียด</a><a class="btn" href="#dl-${m.n}">${icon("dl")}ดาวน์โหลด${(m.media||{}).video?"วิดีโอและเอกสาร":"เอกสาร"}</a></div>
+  <div class="actions"><a class="btn primary read" href="#read-${m.n}">${icon("book")}อ่านรายละเอียด</a><a class="btn" href="#dl-${m.n}">${icon("dl")}ดาวน์โหลดเอกสาร</a></div>
   <div class="share">${shareRow(m,id(m))}</div>
  </div>
  ${mediaBlock(m)}
@@ -1742,16 +1760,16 @@ function subChairs(m){
 function fmtSize(b){if(!b)return "";const mb=b/1048576;return mb>=1?`${mb>=10?Math.round(mb):mb.toFixed(1)} MB`:`${Math.max(1,Math.round(b/1024))} KB`}
 function dlSection(m){
  const vs=(m.media||{}).videos||((m.media||{}).video?[m.media.video]:[]),rows=[];
- vs.forEach(v=>rows.push(`<a class="dlrow" href="${v.src}" download="${v.kind==="pre"?"วิดีโอก่อนการประชุม":"สรุปการประชุม"}_${m.n}-2569.mp4"><span class="di">${icon("video")}</span><span><b>${v.label} ครั้งที่ ${m.n}/2569</b><span class="dmeta"><span class="ft">MP4</span>${v.size?`<span>${fmtSize(v.size)}</span>`:""}<span>ความยาว ${v.dur} นาที</span><span>จากเว็บไซต์นี้</span></span></span><span class="act">${icon("dl")}ดาวน์โหลด</span></a>`));
+ /*NOVDL: no video download rows (no_video_dl.py, Sukit 11 Nov 2569)*/
  (m.docs||[]).forEach(d=>{const web=d.k==="agenda";
   rows.push(`<a class="dlrow" href="${esc(d.url)}" target="_blank" rel="noopener"><span class="di">${icon(web?"other":"doc")}</span><span><b>${DOC[d.k][0]} ครั้งที่ ${m.n}/2569</b><span class="dmeta"><span class="ft">${web?"หน้าเว็บ":"PDF"}</span>${d.size?`<span>${fmtSize(d.size)}</span>`:""}<span>จากระบบของรัฐสภา</span></span></span><span class="act${web?" web":""}">${icon(web?"ext":"dl")}${web?"เปิดดู":"เปิด / ดาวน์โหลด"}</span></a>`)});
  const minutes=(m.docs||[]).some(d=>d.k==="minutes");
- return `<section class="d-sec" id="dl-sec"><h3>${icon("dl")}ดาวน์โหลดเอกสาร${vs.length?"และวิดีโอ":""}</h3>
+ return `<section class="d-sec" id="dl-sec"><h3>${icon("dl")}ดาวน์โหลดเอกสาร</h3>
    <div class="dl">${rows.join("")||`<p class="credit-line">ยังไม่มีเอกสารเผยแพร่สำหรับการประชุมครั้งนี้</p>`}</div>
    <ul class="dl-notes">
     <li>${icon("info")}<span>เอกสารทางการ (PDF) เปิดจากระบบของรัฐสภาโดยตรง เว็บไซต์นี้ไม่ได้เก็บหรือแก้ไขสำเนา หากบทสรุปต่างจากเอกสาร ให้ถือตามเอกสารต้นฉบับ</span></li>
     ${minutes?`<li>${icon("info")}<span>บันทึกการประชุมเป็นฉบับที่เผยแพร่ในระบบของรัฐสภา ให้ถือตามฉบับที่ที่ประชุมรับรอง</span></li>`:""}
-    ${vs.length?`<li>${icon("info")}<span>ดาวน์โหลดวิดีโอไว้ดูหรือส่งต่อได้โดยไม่ตัดต่อ หากจะนำไปลงในสื่ออื่น โปรดติดต่อคณะทำงานก่อน (<a href="#terms">ข้อตกลงการใช้งาน</a> ข้อ 5)</span></li>`:""}
+    ${vs.length?`<li>${icon("info")}<span>วิดีโอเปิดชมได้บนเว็บไซต์นี้ และส่งลิงก์ให้ผู้อื่นชมได้ หากจะนำไปใช้ในสื่ออื่น โปรดติดต่อคณะทำงานก่อน (<a href="#terms">ข้อตกลงการใช้งาน</a> ข้อ 5)</span></li>`:""}
     <li>${icon("info")}<span>หากเปิดจาก LINE แล้วดาวน์โหลดไม่ได้ ให้แตะเมนู ⋯ แล้วเลือกเปิดใน Safari หรือ Chrome</span></li>
    </ul>
    <a class="doc" href="https://www.senate.go.th/view/414/meeting/TH-TH?cid=79731&amp;ctype=1" target="_blank" rel="noopener"><span class="di">${icon("cal")}</span><span><b>รายการการประชุมทั้งหมดของคณะกรรมาธิการ</b><span>senate.go.th</span></span><span class="go">${icon("ext")}</span></a>
@@ -1767,10 +1785,10 @@ function newsSection(m){const ns=m.news||[];if(!ns.length)return "";
  return `<section class="d-sec" id="news-sec"><h3>${icon("news")}ข่าวที่เกี่ยวข้อง</h3>${grp("ข่าวการประชุมหรือกิจกรรมนี้",own)}${grp("ข่าวเบื้องหลังของเรื่องที่พิจารณา",bg)}<p class="newsnote">${icon("info")}<span>ลิงก์เปิดเว็บไซต์ภายนอกในหน้าใหม่ ${ns.some(x=>x.outlet!=="วุฒิสภา")?"ข่าวจากสำนักข่าวเป็นเนื้อหาของสำนักข่าวนั้น ไม่ใช่ความเห็นของคณะกรรมาธิการหรือของเว็บไซต์นี้":"ข่าวจากเว็บไซต์วุฒิสภาเผยแพร่โดยสำนักงานเลขาธิการวุฒิสภา"}${bg.length?" ข่าวเบื้องหลังให้ข้อมูลประกอบเรื่องที่พิจารณาเท่านั้น ไม่ได้หมายความว่าคณะกรรมาธิการพิจารณาตามข่าวนั้น":""}</span></p></section>`}
 /* on open, move focus to the sheet title (screen readers read it first; no gold ring on "ปิด" for people who arrive from a shared link) */
 function dFocus(){const h=$("#d-title");if(!h)return;h.tabIndex=-1;h.focus({preventScroll:true})}
-function openDetail(n,sec){
+/*VK*/function vkK(v){return v&&v.kind==="pre"?"pre":"post"}function vkSort(a){return a.slice().sort((x,y)=>(vkK(x)==="pre"?0:1)-(vkK(y)==="pre"?0:1))}function vkHead(v){const p=vkK(v)==="pre";return `<div class="vk-head" data-solid><span class="vk-ic">${icon(p?"cal":"check")}</span><span class="vk-t"><b>${p?"ก่อนการประชุม":"หลังการประชุม"}</b><span class="vk-s">${p?"เรื่องที่นัดพิจารณา":"ผลการประชุม"}</span></span></div>`}/*/VK*/function openDetail(n,sec){
  const i=live.findIndex(m=>m.n===n);if(i<0)return;const m=live[i];
  const newer=live[i-1],older=live[i+1],md=m.media||{},k=CHAIR_IMG[m.chair];
- const fig=md.video?(md.videos||[md.video]).map(v=>`<figure class="d-figure"><div class="vid"><video controls preload="none" playsinline poster="${v.poster}" src="${v.src}">${track(v.ck||m.n,v.cc)}</video></div><figcaption>${icon("video")} ${v.label} · ${v.cc||"มีคำบรรยายภาษาไทย"}</figcaption></figure>`).join("")
+ const fig=md.video?vkSort(md.videos||[md.video]).map(v=>`<figure class="d-figure vk-fig vk-${vkK(v)}">${vkHead(v)}<div class="vid"><video controlslist=nodownload controls preload="none" playsinline poster="${v.poster}" src="${v.src}">${track(v.ck||m.n,v.cc)}</video></div><figcaption>${icon("video")} ${v.label} · ${v.cc||"มีคำบรรยายภาษาไทย"}</figcaption></figure>`).join("")
   :md.photo?`<figure class="d-figure"><img src="${md.photo}" alt="บรรยากาศห้องประชุม ครั้งที่ ${m.n}/2569"><figcaption>${icon("photo")} บรรยากาศการประชุม · ภาพ: สำนักงานเลขาธิการวุฒิสภา (จากเอกสารสรุปผลการประชุม)</figcaption></figure>`
   :k?`<figure class="d-figure"><img src="${P[k].img}" alt="${esc(m.chair)}"><figcaption>${esc(m.chair)} ประธานในที่ประชุม · ภาพ: สำนักงานเลขาธิการวุฒิสภา</figcaption></figure>`:"";
  const hasComplaint=(m.items||[]).some(x=>x[2]==="complaint");
@@ -1989,7 +2007,7 @@ let reelsBuilt=false,muted=true;
 function reel(m){
  const v=m.media&&m.media.video,ph=(m.media&&m.media.photo)||(PHX[m.n]&&PHL[PHX[m.n]].src),ill=!(m.media&&m.media.photo)&&ph;
  const top=(m.items||[]).slice(0,3);
- const inner=v?`<video playsinline muted preload="none" poster="${v.poster}" src="${v.src}">${track(v.ck||m.n,v.cc)}</video><div class="reel-ovl"><p class="reel-cap" hidden></p><b>ครั้งที่ ${m.n}/2569 · ${v.label}</b><span>${thaiDate(m,1)}</span></div><button class="unmute" type="button" data-mute>${icon("vol")}แตะเพื่อเปิดเสียง</button>`
+ const inner=v?`<video controlslist=nodownload playsinline muted preload="none" poster="${v.poster}" src="${v.src}">${track(v.ck||m.n,v.cc)}</video><div class="reel-ovl"><p class="reel-cap" hidden></p><b>ครั้งที่ ${m.n}/2569 · ${v.label}</b><span>${thaiDate(m,1)}</span></div><button class="unmute" type="button" data-mute>${icon("vol")}แตะเพื่อเปิดเสียง</button>`
  :`<div class="reel-card">${ph?`${ill?`<span class="chip-ill">ภาพประกอบ</span>`:""}<img class="bgp" src="${ph}" alt="${phAlt(m)}" loading="lazy"><div class="fade"></div>`:`<div class="reel-big">${m.n}</div>`}<div class="txt"><span class="reel-no">ครั้งที่ ${m.n}/2569 · ${thaiDate(m,1)}</span><h3>${esc(m.headline)}</h3><ul>${top.map(i=>`<li>${icon(i[2])}<span>${esc(i[0].length>110?i[0].slice(0,108)+"…":i[0])}</span></li>`).join("")}</ul><a class="rread" href="#read-${m.n}">${icon("book")}อ่านสรุปครั้งนี้</a><span class="note">${m.date>="2026-10-01"?`${icon("video")} วิดีโอครั้งนี้กำลังจัดทำ`:`${icon("doc")} เปิดเอกสารต้นฉบับได้ในหน้ารายละเอียด`}${phNote(m)}</span></div></div>`;
  return `<section class="reel" id="reel-${m.n}" aria-label="ครั้งที่ ${m.n}/2569"><div class="reel-stage">${inner}
  <div class="reel-side">${v?`<button class="rbtn" type="button" data-mute aria-label="เปิดหรือปิดเสียง">${icon(muted?"mute":"vol")}</button><span class="rlabel">เสียง</span>`:""}
@@ -2040,7 +2058,7 @@ document.addEventListener("click",e=>{
  if(t.dataset.q){S.q=t.dataset.q;$("#q").value=S.q;render();$("#controls").scrollIntoView({block:"start"});return}
  if(t.dataset.mo!==undefined){S.mo=S.mo===+t.dataset.mo?-1:+t.dataset.mo;render();return}
  if(t.dataset.go){location.hash=t.dataset.go;return}
- if(t.dataset.play){const m=live.find(x=>x.n===+t.dataset.play),v=m.media.video,box=t.closest(".vid");box.innerHTML=`<video controls autoplay playsinline poster="${v.poster}" src="${v.src}">${track(v.ck||m.n,v.cc)}</video>`;box.querySelector("video").focus();return}
+ if(t.dataset.play){const m=live.find(x=>x.n===+t.dataset.play),v=m.media.video,box=t.closest(".vid");box.innerHTML=`<video controlslist=nodownload controls autoplay playsinline poster="${v.poster}" src="${v.src}">${track(v.ck||m.n,v.cc)}</video>`;box.querySelector("video").focus();return}
  if(t.dataset.mute!==undefined){muted=!muted;const R=$("#reels");R.classList.toggle("is-muted",muted);R.querySelectorAll("video").forEach(v=>v.muted=muted);R.querySelectorAll(".rbtn[data-mute]").forEach(b=>b.innerHTML=icon(muted?"mute":"vol"));if(!muted){const r=[...R.querySelectorAll(".reel")].find(x=>{const b=x.getBoundingClientRect();return b.top>-b.height/2&&b.top<b.height/2});const v=r&&r.querySelector("video");if(v)v.play().catch(()=>{})}return}
  if(t.id==="d-close"){closeDetail();return}
  if(t.id==="open-reels"){location.hash="reels";return}
@@ -3867,7 +3885,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
    s.querySelector(".lv-h").textContent=hd;
    s.querySelector(".lv-play").addEventListener("click",function(){
     var box=s.querySelector(".lv-box");var tr=typeof track==="function"?track(v.ck||m.n):"";
-    box.className="lv-vid";box.innerHTML='<video controls autoplay playsinline poster="'+v.poster+'" src="'+v.src+'">'+tr+'</video>';
+    box.className="lv-vid";box.innerHTML='<video controlslist=nodownload controls autoplay playsinline poster="'+v.poster+'" src="'+v.src+'">'+tr+'</video>';
     var el=box.querySelector("video");if(el)el.focus();
    });
    q.parentNode.insertBefore(s,q);
@@ -4182,7 +4200,7 @@ W.__sfStop=hand;
 /* link_share.py: links to a senator, the timeline, a subcommittee or a member list use their own share page,
    so LINE / Facebook show a matching preview card (apps ignore everything after "#"). */
 (function(){
- const X=/*XSHARE*/{"senator-25670711_094419":"share/senator-25670711_094419.html?v=7ecd158b","senator-25670711_111944":"share/senator-25670711_111944.html?v=8a109b27","senator-25670711_125618":"share/senator-25670711_125618.html?v=6a0228d9","senator-25670712_113502":"share/senator-25670712_113502.html?v=b8956e8e","senator-25670712_135148":"share/senator-25670712_135148.html?v=01e6ee87","senator-25670712_163513":"share/senator-25670712_163513.html?v=8036fc9f","senator-25670715_091754":"share/senator-25670715_091754.html?v=c5c25b01","senator-25670716_162235":"share/senator-25670716_162235.html?v=1d0f900e","senator-25670723_142533":"share/senator-25670723_142533.html?v=dd101413","senator-25670813_111705":"share/senator-25670813_111705.html?v=1d7e3561","senator-25671022_143306":"share/senator-25671022_143306.html?v=45e281c2","senator-25680217_115448":"share/senator-25680217_115448.html?v=d31dfb65","senator-25680224_095407":"share/senator-25680224_095407.html?v=8390b56c","senator-25690505_094922":"share/senator-25690505_094922.html?v=0e7696c4","senator-25690505_140537":"share/senator-25690505_140537.html?v=06c6e08f","senator-25690519_112902":"share/senator-25690519_112902.html?v=fcd87df1","senator-25690623_133806":"share/senator-25690623_133806.html?v=5fca70ad","senator-25690629_090451":"share/senator-25690629_090451.html?v=2a04532d","senator-25690629_102921":"share/senator-25690629_102921.html?v=4d2f5347","members":"share/members.html?v=9564bb92","members-central":"share/members-central.html?v=8a2a3e9c","members-dev":"share/members-dev.html?v=44e214db","members-disaster":"share/members-disaster.html?v=d0e6cefd","subs-central":"share/subs-central.html?v=25e019e9","subs-dev":"share/subs-dev.html?v=7d5ed587","subs-disaster":"share/subs-disaster.html?v=2da1c5ba","subs-dev-old":"share/subs-dev-old.html?v=cea6345c","subs-disaster-old":"share/subs-disaster-old.html?v=c34b802d","timeline":"share/timeline.html?v=79dbab7a"};
+ const X=/*XSHARE*/{"senator-25670711_094419":"share/senator-25670711_094419.html?v=672c85d6","senator-25670711_111944":"share/senator-25670711_111944.html?v=7da46001","senator-25670711_125618":"share/senator-25670711_125618.html?v=97779a11","senator-25670712_113502":"share/senator-25670712_113502.html?v=cd14f6b3","senator-25670712_135148":"share/senator-25670712_135148.html?v=858c8119","senator-25670712_163513":"share/senator-25670712_163513.html?v=b438ab71","senator-25670715_091754":"share/senator-25670715_091754.html?v=c6378bf0","senator-25670716_162235":"share/senator-25670716_162235.html?v=40a230f5","senator-25670723_142533":"share/senator-25670723_142533.html?v=aada1b1a","senator-25670813_111705":"share/senator-25670813_111705.html?v=841a3403","senator-25671022_143306":"share/senator-25671022_143306.html?v=fe2ad306","senator-25680217_115448":"share/senator-25680217_115448.html?v=7e769f82","senator-25680224_095407":"share/senator-25680224_095407.html?v=d11a3b63","senator-25690505_094922":"share/senator-25690505_094922.html?v=e6d9a150","senator-25690505_140537":"share/senator-25690505_140537.html?v=7955cce6","senator-25690519_112902":"share/senator-25690519_112902.html?v=11a7c897","senator-25690623_133806":"share/senator-25690623_133806.html?v=1813f3e3","senator-25690629_090451":"share/senator-25690629_090451.html?v=dca8aaa2","senator-25690629_102921":"share/senator-25690629_102921.html?v=531d37ff","members":"share/members.html?v=6f71350b","members-central":"share/members-central.html?v=b179c6c5","members-dev":"share/members-dev.html?v=df0578f5","members-disaster":"share/members-disaster.html?v=4c8777ab","subs-central":"share/subs-central.html?v=5de5fdfc","subs-dev":"share/subs-dev.html?v=2591a4c4","subs-disaster":"share/subs-disaster.html?v=525778eb","subs-dev-old":"share/subs-dev-old.html?v=5cfc8007","subs-disaster-old":"share/subs-disaster-old.html?v=9aa98d82","timeline":"share/timeline.html?v=09f4b367"};
  const dir=(typeof BASE_URL!=="undefined"&&BASE_URL)||location.href.split("#")[0].split("?")[0].replace(/[^/]*$/,"");
  const here=location.href.split("#")[0].split("?")[0];
  const xmap=u=>{try{if(typeof u!=="string"||u.indexOf("#")<0)return u;const i=u.indexOf("#"),h=decodeURIComponent(u.slice(i+1)),b=u.slice(0,i);
@@ -4439,6 +4457,18 @@ function start(){all();
  // re-label when the visitor switches Thai/English
  new MutationObserver(function(){setTimeout(all,60)}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']})}
 document.readyState==='complete'?start():addEventListener('load',start)})();
+</script>
+<script id="novdl-js">(function(){function f(v){if(v.getAttribute("controlslist")!=="nodownload")v.setAttribute("controlslist","nodownload")}function a(r){if(r&&r.querySelectorAll)r.querySelectorAll("video").forEach(f)}function isV(t){return t&&t.tagName==="VIDEO"}document.addEventListener("contextmenu",function(e){if(isV(e.target))e.preventDefault()},true);document.addEventListener("dragstart",function(e){if(isV(e.target))e.preventDefault()},true);document.addEventListener("play",function(e){if(isV(e.target))f(e.target)},true);a(document);if(window.MutationObserver)new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType!==1)return;if(isV(n))f(n);else a(n)})})}).observe(document.documentElement,{childList:true,subtree:true})})();</script>
+<script id="vidkind-js">
+(function(){
+ if(window.__vk)return;window.__vk=1;
+ function isVk(v){return v&&v.tagName==="VIDEO"&&v.closest&&v.closest(".vk-fig")}
+ /* one video at a time in the panel */
+ document.addEventListener("play",function(e){var v=e.target;if(!isVk(v))return;
+  var box=v.closest("#sheet")||document;box.querySelectorAll(".vk-fig video").forEach(function(o){if(o!==v&&!o.paused){try{o.pause()}catch(x){}}})},true);
+ /* when a video ends, show its cover (the title frame) again instead of the last frame */
+ document.addEventListener("ended",function(e){var v=e.target;if(!isVk(v))return;try{v.load()}catch(x){}},true);
+})();
 </script>
 </body>
 </html>
