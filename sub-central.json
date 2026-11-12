@@ -1,5 +1,27 @@
 [
  {
+  "n": 31,
+  "date": "2026-11-18",
+  "time": "",
+  "room": "",
+  "docs": [
+   {
+    "k": "agenda",
+    "url": "https://pis.parliament.go.th/PARWeb/doc/meeting-agenda/MeetingAgendaDetailForQRCode?meetingId=RRcerlzplPqurwVyObk"
+   }
+  ],
+  "media": {},
+  "chair": "",
+  "chair_role": "",
+  "headline": "การประชุมครั้งที่ 31/2569",
+  "summary": "นัดประชุมครั้งนี้ วุฒิสภายังไม่ได้เผยแพร่หนังสือนัดประชุม เปิดอ่านเอกสารต้นฉบับของรัฐสภาได้จากหน้ารายละเอียด บทสรุปจะเพิ่มหลังวุฒิสภาเผยแพร่สรุปผลการประชุม",
+  "items": [],
+  "tags": [],
+  "places": [],
+  "pending": false,
+  "upcoming": true
+ },
+ {
   "n": 30,
   "date": "2026-11-11",
   "time": "",
