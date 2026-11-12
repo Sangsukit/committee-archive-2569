@@ -17,16 +17,28 @@
   ],
   "media": {
    "video": {
-    "src": "media/v36.mp4",
-    "poster": "img/poster36.jpg",
-    "vtt": "media/v36.th.vtt",
-    "kind": "pre",
-    "label": "วิดีโอก่อนการประชุม",
-    "dur": "1:40",
-    "ck": "36p",
-    "size": 3318752
+    "src": "media/v36post.mp4",
+    "poster": "img/poster36post.jpg",
+    "vtt": "media/v36post.th.vtt",
+    "kind": "post",
+    "label": "วิดีโอสรุปผลการประชุม",
+    "dur": "3:47",
+    "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+    "ck": "36",
+    "size": 9289882
    },
    "videos": [
+    {
+     "src": "media/v36post.mp4",
+     "poster": "img/poster36post.jpg",
+     "vtt": "media/v36post.th.vtt",
+     "kind": "post",
+     "label": "วิดีโอสรุปผลการประชุม",
+     "dur": "3:47",
+     "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+     "ck": "36",
+     "size": 9289882
+    },
     {
      "src": "media/v36.mp4",
      "poster": "img/poster36.jpg",
