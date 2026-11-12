@@ -15,7 +15,32 @@
     "url": "https://pis.parliament.go.th/PARWeb/doc/meeting-agenda/MeetingAgendaDetailForQRCode?meetingId=-49_W1n2XX9GSW2UPQU"
    }
   ],
-  "media": {},
+  "media": {
+   "videos": [
+    {
+     "src": "media/v37.mp4",
+     "poster": "img/poster37.jpg",
+     "vtt": "media/v37.th.vtt",
+     "kind": "pre",
+     "label": "วิดีโอก่อนการประชุม",
+     "dur": "1:58",
+     "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+     "ck": "37p",
+     "size": 4693055
+    }
+   ],
+   "video": {
+    "src": "media/v37.mp4",
+    "poster": "img/poster37.jpg",
+    "vtt": "media/v37.th.vtt",
+    "kind": "pre",
+    "label": "วิดีโอก่อนการประชุม",
+    "dur": "1:58",
+    "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+    "ck": "37p",
+    "size": 4693055
+   }
+  },
   "chair": "นายธวัช สุระบาล",
   "chair_role": "ประธานคณะกรรมาธิการ",
   "headline": "รับรองบันทึกครั้งที่ 36 ผลงานคณะอนุฯ และเรื่องร้องเรียนจากประชาชน",
