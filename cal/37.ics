@@ -5,13 +5,16 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:committee-archive-2569-m37@sangsukit.github.io
-DTSTAMP:20261112T060412Z
-DTSTART;VALUE=DATE:20261118
-DTEND;VALUE=DATE:20261119
+DTSTAMP:20261112T120551Z
+DTSTART:20261118T060000Z
+DTEND:20261118T090000Z
 SUMMARY:ประชุม กมธ.การบริหารราช
  การแผ่นดิน วุฒิสภา ครั้งท
  ี่ 37/2569
-LOCATION:
+LOCATION:ห้องประชุมกรรมาธิการ CA 
+ 426 ชั้น 4 อาคารรัฐสภา (สัปปาย
+ ะสภาสถาน 1111 ถนนสามเสน เขตด
+ ุสิต กรุงเทพมหานคร)
 DESCRIPTION:นัดประชุมตามหนังสือน
  ัดประชุมที่วุฒิสภาเผยแพร
  ่ ใส่ปฏิทินเพื่อติดตามเท
