@@ -15,7 +15,32 @@
     "url": "https://pis.parliament.go.th/PARWeb/doc/meeting-agenda/MeetingAgendaDetailForQRCode?meetingId=llWyQtFtP_-bVgTZvOM"
    }
   ],
-  "media": {},
+  "media": {
+   "video": {
+    "src": "media/sub-central-v31pre.mp4",
+    "poster": "img/poster-sub-central-31pre.jpg",
+    "vtt": "media/sub-central-v31pre.th.vtt",
+    "kind": "pre",
+    "label": "วิดีโอก่อนการประชุม",
+    "dur": "2:20",
+    "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+    "ck": "central-31p",
+    "size": 5381240
+   },
+   "videos": [
+    {
+     "src": "media/sub-central-v31pre.mp4",
+     "poster": "img/poster-sub-central-31pre.jpg",
+     "vtt": "media/sub-central-v31pre.th.vtt",
+     "kind": "pre",
+     "label": "วิดีโอก่อนการประชุม",
+     "dur": "2:20",
+     "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+     "ck": "central-31p",
+     "size": 5381240
+    }
+   ]
+  },
   "chair": "",
   "chair_role": "",
   "headline": "ผังเมืองเฉพาะกับการอนุรักษ์เมือง (กรอบร่างรายงานการศึกษา)",
