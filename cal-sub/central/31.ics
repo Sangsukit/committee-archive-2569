@@ -5,13 +5,16 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:committee-archive-2569-central-m31@sangsukit.github.io
-DTSTAMP:20261112T120551Z
-DTSTART;VALUE=DATE:20261118
-DTEND;VALUE=DATE:20261119
+DTSTAMP:20261113T120434Z
+DTSTART:20261118T020000Z
+DTEND:20261118T050000Z
 SUMMARY:ประชุมคณะอนุกรรมาธิกา
  รส่วนกลางและส่วนภูมิภาค (
  วุฒิสภา) ครั้งที่ 31/2569
-LOCATION:
+LOCATION:ห้องประชุมกรรมาธิการ CB 
+ 315 ชั้น 3 อาคารรัฐสภา (สัปปาย
+ ะสภาสถาน 1111 ถนนสามเสน เขตด
+ ุสิต กรุงเทพมหานคร)
 DESCRIPTION:นัดประชุมตามหนังสือน
  ัดประชุมที่วุฒิสภาเผยแพร
  ่ ใส่ปฏิทินเพื่อติดตามเท
