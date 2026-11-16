@@ -2,32 +2,48 @@
  {
   "n": 11,
   "date": "2026-11-12",
-  "time": "",
-  "room": "",
+  "time": "09.30",
+  "room": "ห้องประชุมกรรมาธิการ CA 331 ชั้น 3 อาคารรัฐสภา",
   "docs": [
    {
     "k": "notice",
-    "url": "https://pis.parliament.go.th/PARFileDownloadProxy/download?s=TL50WFc_nr5MZ6xacfJK6xlUWeVEpGp0hB5oFHjb4tj8N-FuMbibB1JMf0PRIsFRKVDpJnvhra2EafACAjpTYQnNmGt9i2quMpKIqlWtgdhDgdoKXfh6XcbRAkUlrztVW9egCvsFQGKPDeDWaHweRqqb0FccUmjRPMdbGg==&ref=11108473",
+    "url": "https://pis.parliament.go.th/PARFileDownloadProxy/download?s=BEC4CtFMCpQEGunfmAuz59WmmiUwXttA-5NH7L--MkMHmD2AUgBV_5vT1tVdyB5dmqGAO7BN10JPizTLzNo-wBzNwhc05Lq8w2w6BeJHcqCAeNbVxqgEcO0-Xg59zVkfB4xwC8z0VZk2dOpbWW02oiDHkUtwFWvnwNn9dw==&ref=11108473",
     "size": 160017
    },
    {
+    "k": "summary",
+    "url": "https://pis.parliament.go.th/PARFileDownloadProxy/download?s=7QL5jIm6sRdt1MZnLbconVKrxsX7iqbSSDy7BhLhypyREBvoy2MAhHcB27p3sta4GISp3yW5_JCvQpGwAsLIhwo2ZGTIg7NwiiOCUHEvhn3f5FNvzyxXW-gBnVyFrAoKLdWL-zmJkrXLdnN-O8oKjJocMGSTJFDqKhalLw==&ref=11185641",
+    "size": 6856010
+   },
+   {
     "k": "agenda",
-    "url": "https://pis.parliament.go.th/PARWeb/doc/meeting-agenda/MeetingAgendaDetailForQRCode?meetingId=-eb2nSq3LC8DNQyd-JI"
+    "url": "https://pis.parliament.go.th/PARWeb/doc/meeting-agenda/MeetingAgendaDetailForQRCode?meetingId=7iVlDrNUvQ3uuQPUANk"
    }
   ],
   "media": {
    "video": {
-    "src": "media/sub-disaster-v11pre.mp4",
-    "poster": "img/poster-sub-disaster-11pre.jpg",
-    "vtt": "media/sub-disaster-v11pre.th.vtt",
-    "kind": "pre",
-    "label": "วิดีโอก่อนการประชุม",
-    "dur": "2:26",
+    "src": "media/sub-disaster-v11.mp4",
+    "poster": "img/poster-sub-disaster-11.jpg",
+    "vtt": "media/sub-disaster-v11.th.vtt",
+    "kind": "post",
+    "label": "วิดีโอสรุปผลการประชุม",
+    "dur": "3:28",
     "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
-    "ck": "disaster-11p",
-    "size": 5558400
+    "ck": "disaster-11",
+    "size": 8499964
    },
    "videos": [
+    {
+     "src": "media/sub-disaster-v11.mp4",
+     "poster": "img/poster-sub-disaster-11.jpg",
+     "vtt": "media/sub-disaster-v11.th.vtt",
+     "kind": "post",
+     "label": "วิดีโอสรุปผลการประชุม",
+     "dur": "3:28",
+     "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+     "ck": "disaster-11",
+     "size": 8499964
+    },
     {
      "src": "media/sub-disaster-v11pre.mp4",
      "poster": "img/poster-sub-disaster-11pre.jpg",
@@ -41,15 +57,53 @@
     }
    ]
   },
-  "chair": "",
-  "chair_role": "",
-  "headline": "การประชุมครั้งที่ 11/2569",
-  "summary": "นัดประชุมครั้งนี้ ดูระเบียบวาระได้จากหนังสือนัดประชุมในหน้ารายละเอียด บทสรุปจะเพิ่มหลังวุฒิสภาเผยแพร่สรุปผลการประชุม",
-  "items": [],
-  "tags": [],
-  "places": [],
-  "pending": false,
-  "upcoming": true
+  "chair": "นางสาวรัชนีกร ทองทิพย์",
+  "chair_role": "ประธานคณะอนุกรรมาธิการ",
+  "headline": "ความปลอดภัยในสถานศึกษาและการรับมือภัยพิบัติ จังหวัดชายฝั่งอันดามัน",
+  "summary": "คณะอนุกรรมาธิการศึกษาแนวทางพัฒนาการศึกษาด้านภัยพิบัติและความปลอดภัยในสถานศึกษา โดยเชิญผู้แทนหน่วยงานในสังกัดสำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน (สพฐ.) กระทรวงศึกษาธิการ และสำนักงานเขตพื้นที่การศึกษาประถมศึกษาใน 6 จังหวัดชายฝั่งอันดามัน ได้แก่ ระนอง พังงา ภูเก็ต กระบี่ ตรัง และสตูล มาให้ข้อมูลเรื่องแผนเผชิญเหตุและการฝึกซ้อมในโรงเรียน ช่องทางแจ้งเหตุด้านความปลอดภัยของนักเรียนและครู และเกณฑ์ความปลอดภัยของอาคารเรียน ที่ประชุมเสนอให้ปรับเกณฑ์ประเมินความปลอดภัยของอาคารให้นำไปใช้ได้จริง และกำหนดประชุมครั้งที่ 12/2569 วันพฤหัสบดีที่ 26 พฤศจิกายน 2569",
+  "items": [
+   [
+    "การขับเคลื่อนแผนการป้องกันและบรรเทาสาธารณภัยแห่งชาติ พ.ศ. 2564-2570 ในสถานศึกษา เช่น ความร่วมมือ (MOU) กับกรมป้องกันและบรรเทาสาธารณภัยเพื่อพัฒนาหลักสูตรด้านการจัดการสาธารณภัย และศูนย์ช่วยเหลือสถานศึกษาที่ประสบภัยพิบัติให้ครอบคลุมถึงระดับอำเภอ",
+    "แลกเปลี่ยนข้อมูล ใช้ประกอบการพิจารณาตามหน้าที่และอำนาจ",
+    "disaster"
+   ],
+   [
+    "ช่องทางแจ้งเหตุด้านสิทธิ เสรีภาพ และความปลอดภัยของนักเรียน ครู และบุคลากรทางการศึกษา ผ่าน MOE Safety Center ระบบ Traffy EDU ทาง LINE และสายด่วน 1579 รวมทั้งการจัดทำแผนเผชิญเหตุและฝึกซ้อมรับมือเหตุฉุกเฉิน เช่น อัคคีภัย อุทกภัย และเหตุคนร้ายใช้อาวุธ",
+    "รับทราบ ใช้ประกอบการศึกษา",
+    "disaster"
+   ],
+   [
+    "เกณฑ์ความปลอดภัยของอาคารเรียนและศูนย์อพยพ ครอบคลุมโครงสร้างอาคาร ระบบน้ำ ระบบไฟฟ้า และสิ่งอำนวยความสะดวกสำหรับผู้สูงอายุและผู้พิการ",
+    "ที่ประชุมเสนอให้ปรับเกณฑ์ประเมินให้ใช้ได้จริงในสถานศึกษา และใช้เทคโนโลยีเสริมความแข็งแรงของอาคารเรียนเก่าให้รองรับแรงสั่นสะเทือนจากแผ่นดินไหว (งบประมาณประมาณร้อยละ 10-20 ของมูลค่าอาคาร)",
+    "disaster"
+   ],
+   [
+    "ตัวอย่างการดำเนินงานในพื้นที่ชายฝั่งอันดามัน เช่น การฝึกซ้อมแผนรับมือสึนามิร่วมกับ UNDP ในโรงเรียนกลุ่มเสี่ยง 23 แห่ง และกองทุนช่วยเหลือเยียวยาครูและนักเรียนที่ประสบภัยพิบัติของสำนักงานเขตพื้นที่การศึกษา",
+    "รับทราบ",
+    "disaster"
+   ],
+   [
+    "การจัดสัมมนาผลการดำเนินงานของคณะอนุกรรมาธิการ วันที่ 24 ธันวาคม 2569 ณ อาคารรัฐสภา และการประชุมครั้งที่ 12/2569 วันพฤหัสบดีที่ 26 พฤศจิกายน 2569 เรื่องปัญหาและอุปสรรคของระบบบัญชาการและการบูรณาการการบริหารจัดการอุทกภัย",
+    "มีมติกำหนดวันสัมมนาและวันประชุมครั้งถัดไป",
+    "other"
+   ]
+  ],
+  "tags": [
+   "ภัยพิบัติ",
+   "สถานศึกษา",
+   "ความปลอดภัย",
+   "สึนามิ",
+   "แผ่นดินไหว"
+  ],
+  "places": [
+   "ระนอง",
+   "พังงา",
+   "ภูเก็ต",
+   "กระบี่",
+   "ตรัง",
+   "สตูล"
+  ],
+  "upcoming": false
  },
  {
   "n": 10,
