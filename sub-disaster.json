@@ -15,7 +15,32 @@
     "url": "https://pis.parliament.go.th/PARWeb/doc/meeting-agenda/MeetingAgendaDetailForQRCode?meetingId=9eEBFIzV4nAzySmBpPI"
    }
   ],
-  "media": {},
+  "media": {
+   "video": {
+    "src": "media/sub-disaster-v12pre.mp4",
+    "poster": "img/poster-sub-disaster-12pre.jpg",
+    "vtt": "media/sub-disaster-v12pre.th.vtt",
+    "kind": "pre",
+    "label": "วิดีโอก่อนการประชุม",
+    "dur": "2:38",
+    "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+    "ck": "disaster-12p",
+    "size": 5992482
+   },
+   "videos": [
+    {
+     "src": "media/sub-disaster-v12pre.mp4",
+     "poster": "img/poster-sub-disaster-12pre.jpg",
+     "vtt": "media/sub-disaster-v12pre.th.vtt",
+     "kind": "pre",
+     "label": "วิดีโอก่อนการประชุม",
+     "dur": "2:38",
+     "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+     "ck": "disaster-12p",
+     "size": 5992482
+    }
+   ]
+  },
   "chair": "นางสาวรัชนีกร ทองทิพย์",
   "chair_role": "ประธานคณะอนุกรรมาธิการ",
   "headline": "ระบบบัญชาการและการบูรณาการการบริหารจัดการอุทกภัย",
