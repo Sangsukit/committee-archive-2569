@@ -15,7 +15,32 @@
     "url": "https://pis.parliament.go.th/PARWeb/doc/meeting-agenda/MeetingAgendaDetailForQRCode?meetingId=iWzEkjx5US3qd5KcKao"
    }
   ],
-  "media": {},
+  "media": {
+   "videos": [
+    {
+     "src": "media/v38.mp4",
+     "poster": "img/poster38.jpg",
+     "vtt": "media/v38.th.vtt",
+     "kind": "pre",
+     "label": "วิดีโอก่อนการประชุม",
+     "dur": "1:40",
+     "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+     "ck": "38p",
+     "size": 4516814
+    }
+   ],
+   "video": {
+    "src": "media/v38.mp4",
+    "poster": "img/poster38.jpg",
+    "vtt": "media/v38.th.vtt",
+    "kind": "pre",
+    "label": "วิดีโอก่อนการประชุม",
+    "dur": "1:40",
+    "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+    "ck": "38p",
+    "size": 4516814
+   }
+  },
   "chair": "นายธวัช สุระบาล",
   "chair_role": "ประธานคณะกรรมาธิการ",
   "headline": "รับรองบันทึกครั้งที่ 37 ผลงานคณะอนุฯ และเรื่องร้องเรียนจากประชาชน",
