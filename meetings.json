@@ -110,6 +110,17 @@
   "media": {
    "videos": [
     {
+     "src": "media/v37post.mp4",
+     "poster": "img/poster37post.jpg",
+     "vtt": "media/v37post.th.vtt",
+     "kind": "post",
+     "label": "วิดีโอสรุปผลการประชุม",
+     "dur": "5:01",
+     "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
+     "ck": "37",
+     "size": 12244936
+    },
+    {
      "src": "media/v37.mp4",
      "poster": "img/poster37.jpg",
      "vtt": "media/v37.th.vtt",
@@ -122,15 +133,15 @@
     }
    ],
    "video": {
-    "src": "media/v37.mp4",
-    "poster": "img/poster37.jpg",
-    "vtt": "media/v37.th.vtt",
-    "kind": "pre",
-    "label": "วิดีโอก่อนการประชุม",
-    "dur": "1:58",
+    "src": "media/v37post.mp4",
+    "poster": "img/poster37post.jpg",
+    "vtt": "media/v37post.th.vtt",
+    "kind": "post",
+    "label": "วิดีโอสรุปผลการประชุม",
+    "dur": "5:01",
     "cc": "เสียงบรรยายภาษาไทย มีคำบรรยายภาษาอังกฤษในวิดีโอ",
-    "ck": "37p",
-    "size": 4693055
+    "ck": "37",
+    "size": 12244936
    }
   },
   "chair": "นายธวัช สุระบาล",
